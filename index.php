@@ -1,89 +1,96 @@
 <?php
-$json = file_get_contents("contenido.json"); 
+$json = file_get_contents("contenido.json");
 $trenes = json_decode($json, true);
-
-$id = $_GET['id'] ?? null;
-$tren = $trenes[$id] ?? null;
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta charset="UTF-8">
-<title>Ferrocarril</title>
-<link rel="stylesheet" href="./styles.css?v=3">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.css"/>
-<script src="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exposición Ferroviaria</title>
+  <link rel="stylesheet" href="styles.css?v=10">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="page-index">
 
-<!-- Tren animado -->
-<div class="train">
-  <img src="/Prueba/images/train.png" alt="tren">
-  <div class="smoke">
-    <span></span><span></span><span></span>
+  <!-- Partículas de humo de fondo -->
+  <div class="bg-smoke">
+    <span></span><span></span><span></span><span></span><span></span>
   </div>
-</div>
 
-<!--Tuerca -->
-<div class="gear">
-    <img src="/Prueba/images/settings.png" alt="tuerca">
-</div>
+  <!-- Rieles decorativos -->
+  <div class="rails-bg">
+    <div class="rail"></div>
+    <div class="rail"></div>
+    <div class="ties"></div>
+  </div>
 
-<div class="container">
+  <!-- Header -->
+  <header class="main-header">
+    <div class="header-inner">
+      <div class="header-emblem">🚂</div>
+      <div class="header-text">
+        <p class="header-sub">Exposición</p>
+        <h1 class="header-title">Ferrocarriles<br><em>Históricos</em></h1>
+        <p class="header-tagline">Un viaje a través del tiempo sobre rieles de acero</p>
+      </div>
+    </div>
+    <div class="header-divider">
+      <span>— ✦ —</span>
+    </div>
+  </header>
 
-<?php if ($tren): ?>
+  <!-- Tablero de horarios estilo vintage -->
+  <section class="departure-board">
+    <div class="board-header">
+      <span class="board-label">SALIDAS</span>
+      <span class="board-clock" id="reloj">00:00:00</span>
+      <span class="board-label">DESTINOS</span>
+    </div>
 
-    <header class="hero fade-in delay-1">
-        <h1 class="title"><?= $tren["nombre"] ?></h1>
-        <p class="subtitle">Un viaje cinematográfico por el ferrocarril</p>
-    </header>
-
-    <section class="section historia fade-in delay-2">
-        <h2 class="station"> Estación : Historia</h2>
-        <p><?= $tren["historia"] ?></p>
-    </section>
-
-    <section class="section fade-in delay-4">
-        <h2>Datos Técnicos</h2>
-        <div class="cards">
-            <?php foreach ($tren["datos"] as $dato): ?>
-                <div class="card"><?= $dato ?></div>
-            <?php endforeach; ?>
+    <div class="board-rows" id="boardRows">
+      <?php foreach ($trenes as $id => $tren): ?>
+      <a href="tren.php?id=<?= $id ?>" class="board-row" data-delay="<?= $id ?>">
+        <div class="row-number"><?= str_pad($id, 3, '0', STR_PAD_LEFT) ?></div>
+        <div class="row-flip">
+          <div class="row-name"><?= htmlspecialchars($tren["nombre"]) ?></div>
         </div>
-    </section>
-
-    <section class="section fade-in delay-5">
-        <h2>Galería</h2>
-        <div class="gallery">
-           <?php foreach ($tren["imagenes"] as $index => $img): ?>
-                <a href="detalle.php?tren=<?= $id ?>&img=<?= $index ?>">
-                <img src="<?= $img["src"] ?>" alt="<?= $img["titulo"] ?>">
-                </a>
-            <?php endforeach; ?>
+        <div class="row-era"><?= htmlspecialchars($tren["era"] ?? "Siglo XIX") ?></div>
+        <div class="row-status">
+          <span class="status-dot"></span>
+          EN SERVICIO
         </div>
-    </section>
+        <div class="row-arrow">→</div>
+      </a>
+      <?php endforeach; ?>
+    </div>
+  </section>
 
-    <section class="section curiosidades fade-in delay-6">
-        <h2>¿Sabías que...?</h2>
-        <p id="datoCurioso"></p>
-        <button onclick="mostrarCuriosidad()">Descubrir</button>
-        
-    </section>
+  <!-- Línea de tiempo decorativa -->
+  <section class="timeline-strip">
+    <div class="timeline-track">
+      <div class="timeline-train" id="timelineTrain">🚂</div>
+      <?php foreach ($trenes as $id => $tren): ?>
+        <div class="timeline-stop">
+          <div class="stop-dot"></div>
+          <div class="stop-year"><?= htmlspecialchars($tren["año"] ?? "1890") ?></div>
+          <div class="stop-name"><?= htmlspecialchars($tren["nombre"]) ?></div>
+        </div>
+      <?php endforeach; ?>
+    </div>
+  </section>
 
-<?php else: ?>
-    <h1>Tren no encontrado</h1>
-<?php endif; ?>
-</div>
+  <!-- Footer -->
+  <footer class="main-footer">
+    <p>Exposición Ferroviaria &mdash; Patrimonio sobre Rieles</p>
+    <div class="footer-tracks">
+      <div class="track-line"></div>
+      <div class="track-dots"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <div class="track-line"></div>
+    </div>
+  </footer>
 
-<div id="panorama"></div>
-
-<script>
-const curiosidades = <?= json_encode($tren["curiosidades"] ?? []) ?>;
-</script>
-
-<script src="./script.js"></script>
-
+  <script src="script.js?v=10"></script>
 </body>
 </html>

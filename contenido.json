@@ -1,42 +1,179 @@
 {
   "1": {
-    "nombre": "Ferrocarril",
-    "historia": "Fue uno de los primeros trenes que revolucionaron el transporte.",
+    "nombre": "La Locomotora del Progreso",
+    "era": "1850 – 1890",
+    "año": "1865",
+    "historia": "La Locomotora del Progreso marcó el inicio de la era ferroviaria en la región. Impulsada por carbón y vapor, este coloso de hierro acercó poblaciones distantes, transformó el comercio y cambió para siempre la forma en que la gente experimentaba el tiempo y el espacio.",
+    "color": "#8b3a3a",
     "datos": [
-      "Funcionaba con carbón",
-      "Inventado hace años",
-      "Permitió viajes más rápidos"
+      "Motor: Vapor de doble expansión",
+      "Velocidad máxima: 45 km/h",
+      "Peso: 48 toneladas",
+      "Combustible: Carbón mineral",
+      "Año de fabricación: 1865"
     ],
     "curiosidades": [
-      "El primer tren a vapor fue creado en 1804",
-      "Podía transportar grandes cargas"
+      "El silbato del tren era audible a más de 3 kilómetros de distancia.",
+      "Una sola ruta de 200 km reemplazó 4 días de viaje en carreta.",
+      "Los maquinistas se llamaban 'ingenieros de vapor' y gozaban de gran prestigio social.",
+      "El tren podía remolcar hasta 800 toneladas de carga en terreno plano."
     ],
-    "imagenes": [
+    "paradas": [
       {
-        "src": "images/Defecto.png",
-        "titulo": "Vista general",
-        "descripcion": "Imagen representativa del ferrocarril."
+        "nombre": "Estación de Origen",
+        "año": "1865",
+        "tipo": "historia",
+        "descripcion": "Aquí comenzó todo. La Estación Central fue construida en 1865 con materiales importados de Europa. Sus arcos de hierro forjado y su reloj de torre se convirtieron en el símbolo del progreso industrial de la época. Miles de pasajeros pasaron por sus andenes cada semana.",
+        "datos": ["Inaugurada en 1865", "Capacidad: 2.000 pasajeros/día", "Arquitecto: Juan Esteban Morales"],
+        "curiosidad": "El reloj de la estación nunca se detuvo durante más de 10 minutos en sus primeros 50 años de funcionamiento.",
+        "panorama": "https://pannellum.org/images/alma.jpg",
+        "panorama_pitch": 0,
+        "imagen_thumb": "images/Defecto.png"
+      },
+      {
+        "nombre": "El Puente de Hierro",
+        "año": "1867",
+        "tipo": "tecnica",
+        "descripcion": "Considerada la obra de ingeniería más audaz de su tiempo, este puente de 340 metros de largo cruzaba el Río Grande a 40 metros de altura. Su construcción duró 3 años y participaron más de 600 obreros. Hoy sigue en pie como monumento nacional.",
+        "datos": ["Longitud: 340 metros", "Altura: 40 metros", "Material: Hierro belga", "Construcción: 1865–1867"],
+        "curiosidad": "Durante su construcción, los ingenieros calcularon las tolerancias de dilatación térmica del hierro a mano, sin computadoras.",
+        "panorama": "https://pannellum.org/images/jfk/jfk.jpg",
+        "panorama_pitch": -5,
+        "imagen_thumb": "images/Defecto.png"
+      },
+      {
+        "nombre": "La Mina de Carbón",
+        "año": "1870",
+        "tipo": "industria",
+        "descripcion": "El combustible que dio vida a los trenes provenía de las profundidades de la Mina San Andrés. Decenas de mineros extraían toneladas de carbón cada día en condiciones extremas. La mina y el ferrocarril formaban un sistema interdependiente: sin carbón, no había vapor; sin vapor, no había tren.",
+        "datos": ["Producción: 80 ton/día", "Profundidad: 120 metros", "Trabajadores: 340 mineros", "Operativa: 1858–1920"],
+        "curiosidad": "Los mineros se comunicaban con el exterior mediante un sistema de golpes en los rieles que podía transmitir mensajes de hasta 500 metros.",
+        "panorama": "https://pannellum.org/images/alma.jpg",
+        "panorama_pitch": -10,
+        "imagen_thumb": "images/Defecto.png"
+      },
+      {
+        "nombre": "Estación Terminal",
+        "año": "1872",
+        "tipo": "destino",
+        "descripcion": "El destino final del recorrido: la Estación Terminal del Puerto, donde las mercancías se trasladaban directamente a los barcos. Esta estación conectó el interior del país con el comercio internacional por primera vez en la historia regional. Su restaurante era famoso por servir el mejor café de la región.",
+        "datos": ["Conexión directa al puerto", "Almacenes: 12 bodegas", "Capacidad de carga: 500 ton/día"],
+        "curiosidad": "En 1872, el primer cargamento de café exportado vía ferrocarril llegó a Europa en perfectas condiciones gracias al control de temperatura del vagón.",
+        "panorama": "https://pannellum.org/images/jfk/jfk.jpg",
+        "panorama_pitch": 0,
+        "imagen_thumb": "images/Defecto.png"
       }
     ]
   },
 
   "2": {
-    "nombre": "Tren Eléctrico",
-    "historia": "Utiliza energía eléctrica y es común en ciudades modernas.",
+    "nombre": "El Expreso de la Costa",
+    "era": "1890 – 1930",
+    "año": "1895",
+    "historia": "Más elegante, más rápido y más cómodo que sus predecesores, El Expreso de la Costa fue el primer tren de pasajeros de lujo de la región. Sus vagones de madera lacada y terciopelo transportaban a empresarios, diplomáticos y viajeros aventureros a lo largo de 600 kilómetros de costa.",
+    "color": "#2b4c7e",
     "datos": [
-      "Más ecológico",
-      "Alta velocidad",
-      "Menor ruido"
+      "Motor: Vapor compuesto",
+      "Velocidad máxima: 80 km/h",
+      "Vagones de primera clase: 6",
+      "Recorrido: 600 km de costa",
+      "Año de inicio: 1895"
     ],
     "curiosidades": [
-      "Se usa en metros",
-      "Reduce la contaminación"
+      "El vagón comedor servía platillos elaborados por chefs traídos desde Europa.",
+      "Cada vagón de primera clase tenía sus propias cortinas de seda importada.",
+      "El tren llevaba un pianista a bordo para entretener a los pasajeros de lujo.",
+      "En 1902, transportó a un presidente de la república en visita oficial."
     ],
-    "imagenes": [
+    "paradas": [
       {
-        "src": "images/Defecto.png",
-        "titulo": "Tren moderno",
-        "descripcion": "Ejemplo de tren eléctrico."
+        "nombre": "Salón de Primera Clase",
+        "año": "1895",
+        "tipo": "interior",
+        "descripcion": "Bienvenido al corazón del lujo ferroviario. El Salón de Primera Clase del Expreso de la Costa era una obra de arte en movimiento: madera de caoba brasileña, lámparas de gas con pantallas de cristal emplomado, asientos tapizados en terciopelo borgoña y espejos biselados en cada panel. Aquí viajaba la élite de la época.",
+        "datos": ["Capacidad: 24 pasajeros", "Madera: Caoba de Brasil", "Tapizado: Terciopelo francés", "Iluminación: Gas y velas"],
+        "curiosidad": "Los espejos del salón fueron fabricados en Venecia y transportados en cajones especiales con aserrín para protegerlos durante el viaje en barco.",
+        "panorama": "https://pannellum.org/images/alma.jpg",
+        "panorama_pitch": 0,
+        "imagen_thumb": "images/Defecto.png"
+      },
+      {
+        "nombre": "El Vagón Comedor",
+        "año": "1895",
+        "tipo": "interior",
+        "descripcion": "A las 8 de la mañana se servía el desayuno continental. A la 1 del mediodía, el almuerzo de tres tiempos. A las 8 de la noche, la cena con vista al mar. El Vagón Comedor del Expreso era un restaurante rodante donde los ingredientes se abastecían en cada estación de paso.",
+        "datos": ["Capacidad: 18 comensales", "Chef: Importado de Francia", "Vajilla: Porcelana inglesa", "Menú: 3 tiempos"],
+        "curiosidad": "El menú cambiaba según la región que atravesaba el tren, incorporando ingredientes locales frescos en cada parada.",
+        "panorama": "https://pannellum.org/images/jfk/jfk.jpg",
+        "panorama_pitch": 5,
+        "imagen_thumb": "images/Defecto.png"
+      },
+      {
+        "nombre": "La Cabina del Maquinista",
+        "año": "1897",
+        "tipo": "tecnica",
+        "descripcion": "Desde esta cabina de hierro y latón, el maquinista y su fogonero gobernaban 80 toneladas de acero en movimiento. La temperatura cerca de la caldera alcanzaba los 60°C. Cada palanca, cada manómetro, cada válvula tenía un propósito preciso. Manejar un expreso costero requería años de formación.",
+        "datos": ["Presión de vapor: 12 atm", "Temperatura caldera: 180°C", "Tripulación: 3 personas", "Formación: 5 años"],
+        "curiosidad": "Los maquinistas del Expreso de la Costa recibían un bono especial por cada viaje completado sin retraso mayor a 5 minutos.",
+        "panorama": "https://pannellum.org/images/alma.jpg",
+        "panorama_pitch": -3,
+        "imagen_thumb": "images/Defecto.png"
+      }
+    ]
+  },
+
+  "3": {
+    "nombre": "El Ferrocarril Minero",
+    "era": "1920 – 1960",
+    "año": "1923",
+    "historia": "Robusto, incansable y construido para el trabajo duro, el Ferrocarril Minero fue el motor económico de una generación entera. Sus vías atravesaban montañas a más de 3.000 metros de altura, transportando minerales preciosos desde el corazón de la cordillera hasta los puertos de exportación.",
+    "color": "#4a5240",
+    "datos": [
+      "Motor: Diésel-eléctrico",
+      "Carga máxima: 1.200 toneladas",
+      "Altitud máxima: 3.200 m.s.n.m.",
+      "Túneles: 23 en todo el recorrido",
+      "Año de inicio: 1923"
+    ],
+    "curiosidades": [
+      "El tren debía reducir velocidad al 30% en los tramos de mayor altitud por la rareza del aire.",
+      "En 1943 transportó el mayor cargamento de cobre de la historia regional: 1.100 toneladas en un solo viaje.",
+      "Los obreros que construyeron las vías en la cordillera trabajaban en condiciones de frío extremo, a veces bajo -5°C.",
+      "El sistema de frenos de emergencia fue inventado por el propio jefe de talleres del ferrocarril."
+    ],
+    "paradas": [
+      {
+        "nombre": "Los Talleres Centrales",
+        "año": "1923",
+        "tipo": "industria",
+        "descripcion": "El alma mecánica del ferrocarril. Los Talleres Centrales eran una ciudad dentro de una ciudad: fraguas, tornos, grúas puente y decenas de mecánicos especializados que mantenían las locomotoras en perfecto estado. Aquí se realizaban desde simples reparaciones hasta la reconstrucción completa de motores.",
+        "datos": ["Superficie: 12.000 m²", "Trabajadores: 240 mecánicos", "Grúas: 4 de 20 toneladas", "Turnos: 24 horas, 3 turnos"],
+        "curiosidad": "Los talleres nunca cerraban. Existía un turno nocturno permanente para garantizar que ninguna locomotora estuviera inactiva más de 48 horas por reparaciones.",
+        "panorama": "https://pannellum.org/images/alma.jpg",
+        "panorama_pitch": 0,
+        "imagen_thumb": "images/Defecto.png"
+      },
+      {
+        "nombre": "El Paso de la Cumbre",
+        "año": "1925",
+        "tipo": "paisaje",
+        "descripcion": "A 3.200 metros sobre el nivel del mar, el Paso de la Cumbre era el punto más alto y más espectacular del recorrido. Las nubes pasaban por debajo del tren. Los rieles desaparecían en la niebla. Y el silencio de la montaña era interrumpido únicamente por el resoplido de la locomotora y el eco del silbato entre los picos nevados.",
+        "datos": ["Altitud: 3.200 m.s.n.m.", "Temperatura media: 4°C", "Viaducto: 180 metros de longitud", "Vista: Panorámica de 360°"],
+        "curiosidad": "En invierno, una cuadrilla de 20 trabajadores se adelantaba al tren para despejar la nieve de los rieles con palas y antorchas.",
+        "panorama": "https://pannellum.org/images/jfk/jfk.jpg",
+        "panorama_pitch": 10,
+        "imagen_thumb": "images/Defecto.png"
+      },
+      {
+        "nombre": "La Mina de Plata",
+        "año": "1926",
+        "tipo": "industria",
+        "descripcion": "Destino final del ferrocarril minero: la mina más productiva de plata de la región. El tren llegaba vacío y partía cargado hasta los topes. En sus mejores años, la mina producía 40 toneladas de plata refinada por mes, toda ella transportada en los vagones blindados del ferrocarril.",
+        "datos": ["Mineral principal: Plata", "Producción pico: 40 ton/mes", "Profundidad: 450 metros", "Años activa: 1920–1975"],
+        "curiosidad": "Los vagones de carga de mineral tenían un revestimiento interior especial de madera dura para evitar que las vibraciones del tren dañaran los bloques de mineral durante el transporte.",
+        "panorama": "https://pannellum.org/images/alma.jpg",
+        "panorama_pitch": -8,
+        "imagen_thumb": "images/Defecto.png"
       }
     ]
   }
