@@ -1,0 +1,288 @@
+:root {
+  --ocre: #c9a66b;
+  --ocre-oscuro: #8b6f47;
+  --fondo: #2b1f1a;
+  --fondo2: #1a1411;
+  --texto: #f5deb3;
+}
+
+/* BASE */
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background: radial-gradient(circle, var(--fondo), var(--fondo2));
+  color: var(--texto);
+  overflow-x: hidden;
+}
+
+/*  EFECTO CINE (SUAVE) */
+body::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.02) 0px,
+    rgba(255,255,255,0.02) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
+  z-index: 999;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 120px rgba(0,0,0,0.8);
+  pointer-events: none;
+}
+
+/* RIEL */
+.train-track {
+  border-top: 3px dashed var(--ocre);
+  position: fixed;
+  top: 80px;
+  width: 100%;
+  z-index: 999;
+}
+
+/* TREN (CONTROLADO POR JS) */
+.train {
+  position: fixed;
+  top: 30px;
+  left: 0;
+  transform: translateX(0);
+  transition: transform 0.6s ease;
+  z-index: 1000;
+}
+
+.train img {
+  width: 60px;
+}
+
+/* HUMO */
+.smoke {
+  position: absolute;
+  left: -10px;
+  top: -10px;
+  display: flex;
+  gap: 6px;
+}
+
+.smoke span {
+  width: 10px;
+  height: 10px;
+  background: rgba(255,255,255,0.7);
+  border-radius: 50%;
+  animation: smoke 2s infinite ease-out;
+  filter: blur(2px);
+}
+
+.smoke span:nth-child(2){ animation-delay: .4s; }
+.smoke span:nth-child(3){ animation-delay: .8s; }
+
+@keyframes smoke {
+  0%   { transform: translate(0,0) scale(1); opacity: .8; }
+  100% { transform: translate(-40px,-40px) scale(2); opacity: 0; }
+}
+
+/*  TUERCA */
+.gear {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  animation: spin 6s linear infinite;
+}
+
+.gear img {
+  width: 40px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* CONTENEDOR */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  margin-top: 120px;
+}
+
+.title {
+  font-size: 3rem;
+}
+
+.subtitle {
+  opacity: 0.7;
+}
+
+/* SECCIONES */
+.section {
+  margin-top: 80px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.6s ease;
+}
+
+/* aparece con JS */
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* estación activa */
+.section.active {
+  border-left: 4px solid var(--ocre);
+  padding-left: 10px;
+}
+
+/* HISTORIA */
+.historia {
+  text-align: center;
+}
+
+.historia p {
+  max-width: 700px;
+  margin: auto;
+  font-size: 1.1rem;
+  opacity: 0.85;
+}
+
+/* CARDS */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: rgba(255,255,255,0.08);
+  padding: 20px;
+  border-radius: 15px;
+  transition: 0.3s;
+  backdrop-filter: blur(10px);
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.05);
+  background: rgba(255,255,255,0.15);
+}
+
+/* GALERÍA */
+.gallery {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+}
+
+.gallery img {
+  width: 220px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.08);
+}
+
+/* BOTÓN */
+button {
+  padding: 15px 25px;
+  font-size: 16px;
+  border-radius: 30px;
+  background: linear-gradient(45deg, var(--ocre), var(--ocre-oscuro));
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 15px rgba(201,166,107,0.4);
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+/* ANIMACIÓN INICIAL */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  filter: blur(4px);
+  animation: cinemaFade 0.8s ease forwards;
+}
+
+@keyframes cinemaFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* DELAYS */
+.delay-1 { animation-delay: 0.5s; }
+.delay-2 { animation-delay: 1s; }
+.delay-4 { animation-delay: 1.5s; }
+.delay-5 { animation-delay: 2s; }
+.delay-6 { animation-delay: 2.5s; }
+
+/* ESTACIÓN */
+.station {
+  font-size: 1.5rem;
+  text-align: center;
+  color: var(--ocre);
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+/* 360 */
+#panorama {
+  height: 300px;
+  margin-top: 40px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+  .container {
+    padding: 15px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .gallery img {
+    width: 150px;
+  }
+
+  .train img {
+    width: 50px;
+  }
+
+  #panorama {
+    height: 220px;
+  }
+}

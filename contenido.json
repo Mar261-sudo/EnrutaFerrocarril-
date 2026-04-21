@@ -1,0 +1,43 @@
+{
+  "1": {
+    "nombre": "Ferrocarril",
+    "historia": "Fue uno de los primeros trenes que revolucionaron el transporte.",
+    "datos": [
+      "Funcionaba con carbón",
+      "Inventado hace años",
+      "Permitió viajes más rápidos"
+    ],
+    "curiosidades": [
+      "El primer tren a vapor fue creado en 1804",
+      "Podía transportar grandes cargas"
+    ],
+    "imagenes": [
+      {
+        "src": "images/Defecto.png",
+        "titulo": "Vista general",
+        "descripcion": "Imagen representativa del ferrocarril."
+      }
+    ]
+  },
+
+  "2": {
+    "nombre": "Tren Eléctrico",
+    "historia": "Utiliza energía eléctrica y es común en ciudades modernas.",
+    "datos": [
+      "Más ecológico",
+      "Alta velocidad",
+      "Menor ruido"
+    ],
+    "curiosidades": [
+      "Se usa en metros",
+      "Reduce la contaminación"
+    ],
+    "imagenes": [
+      {
+        "src": "images/Defecto.png",
+        "titulo": "Tren moderno",
+        "descripcion": "Ejemplo de tren eléctrico."
+      }
+    ]
+  }
+}
