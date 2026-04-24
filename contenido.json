@@ -37,7 +37,7 @@
         "descripcion": "Considerada la obra de ingeniería más audaz de su tiempo, este puente de 340 metros de largo cruzaba el Río Grande a 40 metros de altura. Su construcción duró 3 años y participaron más de 600 obreros. Hoy sigue en pie como monumento nacional.",
         "datos": ["Longitud: 340 metros", "Altura: 40 metros", "Material: Hierro belga", "Construcción: 1865–1867"],
         "curiosidad": "Durante su construcción, los ingenieros calcularon las tolerancias de dilatación térmica del hierro a mano, sin computadoras.",
-        "panorama": "https://pannellum.org/images/jfk/jfk.jpg",
+        "panorama": "https://pannellum.org/images/alma.jpg",
         "panorama_pitch": -5,
         "imagen_thumb": "images/Defecto.png"
       },
@@ -59,7 +59,7 @@
         "descripcion": "El destino final del recorrido: la Estación Terminal del Puerto, donde las mercancías se trasladaban directamente a los barcos. Esta estación conectó el interior del país con el comercio internacional por primera vez en la historia regional. Su restaurante era famoso por servir el mejor café de la región.",
         "datos": ["Conexión directa al puerto", "Almacenes: 12 bodegas", "Capacidad de carga: 500 ton/día"],
         "curiosidad": "En 1872, el primer cargamento de café exportado vía ferrocarril llegó a Europa en perfectas condiciones gracias al control de temperatura del vagón.",
-        "panorama": "https://pannellum.org/images/jfk/jfk.jpg",
+        "panorama": "https://pannellum.org/images/alma.jpg",
         "panorama_pitch": 0,
         "imagen_thumb": "images/Defecto.png"
       }
@@ -104,7 +104,7 @@
         "descripcion": "A las 8 de la mañana se servía el desayuno continental. A la 1 del mediodía, el almuerzo de tres tiempos. A las 8 de la noche, la cena con vista al mar. El Vagón Comedor del Expreso era un restaurante rodante donde los ingredientes se abastecían en cada estación de paso.",
         "datos": ["Capacidad: 18 comensales", "Chef: Importado de Francia", "Vajilla: Porcelana inglesa", "Menú: 3 tiempos"],
         "curiosidad": "El menú cambiaba según la región que atravesaba el tren, incorporando ingredientes locales frescos en cada parada.",
-        "panorama": "https://pannellum.org/images/jfk/jfk.jpg",
+        "panorama": "https://pannellum.org/images/alma.jpg",
         "panorama_pitch": 5,
         "imagen_thumb": "images/Defecto.png"
       },
@@ -160,7 +160,7 @@
         "descripcion": "A 3.200 metros sobre el nivel del mar, el Paso de la Cumbre era el punto más alto y más espectacular del recorrido. Las nubes pasaban por debajo del tren. Los rieles desaparecían en la niebla. Y el silencio de la montaña era interrumpido únicamente por el resoplido de la locomotora y el eco del silbato entre los picos nevados.",
         "datos": ["Altitud: 3.200 m.s.n.m.", "Temperatura media: 4°C", "Viaducto: 180 metros de longitud", "Vista: Panorámica de 360°"],
         "curiosidad": "En invierno, una cuadrilla de 20 trabajadores se adelantaba al tren para despejar la nieve de los rieles con palas y antorchas.",
-        "panorama": "https://pannellum.org/images/jfk/jfk.jpg",
+        "panorama": "https://pannellum.org/images/alma.jpg",
         "panorama_pitch": 10,
         "imagen_thumb": "images/Defecto.png"
       },
