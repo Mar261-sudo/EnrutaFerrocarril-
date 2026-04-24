@@ -14,13 +14,22 @@ $parada = $tren["paradas"][$paradaId] ?? null;
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?= $parada ? htmlspecialchars($parada["nombre"]) : "Detalle" ?> — Ferroviaria</title>
-  <link rel="stylesheet" href="styles.css?v=10">
+  <link rel="stylesheet" href="styles.css?v=11">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.css"/>
   <script src="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.js"></script>
 </head>
 <body class="page-detalle">
+
+  <!-- Control de tamaño de letra -->
+  <div class="font-controls" aria-label="Tamaño de letra">
+    <button class="btn-font-decrease" onclick="decreaseFontSize()" title="Reducir letra">A−</button>
+    <span class="fc-divider"></span>
+    <span class="font-size-indicator">A</span>
+    <span class="fc-divider"></span>
+    <button class="btn-font-increase" onclick="increaseFontSize()" title="Agrandar letra">A+</button>
+  </div>
 
 <?php if ($tren && $parada): ?>
 
@@ -93,17 +102,17 @@ $parada = $tren["paradas"][$paradaId] ?? null;
   </div>
 
   <script>
-    const PANORAMA_URL = <?= json_encode($parada["panorama"] ?? "https://pannellum.org/images/alma.jpg") ?>;
+    const PANORAMA_URL   = <?= json_encode($parada["panorama"] ?? "https://pannellum.org/images/alma.jpg") ?>;
     const PANORAMA_PITCH = <?= json_encode($parada["panorama_pitch"] ?? 0) ?>;
 
     document.addEventListener("DOMContentLoaded", () => {
       pannellum.viewer('panoramaDetalle', {
-        type: "equirectangular",
-        panorama: PANORAMA_URL,
-        autoLoad: true,
-        autoRotate: -2,
-        pitch: PANORAMA_PITCH,
-        hfov: 100,
+        type:        "equirectangular",
+        panorama:    PANORAMA_URL,
+        autoLoad:    true,
+        autoRotate:  -2,
+        pitch:       PANORAMA_PITCH,
+        hfov:        100,
         showControls: true
       });
     });
@@ -116,6 +125,6 @@ $parada = $tren["paradas"][$paradaId] ?? null;
   </div>
 <?php endif; ?>
 
-  <script src="script.js?v=10"></script>
+  <script src="script.js?v=11"></script>
 </body>
 </html>

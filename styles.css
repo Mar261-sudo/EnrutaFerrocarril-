@@ -24,6 +24,90 @@
   --shadow-deep:  0 8px 40px rgba(0,0,0,0.6);
   --glow-ocre:    0 0 20px rgba(201,166,107,0.4);
   --glow-rojo:    0 0 20px rgba(139,26,26,0.5);
+
+  /* Tamaño base de fuente (se modifica con las clases font-*) */
+  --base-font-size: 1rem;
+}
+
+/* ================================================================
+   TAMAÑOS DE LETRA — Se controla via font-size en <html> desde JS
+   Todo usa rem para heredar automáticamente el tamaño base
+   ================================================================ */
+html { font-size: 16px; } /* valor por defecto, JS lo sobreescribe */
+
+body { font-size: 1rem; }
+
+.parada-desc,
+.detalle-desc,
+.facts-list li,
+.parada-curiosidad p,
+.detalle-curiosity p {
+  font-size: 0.9rem;
+}
+
+.parada-nombre,
+.detalle-title {
+  font-size: clamp(1.2rem, 5vw, 2rem);
+}
+
+/* ================================================================
+   CONTROL DE TAMAÑO DE LETRA — Botón flotante
+   ================================================================ */
+.font-controls {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(26, 20, 17, 0.92);
+  border: 1px solid rgba(201, 166, 107, 0.3);
+  border-radius: 6px;
+  padding: 5px 8px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.font-controls button {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  color: var(--ocre);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 3px 6px;
+  border-radius: 3px;
+  line-height: 1;
+  transition: background 0.2s;
+  touch-action: manipulation;
+}
+
+.font-controls button:hover,
+.font-controls button:active {
+  background: rgba(201, 166, 107, 0.15);
+}
+
+.font-controls button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.font-size-indicator {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  color: var(--ocre);
+  opacity: 0.7;
+  min-width: 22px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.font-controls .fc-divider {
+  width: 1px;
+  height: 14px;
+  background: rgba(201, 166, 107, 0.25);
+  margin: 0 2px;
 }
 
 /* ---- RESET ---- */
@@ -764,6 +848,9 @@ button { font-family: var(--font-display); cursor: pointer; touch-action: manipu
   .ctrl-btn { padding:12px 20px; font-size:0.75rem; max-width:200px; }
   .detalle-360-wrapper { height:45vw; max-height:440px; }
   .detalle-panel { padding:24px 28px 40px; }
+
+  /* En tablet el botón de fuente no choca con btn-volver */
+  .font-controls { top:14px; right:14px; }
 }
 
 /* ================================================================
@@ -788,9 +875,20 @@ button { font-family: var(--font-display); cursor: pointer; touch-action: manipu
   .detalle-panel::-webkit-scrollbar-track { background:transparent; }
   .detalle-panel::-webkit-scrollbar-thumb { background:var(--ocre-oscuro); border-radius:2px; }
 }
+
 .btn-volver-tren img {
   width: 20px;
   height: auto;
   vertical-align: middle;
   margin-right: 5px;
+}
+
+/* ================================================================
+   AJUSTE: en móvil el btn-volver y font-controls no se solapan
+   ================================================================ */
+@media (max-width: 599px) {
+  /* En páginas con btn-volver (tren.php), mover font-controls un poco más abajo */
+  .page-tren .font-controls {
+    top: 52px;
+  }
 }

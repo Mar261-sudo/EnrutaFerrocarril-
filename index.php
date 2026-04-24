@@ -8,11 +8,20 @@ $trenes = json_decode($json, true);
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Exposición Ferroviaria</title>
-  <link rel="stylesheet" href="styles.css?v=10">
+  <link rel="stylesheet" href="styles.css?v=11">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body class="page-index">
+
+  <!-- Control de tamaño de letra -->
+  <div class="font-controls" aria-label="Tamaño de letra">
+    <button class="btn-font-decrease" onclick="decreaseFontSize()" title="Reducir letra">A−</button>
+    <span class="fc-divider"></span>
+    <span class="font-size-indicator">A</span>
+    <span class="fc-divider"></span>
+    <button class="btn-font-increase" onclick="increaseFontSize()" title="Agrandar letra">A+</button>
+  </div>
 
   <!-- Partículas de humo de fondo -->
   <div class="bg-smoke">
@@ -91,6 +100,6 @@ $trenes = json_decode($json, true);
     </div>
   </footer>
 
-  <script src="script.js?v=10"></script>
+  <script src="script.js?v=11"></script>
 </body>
 </html>

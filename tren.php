@@ -11,13 +11,22 @@ $tren = $trenes[$id] ?? null;
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?= $tren ? htmlspecialchars($tren["nombre"]) : "Tren" ?> — Exposición Ferroviaria</title>
-  <link rel="stylesheet" href="styles.css?v=10">
+  <link rel="stylesheet" href="styles.css?v=11">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.css"/>
   <script src="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.js"></script>
 </head>
 <body class="page-tren">
+
+  <!-- Control de tamaño de letra -->
+  <div class="font-controls" aria-label="Tamaño de letra">
+    <button class="btn-font-decrease" onclick="decreaseFontSize()" title="Reducir letra">A−</button>
+    <span class="fc-divider"></span>
+    <span class="font-size-indicator">A</span>
+    <span class="fc-divider"></span>
+    <button class="btn-font-increase" onclick="increaseFontSize()" title="Agrandar letra">A+</button>
+  </div>
 
 <?php if ($tren): ?>
 
@@ -136,6 +145,6 @@ $tren = $trenes[$id] ?? null;
   </div>
 <?php endif; ?>
 
-  <script src="script.js?v=10"></script>
+  <script src="script.js?v=11"></script>
 </body>
 </html>
