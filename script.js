@@ -408,13 +408,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ---- Efecto de aceleración del paisaje ----
   function acelerarPaisaje() {
-    const landscape = document.getElementById("landscape");
-    if (!landscape) return;
-    landscape.style.animationDuration = "5s";
-    setTimeout(() => {
-      landscape.style.animationDuration = "20s";
-    }, 1500);
-  }
+  const landscape = document.getElementById("landscape");
+  if (!landscape) return;
+  // Muestra el paisaje CSS brevemente simulando aceleración
+  landscape.style.opacity = "0.6";
+  landscape.style.animationDuration = "5s";
+  setTimeout(() => {
+    landscape.style.animationDuration = "20s";
+    landscape.style.opacity = "0";
+  }, 1500);
+}
 
   /* ================================================================
      CURIOSIDADES (index.php legado)
