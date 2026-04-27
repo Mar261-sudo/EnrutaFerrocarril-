@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Gancho superior -->
+  <path d="M32 4 Q32 2 36 2 Q40 2 40 6 Q40 10 32 10" stroke="#c9a66b" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <!-- Cadena/colgante -->
+  <line x1="32" y1="10" x2="32" y2="14" stroke="#c9a66b" stroke-width="1.2"/>
+  <!-- Tapa superior -->
+  <rect x="22" y="14" width="20" height="4" rx="1" fill="#8b6f47" stroke="#c9a66b" stroke-width="1"/>
+  <!-- Cuerpo linterna -->
+  <rect x="24" y="18" width="16" height="26" rx="2" fill="#3d2e28" stroke="#c9a66b" stroke-width="1.2"/>
+  <!-- Vidrio (luz) -->
+  <rect x="27" y="21" width="10" height="20" rx="1" fill="#c9a66b" opacity="0.15" stroke="#8b6f47" stroke-width="0.8"/>
+  <!-- Llama interior -->
+  <path d="M32 38 Q29 34 31 30 Q32 28 33 30 Q35 34 32 38 Z" fill="#c9a66b" opacity="0.7"/>
+  <path d="M32 36 Q30.5 33 31.5 30.5 Q32 29.5 32.5 30.5 Q33.5 33 32 36 Z" fill="#e8c98a" opacity="0.9"/>
+  <!-- Barras verticales decorativas -->
+  <line x1="30" y1="21" x2="30" y2="41" stroke="#8b6f47" stroke-width="0.8" opacity="0.6"/>
+  <line x1="34" y1="21" x2="34" y2="41" stroke="#8b6f47" stroke-width="0.8" opacity="0.6"/>
+  <!-- Aro central decorativo -->
+  <rect x="22" y="30" width="20" height="3" rx="0" fill="#8b6f47" stroke="#c9a66b" stroke-width="0.8" opacity="0.8"/>
+  <!-- Tapa inferior -->
+  <rect x="22" y="44" width="20" height="4" rx="1" fill="#8b6f47" stroke="#c9a66b" stroke-width="1"/>
+  <!-- Pie -->
+  <rect x="26" y="48" width="12" height="3" rx="1" fill="#3d2e28" stroke="#c9a66b" stroke-width="0.8"/>
+  <rect x="24" y="51" width="16" height="3" rx="1" fill="#3d2e28" stroke="#c9a66b" stroke-width="0.8"/>
+  <!-- Remaches esquinas -->
+  <circle cx="25" cy="19" r="1" fill="#c9a66b" opacity="0.8"/>
+  <circle cx="39" cy="19" r="1" fill="#c9a66b" opacity="0.8"/>
+  <circle cx="25" cy="43" r="1" fill="#c9a66b" opacity="0.8"/>
+  <circle cx="39" cy="43" r="1" fill="#c9a66b" opacity="0.8"/>
+</svg>

@@ -47,7 +47,7 @@ $tren = $trenes[$id] ?? null;
             <span class="ticket-label">PARTIDA</span>
             <span class="ticket-val">Estación Central</span>
           </div>
-          <div class="ticket-train-icon">🚂</div>
+          <div class="ticket-train-icon"><img src="icons/icon-tren.svg" alt="tren" class="icon-btn"></div>
           <div>
             <span class="ticket-label">LLEGADA</span>
             <span class="ticket-val">Estación Final</span>
@@ -56,7 +56,7 @@ $tren = $trenes[$id] ?? null;
       </div>
       <button class="btn-embarcar" id="btnEmbarcar" onclick="iniciarViaje()">
         <span class="btn-text">SUBIR AL TREN</span>
-        <span class="btn-whistle">🔔</span>
+        <span class="btn-whistle"><img src="icons/icon-campana.svg" alt="campana" class="icon-btn"></span>
       </button>
       <p class="boarding-hint">Haz clic para comenzar el recorrido</p>
     </div>
@@ -88,7 +88,7 @@ $tren = $trenes[$id] ?? null;
       <div class="journey-progress">
         <div class="progress-track">
           <div class="progress-fill" id="progressFill"></div>
-          <div class="progress-train" id="progressTrain">🚂</div>
+          <div class="progress-train" id="progressTrain"><img src="icons/icon-tren.svg" alt="tren" class="icon-progress-train"></div>
           <?php foreach ($tren["paradas"] as $i => $parada): ?>
             <div class="progress-stop" style="left: <?= ($i / (count($tren["paradas"]) - 1)) * 100 ?>%">
               <div class="pstop-dot" data-index="<?= $i ?>"></div>
@@ -104,7 +104,7 @@ $tren = $trenes[$id] ?? null;
         <!-- Anuncio de llegada a estación -->
         <div class="arrival-announcement hidden" id="arrivalAnnouncement">
           <div class="announcement-inner">
-            <span class="announcement-icon">📢</span>
+            <span class="announcement-icon"><img src="icons/icon-bocina.svg" alt="anuncio" class="icon-sm"></span>
             <span class="announcement-text" id="announcementText"></span>
           </div>
         </div>

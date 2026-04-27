@@ -1,11 +1,12 @@
+
 /* ================================================================
    FERROCARRIL — Script Principal
    ================================================================ */
-
+ 
 document.addEventListener("DOMContentLoaded", () => {
-
+ 
   const body = document.body;
-
+ 
   /* ================================================================
      TAMAÑO DE LETRA — Agrandar / Minimizar
      ================================================================ */
@@ -13,19 +14,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const FONT_LABELS  = ["A−−", "A−", "A", "A+", "A++"];
   const STORAGE_KEY  = "ferro_font_size";
   const htmlEl       = document.documentElement;
-
+ 
   let currentSizeIndex = 2; // índice 2 = 16px (normal)
-
+ 
   // Restaurar tamaño guardado
   const savedIdx = parseInt(localStorage.getItem(STORAGE_KEY));
   if (!isNaN(savedIdx) && savedIdx >= 0 && savedIdx < FONT_STEPS.length) {
     currentSizeIndex = savedIdx;
   }
-
+ 
   function applyFontSize(index) {
     htmlEl.style.fontSize = FONT_STEPS[index] + "px";
     localStorage.setItem(STORAGE_KEY, index);
-
+ 
     document.querySelectorAll(".btn-font-increase").forEach(btn => {
       btn.disabled = index >= FONT_STEPS.length - 1;
     });
@@ -36,24 +37,24 @@ document.addEventListener("DOMContentLoaded", () => {
       el.textContent = FONT_LABELS[index];
     });
   }
-
+ 
   window.increaseFontSize = function () {
     if (currentSizeIndex < FONT_STEPS.length - 1) {
       currentSizeIndex++;
       applyFontSize(currentSizeIndex);
     }
   };
-
+ 
   window.decreaseFontSize = function () {
     if (currentSizeIndex > 0) {
       currentSizeIndex--;
       applyFontSize(currentSizeIndex);
     }
   };
-
+ 
   // Aplicar tamaño inicial
   applyFontSize(currentSizeIndex);
-
+ 
   /* ================================================================
      RELOJ EN VIVO (index.php)
      ================================================================ */
@@ -69,16 +70,16 @@ document.addEventListener("DOMContentLoaded", () => {
     actualizarReloj();
     setInterval(actualizarReloj, 1000);
   }
-
+ 
   /* ================================================================
      TREN EN LÍNEA DE TIEMPO (index.php)
      ================================================================ */
   const timelineTrain = document.getElementById("timelineTrain");
   const timelineStops = document.querySelectorAll(".timeline-stop");
-
+ 
   if (timelineTrain && timelineStops.length > 0) {
     let currentStop = 0;
-
+ 
     function moverTrenTimeline() {
       const stop = timelineStops[currentStop];
       if (!stop) return;
@@ -86,44 +87,49 @@ document.addEventListener("DOMContentLoaded", () => {
       const trackRect = track.getBoundingClientRect();
       const stopRect  = stop.getBoundingClientRect();
       const relativeLeft = (stopRect.left - trackRect.left) / trackRect.width * 100;
-
+ 
       timelineTrain.style.left = relativeLeft + "%";
-
+ 
       timelineStops.forEach((s, i) => {
         const dot = s.querySelector(".stop-dot");
         if (dot) dot.style.background = i <= currentStop ? "var(--ocre)" : "var(--ocre-oscuro)";
       });
-
+ 
       currentStop = (currentStop + 1) % timelineStops.length;
     }
-
-    setTimeout(moverTrenTimeline, 800);
-    setInterval(moverTrenTimeline, 3000);
+ 
+    setTimeout(moverTrenTimeline, 1500);
+    setInterval(moverTrenTimeline, 4000);
   }
-
+ 
   /* ================================================================
      PANTALLA DE EMBARQUE Y VIAJE (tren.php)
      ================================================================ */
   if (typeof TREN_DATA === "undefined") return;
-
+ 
   const boardingScreen = document.getElementById("boardingScreen");
   const journeyScreen  = document.getElementById("journeyScreen");
-
+ 
+  const ICON_TREN     = '<img src="icons/icon-tren.svg" alt="tren" class="icon-progress-train">';
+  const ICON_LINTERNA = '<img src="icons/icon-linterna.svg" alt="curiosidad" class="icon-sm">';
+  const ICON_DATOS    = '<img src="icons/icon-datos.svg" alt="datos" class="icon-sm">';
+  const ICON_BOCINA   = '<img src="icons/icon-bocina.svg" alt="anuncio" class="icon-sm">';
+ 
   let paradaActual  = 0;
   const paradas     = TREN_DATA.paradas || [];
   let panoramaViewer = null;
-
+ 
   window.iniciarViaje = function () {
     if (!boardingScreen) return;
-
+ 
     const btn = document.getElementById("btnEmbarcar");
     if (btn) {
       btn.style.transform = "scale(0.95)";
       setTimeout(() => { btn.style.transform = ""; }, 150);
     }
-
+ 
     boardingScreen.classList.add("leaving");
-
+ 
     setTimeout(() => {
       boardingScreen.style.display = "none";
       journeyScreen.classList.remove("hidden");
@@ -132,11 +138,11 @@ document.addEventListener("DOMContentLoaded", () => {
       activarLluvia();
     }, 800);
   };
-
+ 
   function generarPaisaje() {
     const landscape = document.getElementById("landscape");
     if (!landscape) return;
-
+ 
     const colores = {
       cielo:    "#1a1411",
       horizonte:"#2b1f1a",
@@ -145,11 +151,11 @@ document.addEventListener("DOMContentLoaded", () => {
       edificio: "#1e2a38",
       montaña:  "#1a2030"
     };
-
+ 
     let html = "";
-
+ 
     html += `<div style="position:absolute;top:0;left:0;width:100%;height:50%;background:linear-gradient(to bottom,#0a0a12,${colores.horizonte});"></div>`;
-
+ 
     for (let i = 0; i < 80; i++) {
       const x  = Math.random() * 3000;
       const y  = Math.random() * 50;
@@ -157,9 +163,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const op = Math.random() * 0.7 + 0.3;
       html += `<div style="position:absolute;left:${x}px;top:${y}%;width:${s}px;height:${s}px;border-radius:50%;background:white;opacity:${op};"></div>`;
     }
-
+ 
     html += `<div style="position:absolute;left:200px;top:10%;width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#f5deb3,#c9a66b);box-shadow:0 0 20px rgba(201,166,107,0.4);"></div>`;
-
+ 
     const montañas = [[0,"#101820"],[150,"#121a22"],[300,"#141c24"],[500,"#101820"],
                       [700,"#0e1618"],[900,"#121a22"],[1100,"#0c1416"],[1300,"#101820"],
                       [1500,"#121a22"],[1700,"#101820"],[1900,"#141c24"],[2100,"#101820"],
@@ -169,9 +175,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const h = 60  + Math.random() * 80;
       html += `<div style="position:absolute;left:${x}px;bottom:35%;width:${w}px;height:${h}px;background:${col};clip-path:polygon(0% 100%,50% 0%,100% 100%);"></div>`;
     });
-
+ 
     html += `<div style="position:absolute;bottom:0;left:0;width:100%;height:40%;background:linear-gradient(to bottom,#1a1210,#0a0a08);"></div>`;
-
+ 
     const elementos = [];
     for (let i = 0; i < 60; i++) {
       const x    = i * 50 + Math.random() * 30;
@@ -196,12 +202,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
     html += elementos.join("");
-
+ 
     html += `<div style="position:absolute;bottom:20%;left:0;width:100%;height:4px;background:repeating-linear-gradient(to right,var(--ocre-oscuro) 0px,var(--ocre-oscuro) 30px,transparent 30px,transparent 50px);opacity:0.6;"></div>`;
-
+ 
     landscape.innerHTML = html;
   }
-
+ 
   function activarLluvia() {
     const rain = document.getElementById("rainOverlay");
     if (!rain) return;
@@ -217,12 +223,12 @@ document.addEventListener("DOMContentLoaded", () => {
       rain.appendChild(drop);
     }
   }
-
+ 
   let transitionEl = document.createElement("div");
   transitionEl.className = "station-transition";
   transitionEl.innerHTML = `<div class="station-transition-text" id="transitionText">⬤ ⬤ ⬤</div>`;
   document.body.appendChild(transitionEl);
-
+ 
   function mostrarTransicion(texto, callback) {
     const textEl = document.getElementById("transitionText");
     if (textEl) textEl.textContent = texto;
@@ -232,7 +238,7 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => { transitionEl.classList.remove("active"); }, 600);
     }, 700);
   }
-
+ 
   function actualizarProgreso(index) {
     const fill  = document.getElementById("progressFill");
     const train = document.getElementById("progressTrain");
@@ -246,11 +252,11 @@ document.addEventListener("DOMContentLoaded", () => {
       if (i === index) dot.classList.add("current");
     });
   }
-
+ 
   function mostrarParada(index, conTransicion = true) {
     const parada = paradas[index];
     if (!parada) return;
-
+ 
     const mostrar = () => {
       const anuncio     = document.getElementById("arrivalAnnouncement");
       const anuncioText = document.getElementById("announcementText");
@@ -267,7 +273,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (btnAnt) btnAnt.disabled = index === 0;
       if (btnSig) {
         if (index === paradas.length - 1) {
-          btnSig.textContent = "🏁 Fin del recorrido";
+          btnSig.textContent = "⬛ Fin del recorrido";
           btnSig.disabled = true;
         } else {
           btnSig.textContent = "Próxima estación ▶";
@@ -276,23 +282,23 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       renderParada(parada, index);
     };
-
+ 
     if (conTransicion && index > 0) {
-      mostrarTransicion(`🚂  Llegando a ${parada.nombre.toUpperCase()}  🚂`, mostrar);
+      mostrarTransicion(`— Llegando a ${parada.nombre.toUpperCase()} —`, mostrar);
     } else {
       mostrar();
     }
   }
-
+ 
   function renderParada(parada, index) {
     const container = document.getElementById("paradaContainer");
     if (!container) return;
-
+ 
     if (panoramaViewer) {
       try { panoramaViewer.destroy(); } catch(e) {}
       panoramaViewer = null;
     }
-
+ 
     const tipoLabels = {
       historia:  "Historia",
       tecnica:   "Técnica",
@@ -301,16 +307,16 @@ document.addEventListener("DOMContentLoaded", () => {
       paisaje:   "Paisaje",
       destino:   "Destino"
     };
-
+ 
     const tipoLabel  = tipoLabels[parada.tipo] || "Parada";
     const datosHTML  = (parada.datos || []).map(d => `<div class="parada-dato">${d}</div>`).join("");
     const curiosidadHTML = parada.curiosidad ? `
       <div class="parada-curiosidad">
-        <span class="curiosidad-icon">💡</span>
+        <span class="curiosidad-icon">${ICON_LINTERNA}</span>
         <p>${parada.curiosidad}</p>
       </div>` : "";
     const panoId = "pano-" + index;
-
+ 
     container.innerHTML = `
       <div class="parada-slide">
         <div class="parada-header">
@@ -329,7 +335,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </a>
         </div>
       </div>`;
-
+ 
     if (typeof pannellum !== "undefined" && parada.panorama) {
       setTimeout(() => {
         try {
@@ -345,11 +351,11 @@ document.addEventListener("DOMContentLoaded", () => {
         } catch(e) { console.warn("Pannellum error:", e); }
       }, 400);
     }
-
+ 
     const interior = document.querySelector(".train-interior");
     if (interior) interior.scrollTop = 0;
   }
-
+ 
   window.paradaSiguiente = function () {
     if (paradaActual < paradas.length - 1) {
       paradaActual++;
@@ -357,26 +363,26 @@ document.addEventListener("DOMContentLoaded", () => {
       acelerarPaisaje();
     }
   };
-
+ 
   window.paradaAnterior = function () {
     if (paradaActual > 0) {
       paradaActual--;
       mostrarParada(paradaActual, true);
     }
   };
-
+ 
   function acelerarPaisaje() {
     const landscape = document.getElementById("landscape");
     if (!landscape) return;
     landscape.style.animationDuration = "5s";
     setTimeout(() => { landscape.style.animationDuration = "20s"; }, 1500);
   }
-
+ 
   window.mostrarCuriosidad = function () {
     if (typeof curiosidades === "undefined" || !curiosidades.length) return;
     const random = curiosidades[Math.floor(Math.random() * curiosidades.length)];
     const el = document.getElementById("datoCurioso");
     if (el) el.textContent = random;
   };
-
+ 
 });

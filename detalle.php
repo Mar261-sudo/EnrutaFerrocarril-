@@ -64,7 +64,7 @@ $parada = $tren["paradas"][$paradaId] ?? null;
 
       <?php if (!empty($parada["datos"])): ?>
       <div class="detalle-facts">
-        <h3 class="facts-title">📋 Datos de esta parada</h3>
+        <h3 class="facts-title"><img src="icons/icon-datos.svg" alt="datos" class="icon-sm"> Datos de esta parada</h3>
         <ul class="facts-list">
           <?php foreach ($parada["datos"] as $dato): ?>
             <li><?= htmlspecialchars($dato) ?></li>
@@ -75,7 +75,7 @@ $parada = $tren["paradas"][$paradaId] ?? null;
 
       <?php if (!empty($parada["curiosidad"])): ?>
       <div class="detalle-curiosity">
-        <span class="curiosity-icon">💡</span>
+        <span class="curiosity-icon"><img src="icons/icon-linterna.svg" alt="curiosidad" class="icon-sm"></span>
         <p><?= htmlspecialchars($parada["curiosidad"]) ?></p>
       </div>
       <?php endif; ?>
