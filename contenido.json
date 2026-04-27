@@ -1,179 +1,555 @@
 {
   "1": {
-    "nombre": "La Locomotora del Progreso",
-    "era": "1850 – 1890",
-    "año": "1865",
-    "historia": "La Locomotora del Progreso marcó el inicio de la era ferroviaria en la región. Impulsada por carbón y vapor, este coloso de hierro acercó poblaciones distantes, transformó el comercio y cambió para siempre la forma en que la gente experimentaba el tiempo y el espacio.",
-    "color": "#8b3a3a",
+    "nombre": "Los Tiempos del Ferrocarril — La Epopeya Inicial",
+    "era": "1810 – 1882",
+    "año": "1878",
+    "historia": "La historia del Ferrocarril del Pacífico comienza mucho antes de que el primer riel fuera puesto. Desde el Grito de Independencia en 1810, cuando Simón Bolívar encargó al Coronel Eusebio Borrero construir un camino entre el Valle del Cauca y el mar, hasta 1878 cuando Francisco Javier Cisneros inició las obras oficiales del ferrocarril desde Buenaventura, esta es la epopeya de un pueblo que soñó con unir el interior de Colombia con el océano Pacífico.",
+    "color": "#3a2a1a",
     "datos": [
-      "Motor: Vapor de doble expansión",
-      "Velocidad máxima: 45 km/h",
-      "Peso: 48 toneladas",
-      "Combustible: Carbón mineral",
-      "Año de fabricación: 1865"
+      "Inicio de obras: 1878 desde Buenaventura",
+      "Impulsor: Francisco Javier Cisneros",
+      "Primer tramo: Buenaventura – Córdoba (27 km, 1882)",
+      "Primera locomotora: llegó al puerto en 1879",
+      "Longitud total del FC del Pacífico: 330 km"
     ],
     "curiosidades": [
-      "El silbato del tren era audible a más de 3 kilómetros de distancia.",
-      "Una sola ruta de 200 km reemplazó 4 días de viaje en carreta.",
-      "Los maquinistas se llamaban 'ingenieros de vapor' y gozaban de gran prestigio social.",
-      "El tren podía remolcar hasta 800 toneladas de carga en terreno plano."
+      "Simón Bolívar fue el primero en ordenar la apertura de un camino entre el Valle del Cauca y el mar en 1829.",
+      "En 1852 concluyó la construcción del Ferrocarril de Panamá, lo que impulsó el interés por conectar el interior colombiano al Pacífico.",
+      "La Guerra de los Mil Días (1899–1903) suspendió completamente las obras del ferrocarril.",
+      "En 1847 se elaboró el primer mapa del camino carreteable a Buenaventura por el ingeniero Stanislas Zawadzky."
     ],
     "paradas": [
       {
-        "nombre": "Estación de Origen",
-        "año": "1865",
+        "nombre": "El Grito de Independencia y los Primeros Caminos",
+        "año": "1810",
         "tipo": "historia",
-        "descripcion": "Aquí comenzó todo. La Estación Central fue construida en 1865 con materiales importados de Europa. Sus arcos de hierro forjado y su reloj de torre se convirtieron en el símbolo del progreso industrial de la época. Miles de pasajeros pasaron por sus andenes cada semana.",
-        "datos": ["Inaugurada en 1865", "Capacidad: 2.000 pasajeros/día", "Arquitecto: Juan Esteban Morales"],
-        "curiosidad": "El reloj de la estación nunca se detuvo durante más de 10 minutos en sus primeros 50 años de funcionamiento.",
+        "descripcion": "En 1810, año del Grito de Independencia, Simón Bolívar encargó al Coronel Eusebio Borrero la construcción de un camino entre el Valle del Cauca y el mar. En 1829, el General Eusebio Borrero, Gobernador del Cauca, destinó presos al trabajo de apertura del camino, iniciativa malograda por la inestabilidad política de la época. La Ley de caminos de 1845 de Tomás Cipriano de Mosquera priorizó las vías a construir en el territorio, entre ellas el camino entre Buenaventura y Cali.",
+        "datos": [
+          "Año: 1810",
+          "Promotor: Simón Bolívar",
+          "Objetivo: Unir el Valle del Cauca con el océano Pacífico",
+          "Obstáculo: Inestabilidad política del siglo XIX"
+        ],
+        "curiosidad": "En 1847 se elaboró el primer mapa del camino carreteable a Buenaventura por el ingeniero Stanislas Zawadzky, un hito técnico para la época.",
         "panorama": "https://pannellum.org/images/alma.jpg",
         "panorama_pitch": 0,
-        "imagen_thumb": "images/Defecto.png"
+        "imagen_thumb": "images/1.png"
       },
       {
-        "nombre": "El Puente de Hierro",
-        "año": "1867",
-        "tipo": "tecnica",
-        "descripcion": "Considerada la obra de ingeniería más audaz de su tiempo, este puente de 340 metros de largo cruzaba el Río Grande a 40 metros de altura. Su construcción duró 3 años y participaron más de 600 obreros. Hoy sigue en pie como monumento nacional.",
-        "datos": ["Longitud: 340 metros", "Altura: 40 metros", "Material: Hierro belga", "Construcción: 1865–1867"],
-        "curiosidad": "Durante su construcción, los ingenieros calcularon las tolerancias de dilatación térmica del hierro a mano, sin computadoras.",
-        "panorama": "https://pannellum.org/images/jfk/jfk.jpg",
-        "panorama_pitch": -5,
-        "imagen_thumb": "images/Defecto.png"
-      },
-      {
-        "nombre": "La Mina de Carbón",
-        "año": "1870",
-        "tipo": "industria",
-        "descripcion": "El combustible que dio vida a los trenes provenía de las profundidades de la Mina San Andrés. Decenas de mineros extraían toneladas de carbón cada día en condiciones extremas. La mina y el ferrocarril formaban un sistema interdependiente: sin carbón, no había vapor; sin vapor, no había tren.",
-        "datos": ["Producción: 80 ton/día", "Profundidad: 120 metros", "Trabajadores: 340 mineros", "Operativa: 1858–1920"],
-        "curiosidad": "Los mineros se comunicaban con el exterior mediante un sistema de golpes en los rieles que podía transmitir mensajes de hasta 500 metros.",
-        "panorama": "https://pannellum.org/images/alma.jpg",
-        "panorama_pitch": -10,
-        "imagen_thumb": "images/Defecto.png"
-      },
-      {
-        "nombre": "Estación Terminal",
+        "nombre": "El Contrato con Smith Brothers (1872)",
         "año": "1872",
-        "tipo": "destino",
-        "descripcion": "El destino final del recorrido: la Estación Terminal del Puerto, donde las mercancías se trasladaban directamente a los barcos. Esta estación conectó el interior del país con el comercio internacional por primera vez en la historia regional. Su restaurante era famoso por servir el mejor café de la región.",
-        "datos": ["Conexión directa al puerto", "Almacenes: 12 bodegas", "Capacidad de carga: 500 ton/día"],
-        "curiosidad": "En 1872, el primer cargamento de café exportado vía ferrocarril llegó a Europa en perfectas condiciones gracias al control de temperatura del vagón.",
-        "panorama": "https://pannellum.org/images/jfk/jfk.jpg",
-        "panorama_pitch": 0,
-        "imagen_thumb": "images/Defecto.png"
-      }
-    ]
-  },
-
-  "2": {
-    "nombre": "El Expreso de la Costa",
-    "era": "1890 – 1930",
-    "año": "1895",
-    "historia": "Más elegante, más rápido y más cómodo que sus predecesores, El Expreso de la Costa fue el primer tren de pasajeros de lujo de la región. Sus vagones de madera lacada y terciopelo transportaban a empresarios, diplomáticos y viajeros aventureros a lo largo de 600 kilómetros de costa.",
-    "color": "#2b4c7e",
-    "datos": [
-      "Motor: Vapor compuesto",
-      "Velocidad máxima: 80 km/h",
-      "Vagones de primera clase: 6",
-      "Recorrido: 600 km de costa",
-      "Año de inicio: 1895"
-    ],
-    "curiosidades": [
-      "El vagón comedor servía platillos elaborados por chefs traídos desde Europa.",
-      "Cada vagón de primera clase tenía sus propias cortinas de seda importada.",
-      "El tren llevaba un pianista a bordo para entretener a los pasajeros de lujo.",
-      "En 1902, transportó a un presidente de la república en visita oficial."
-    ],
-    "paradas": [
-      {
-        "nombre": "Salón de Primera Clase",
-        "año": "1895",
-        "tipo": "interior",
-        "descripcion": "Bienvenido al corazón del lujo ferroviario. El Salón de Primera Clase del Expreso de la Costa era una obra de arte en movimiento: madera de caoba brasileña, lámparas de gas con pantallas de cristal emplomado, asientos tapizados en terciopelo borgoña y espejos biselados en cada panel. Aquí viajaba la élite de la época.",
-        "datos": ["Capacidad: 24 pasajeros", "Madera: Caoba de Brasil", "Tapizado: Terciopelo francés", "Iluminación: Gas y velas"],
-        "curiosidad": "Los espejos del salón fueron fabricados en Venecia y transportados en cajones especiales con aserrín para protegerlos durante el viaje en barco.",
+        "tipo": "historia",
+        "descripcion": "En 1872 se firmó contrato con la compañía americana The Cauca Valley Mining and Construction Company (Smith Brothers) para la construcción del ferrocarril entre la bahía de Buenaventura y el río Cauca. En 1866 se habían suspendido las obras del camino carreteable por el auge comercial que implicó el establecimiento de cultivos de exportación y el proceso de expulsión de labradores independientes.",
+        "datos": [
+          "Contrato: 1872 con Smith Brothers",
+          "Objetivo: Unir Buenaventura con el río Cauca",
+          "Crisis política: 1876 dividió las fuerzas regionales",
+          "Resultado: Nació La Regeneración, alianza nacionalista"
+        ],
+        "curiosidad": "La crisis económica exportadora de 1876 causó una profunda división política liberal que terminó creando la alianza conocida como La Regeneración.",
         "panorama": "https://pannellum.org/images/alma.jpg",
-        "panorama_pitch": 0,
-        "imagen_thumb": "images/Defecto.png"
+        "panorama_pitch": -5,
+        "imagen_thumb": "images/2.png"
       },
       {
-        "nombre": "El Vagón Comedor",
-        "año": "1895",
-        "tipo": "interior",
-        "descripcion": "A las 8 de la mañana se servía el desayuno continental. A la 1 del mediodía, el almuerzo de tres tiempos. A las 8 de la noche, la cena con vista al mar. El Vagón Comedor del Expreso era un restaurante rodante donde los ingredientes se abastecían en cada estación de paso.",
-        "datos": ["Capacidad: 18 comensales", "Chef: Importado de Francia", "Vajilla: Porcelana inglesa", "Menú: 3 tiempos"],
-        "curiosidad": "El menú cambiaba según la región que atravesaba el tren, incorporando ingredientes locales frescos en cada parada.",
-        "panorama": "https://pannellum.org/images/jfk/jfk.jpg",
-        "panorama_pitch": 5,
-        "imagen_thumb": "images/Defecto.png"
-      },
-      {
-        "nombre": "La Cabina del Maquinista",
-        "año": "1897",
+        "nombre": "Francisco Javier Cisneros e Inicio Oficial de las Obras",
+        "año": "1878",
         "tipo": "tecnica",
-        "descripcion": "Desde esta cabina de hierro y latón, el maquinista y su fogonero gobernaban 80 toneladas de acero en movimiento. La temperatura cerca de la caldera alcanzaba los 60°C. Cada palanca, cada manómetro, cada válvula tenía un propósito preciso. Manejar un expreso costero requería años de formación.",
-        "datos": ["Presión de vapor: 12 atm", "Temperatura caldera: 180°C", "Tripulación: 3 personas", "Formación: 5 años"],
-        "curiosidad": "Los maquinistas del Expreso de la Costa recibían un bono especial por cada viaje completado sin retraso mayor a 5 minutos.",
+        "descripcion": "En 1878 Francisco Javier Cisneros inició oficialmente las obras del Ferrocarril del Cauca desde Buenaventura. En 1879 llegó la primera locomotora al puerto de Buenaventura. En 1882 se entregó el primer tramo hasta Córdoba (27 km). En 1888 se inició la navegación con barcos a vapor en el río Cauca desde Cali hasta Puerto Caldas, complementando la red ferroviaria.",
+        "datos": [
+          "Primer tramo: Buenaventura – Córdoba, 27 km (1882)",
+          "Primera locomotora: 1879",
+          "Navegación río Cauca: iniciada en 1888",
+          "Constructor: Francisco Javier Cisneros"
+        ],
+        "curiosidad": "En 1897 se reconstruyó el tramo existente averiado por avalanchas del Río Dagua, y entre 1897 y 1899 se avanzó en la construcción de 10 km de vía férrea adicionales.",
         "panorama": "https://pannellum.org/images/alma.jpg",
         "panorama_pitch": -3,
-        "imagen_thumb": "images/Defecto.png"
+        "imagen_thumb": "images/3.png"
+      },
+      {
+        "nombre": "La Compañía del Ferrocarril del Pacífico (1908)",
+        "año": "1908",
+        "tipo": "industria",
+        "descripcion": "En 1905 se constituyó el Banco Central, finalizando la navegación por el Magdalena y los tramos más importantes, especialmente el de Buenaventura a Cali. En 1908 se estableció la Compañía del Ferrocarril del Pacífico con capital de Cali, Buga y Cartago. En 1909 llegó el FC a la Estación, hoy barrio Papagayeros (Dagua). Entre 1922 y 1926 finalizó el tramo Cali–Popayán, completando 330 km del FC del Pacífico.",
+        "datos": [
+          "Fundación compañía: 1908",
+          "Capital: Cali, Buga y Cartago",
+          "Total vía FC Pacífico: 330 km",
+          "Tramo final: Cali–Popayán completado en 1926"
+        ],
+        "curiosidad": "En 1920 Colombia recibió una indemnización de 25 millones de dólares por la pérdida de Panamá, parte de los cuales se destinó a los Ferrocarriles del país.",
+        "panorama": "https://pannellum.org/images/alma.jpg",
+        "panorama_pitch": 0,
+        "imagen_thumb": "images/1.png"
       }
     ]
   },
-
-  "3": {
-    "nombre": "El Ferrocarril Minero",
-    "era": "1920 – 1960",
-    "año": "1923",
-    "historia": "Robusto, incansable y construido para el trabajo duro, el Ferrocarril Minero fue el motor económico de una generación entera. Sus vías atravesaban montañas a más de 3.000 metros de altura, transportando minerales preciosos desde el corazón de la cordillera hasta los puertos de exportación.",
-    "color": "#4a5240",
+  "2": {
+    "nombre": "Estaciones del Ferrocarril del Pacífico",
+    "era": "1882 – 1992",
+    "año": "1915",
+    "historia": "Las estaciones del Ferrocarril del Pacífico fueron mucho más que simples puntos de embarque y desembarque. En el antiguo Cauca Grande, el ferrocarril transformó irreversiblemente la estructura urbana de sus ciudades. El emplazamiento de la estación redefinió en su momento la estructura de cada ciudad: fue ella el principal edificio de una nueva fundación. Atravesar la estación en el tren significaba salir de la ciudad; era imposible salir de ella sin dejarla atrás. Ciudades como Cali, Palmira, Buga, Cartago, Jamundí, Tuluá, Bugalagrande y La Cumbre fueron reintegradas a la vida urbana a través de sus estaciones.",
+    "color": "#1a3a2a",
     "datos": [
-      "Motor: Diésel-eléctrico",
-      "Carga máxima: 1.200 toneladas",
-      "Altitud máxima: 3.200 m.s.n.m.",
-      "Túneles: 23 en todo el recorrido",
-      "Año de inicio: 1923"
+      "Primera estación: Buenaventura (1882)",
+      "Llegada a Cali: 1915",
+      "Llegada a Palmira: 1917",
+      "Llegada a Cartago: 1923",
+      "Llegada a Tuluá: 1920"
     ],
     "curiosidades": [
-      "El tren debía reducir velocidad al 30% en los tramos de mayor altitud por la rareza del aire.",
-      "En 1943 transportó el mayor cargamento de cobre de la historia regional: 1.100 toneladas en un solo viaje.",
-      "Los obreros que construyeron las vías en la cordillera trabajaban en condiciones de frío extremo, a veces bajo -5°C.",
-      "El sistema de frenos de emergencia fue inventado por el propio jefe de talleres del ferrocarril."
+      "En 1915 llegó el tren a Cali y en 1916 se inauguró el puente giratorio sobre el río Cauca entre Cali y Palmira.",
+      "En 1916 se estableció un sistema intermodal tren–barco para llevar café desde Caldas a Buenaventura.",
+      "La Estación de Palmira restaurada funcionó como centro cultural y museo arqueológico.",
+      "Muchas estaciones pequeñas murieron perdidas entre potreros y cañaduzales tras el abandono del ferrocarril."
     ],
     "paradas": [
       {
-        "nombre": "Los Talleres Centrales",
-        "año": "1923",
-        "tipo": "industria",
-        "descripcion": "El alma mecánica del ferrocarril. Los Talleres Centrales eran una ciudad dentro de una ciudad: fraguas, tornos, grúas puente y decenas de mecánicos especializados que mantenían las locomotoras en perfecto estado. Aquí se realizaban desde simples reparaciones hasta la reconstrucción completa de motores.",
-        "datos": ["Superficie: 12.000 m²", "Trabajadores: 240 mecánicos", "Grúas: 4 de 20 toneladas", "Turnos: 24 horas, 3 turnos"],
-        "curiosidad": "Los talleres nunca cerraban. Existía un turno nocturno permanente para garantizar que ninguna locomotora estuviera inactiva más de 48 horas por reparaciones.",
+        "nombre": "Estación de Palmira – Centro Cultural y Arqueológico",
+        "año": "1917",
+        "tipo": "historia",
+        "descripcion": "La Estación de Palmira, versión 1927, fue restaurada junto con sus vecinas bodegas en la primera mitad de la década de los 90, funcionando actualmente como centro cultural y museo arqueológico. Fue el primer edificio de nueva fundación que la ciudad agregó a su estructura urbana moderna. Los aportes técnicos y estéticos de las estaciones marcaron un hito en la arquitectura del país.",
+        "datos": [
+          "Llegada del tren: 1917",
+          "Restauración: primera mitad de los 90",
+          "Uso actual: Centro cultural y museo arqueológico",
+          "Valor: Hito arquitectónico del siglo XX"
+        ],
+        "curiosidad": "Los aportes técnicos y estéticos de las estaciones ferroviarias contribuyeron notablemente al desarrollo de la arquitectura colombiana a principios del siglo XX.",
         "panorama": "https://pannellum.org/images/alma.jpg",
         "panorama_pitch": 0,
-        "imagen_thumb": "images/Defecto.png"
+        "imagen_thumb": "images/1.png"
       },
       {
-        "nombre": "El Paso de la Cumbre",
-        "año": "1925",
-        "tipo": "paisaje",
-        "descripcion": "A 3.200 metros sobre el nivel del mar, el Paso de la Cumbre era el punto más alto y más espectacular del recorrido. Las nubes pasaban por debajo del tren. Los rieles desaparecían en la niebla. Y el silencio de la montaña era interrumpido únicamente por el resoplido de la locomotora y el eco del silbato entre los picos nevados.",
-        "datos": ["Altitud: 3.200 m.s.n.m.", "Temperatura media: 4°C", "Viaducto: 180 metros de longitud", "Vista: Panorámica de 360°"],
-        "curiosidad": "En invierno, una cuadrilla de 20 trabajadores se adelantaba al tren para despejar la nieve de los rieles con palas y antorchas.",
-        "panorama": "https://pannellum.org/images/jfk/jfk.jpg",
-        "panorama_pitch": 10,
-        "imagen_thumb": "images/Defecto.png"
+        "nombre": "Estación de Buga – Equipamiento del Centro Histórico",
+        "año": "1919",
+        "tipo": "historia",
+        "descripcion": "La Estación de Buga (1919) fue restaurada e integrada como equipamiento cultural aprovechando su localización a lo largo del borde occidental del centro histórico. Del proyecto inicial de una estación de un solo piso, se respetaron las características arquitectónicas tipológicas y estructurales, incorporando a la edificación definitiva un cuerpo central de dos pisos, más acorde con la importancia de la ciudad.",
+        "datos": [
+          "Construcción: 1919",
+          "Pisos: 2 en edificación definitiva",
+          "Uso: Equipamiento cultural del centro histórico",
+          "Llegada del tren a Buga: 1919"
+        ],
+        "curiosidad": "La restauración de la Estación de Buga respetó las características tipológicas y estructurales originales, convirtiéndola en un referente de patrimonio arquitectónico del Valle del Cauca.",
+        "panorama": "https://pannellum.org/images/alma.jpg",
+        "panorama_pitch": -5,
+        "imagen_thumb": "images/2.png"
       },
       {
-        "nombre": "La Mina de Plata",
-        "año": "1926",
+        "nombre": "Estación de Jamundí – Biblioteca Municipal",
+        "año": "1920",
+        "tipo": "historia",
+        "descripcion": "La Estación de Jamundí fue restaurada y usada como Biblioteca Municipal en jornada laboral, y en horas de la noche como escenario para grupos culturales de narraciones orales, teatrales y musicales. Esta es una muestra de cómo las comunidades recuperaron las estaciones abandonadas y las integraron a la vida cotidiana de sus municipios.",
+        "datos": [
+          "Uso actual: Biblioteca Municipal",
+          "Actividades nocturnas: Teatro, narración oral, música",
+          "Estado: Restaurada y activa",
+          "Gestión: Comunidad local"
+        ],
+        "curiosidad": "La decadencia del ferrocarril provocó el abandono progresivo de las estaciones; en algunos casos el pueblo las recuperó con reclamaciones ciudadanas ligadas a los centros de equipamiento colectivo.",
+        "panorama": "https://pannellum.org/images/alma.jpg",
+        "panorama_pitch": -3,
+        "imagen_thumb": "images/3.png"
+      },
+      {
+        "nombre": "Estaciones de Bugalagrande y La Cumbre",
+        "año": "1913",
+        "tipo": "historia",
+        "descripcion": "La Estación de Bugalagrande (1923) conserva un gran potencial urbanístico con áreas generosas y gran calidad arquitectónica. La Estación de La Cumbre, ubicada en el municipio del mismo nombre en el Valle del Cauca, fue otro ejemplo de la arquitectura ferroviaria que transformó el paisaje urbano regional. El tren llegó a La Cumbre en 1913, convirtiéndola en destino de veraneo para los caleños.",
+        "datos": [
+          "Estación Bugalagrande: gran potencial urbanístico",
+          "Estación La Cumbre: destino de veraneo",
+          "Llegada tren a La Cumbre: 1913",
+          "Arquitectura: De gran calidad técnica y estética"
+        ],
+        "curiosidad": "La Cumbre se convirtió en un popular destino de veraneo para las familias caleñas gracias al ferrocarril, que hacía el recorrido desde Cali en pocas horas.",
+        "panorama": "https://pannellum.org/images/alma.jpg",
+        "panorama_pitch": 0,
+        "imagen_thumb": "images/1.png"
+      }
+    ]
+  },
+  "3": {
+    "nombre": "Tecnología que Transformó el Territorio",
+    "era": "1879 – 1992",
+    "año": "1930",
+    "historia": "Del vapor al diésel, del diésel al autoferro: la evolución tecnológica del Ferrocarril del Pacífico fue el espejo del desarrollo industrial colombiano. Los Talleres de Chipichape en Cali fueron el corazón mecánico de toda esta maquinaria, donde cientos de obreros mantuvieron viva la red ferroviaria más importante del suroccidente colombiano durante más de un siglo. En 1992 se realizó el último recorrido de un tren en el Ferrocarril del Pacífico, cerrando un capítulo fundamental de la historia regional.",
+    "color": "#2a3a4a",
+    "datos": [
+      "Primera locomotora: llegó a Buenaventura en 1879",
+      "Locomotora Dewihurst (La Docerruedas): llegó en 1927",
+      "Inauguración Talleres Chipichape: 1932",
+      "Cambio a locomotoras diésel-eléctricas: 1958",
+      "Último recorrido del FC del Pacífico: 1992"
+    ],
+    "curiosidades": [
+      "En 1927 llegó a Colombia la primera locomotora Chandón Dewihurst, más conocida como 'La Docerruedas'.",
+      "Una locomotora a vapor de potencia tenía 1.200 caballos de fuerza con 21 motores: compresor, ventilador y gobernador.",
+      "En 1956 una explosión de 7 camiones con dinamita frente a la estación del FC en Cali destruyó el barrio San Nicolás.",
+      "En 1959 el bloqueo de Cuba impulsó la producción de azúcar en el Valle del Cauca para exportación a través del FC."
+    ],
+    "paradas": [
+      {
+        "nombre": "Las Locomotoras de Vapor – La Mula de Hierro",
+        "año": "1879",
+        "tipo": "tecnica",
+        "descripcion": "Las primeras locomotoras del Ferrocarril del Pacífico eran máquinas de vapor alimentadas con carbón, llamadas 'las negras'. Transitaban la línea desde Tumaco hasta El Diviso, para terminar en Cali y en Chipichape. Una locomotora a vapor de potencia tenía 1.200 caballos de fuerza y podía mover 360 toneladas en terreno plano; en el tramo Cali–Yumbo podía transportar hasta 900 toneladas.",
+        "datos": [
+          "Potencia: 1.200 caballos de fuerza",
+          "Capacidad plano: 360 toneladas",
+          "Capacidad Cali–Yumbo: 900 toneladas",
+          "Combustible: Carbón mineral"
+        ],
+        "curiosidad": "Los maquinistas se sentían orgullosos de sus ocupaciones y ponían en marcha el automático sin perder de vista el velocímetro. Era obligatorio llamar a la jefatura para reportar las averías, salvo las pequeñas.",
+        "panorama": "https://pannellum.org/images/alma.jpg",
+        "panorama_pitch": 0,
+        "imagen_thumb": "images/1.png"
+      },
+      {
+        "nombre": "Los Talleres de Chipichape (1932)",
+        "año": "1932",
         "tipo": "industria",
-        "descripcion": "Destino final del ferrocarril minero: la mina más productiva de plata de la región. El tren llegaba vacío y partía cargado hasta los topes. En sus mejores años, la mina producía 40 toneladas de plata refinada por mes, toda ella transportada en los vagones blindados del ferrocarril.",
-        "datos": ["Mineral principal: Plata", "Producción pico: 40 ton/mes", "Profundidad: 450 metros", "Años activa: 1920–1975"],
-        "curiosidad": "Los vagones de carga de mineral tenían un revestimiento interior especial de madera dura para evitar que las vibraciones del tren dañaran los bloques de mineral durante el transporte.",
+        "descripcion": "En 1932 se inauguraron los Talleres de Chipichape en Cali, que se convirtieron en el centro de mantenimiento, reparación y construcción del material rodante del Ferrocarril del Pacífico. Obreros de los talleres de Chipichape aparecen en fotografías históricas en Cartago (1939) y en Zarral (1940), evidenciando la presencia de este equipo técnico en toda la red ferroviaria.",
+        "datos": [
+          "Inauguración: 1932",
+          "Función: Mantenimiento y reparación de locomotoras",
+          "Ubicación: Cali, Valle del Cauca",
+          "Alcance: Centro técnico de toda la red del FC del Pacífico"
+        ],
+        "curiosidad": "Los maquinistas tenían tres categorías: de primera (exclusivo para pasajeros y trenes especiales), de segunda (manejo de locomotoras de pasajeros) y de tercera (engrasador, fogonero de segunda, ayudante de máquinas).",
+        "panorama": "https://pannellum.org/images/alma.jpg",
+        "panorama_pitch": -5,
+        "imagen_thumb": "images/2.png"
+      },
+      {
+        "nombre": "Las Locomotoras Diésel-Eléctricas y los Autoferros",
+        "año": "1958",
+        "tipo": "tecnica",
+        "descripcion": "En 1958 cambió el sistema de las locomotoras: pasaron de vapor a diésel-eléctricas y se implementaron autoferros exclusivos para pasajeros. Las locomotoras diésel-eléctricas tenían tres frenos: el automático, el dinámico y el independiente. Las más grandes eran capaces de transportar 150–200 toneladas en subida y hasta 1.000 toneladas en terreno plano.",
+        "datos": [
+          "Cambio tecnológico: 1958",
+          "Sistema de frenos: Automático, dinámico e independiente",
+          "Capacidad diésel en subida: 150–200 toneladas",
+          "Autoferros: Exclusivos para pasajeros"
+        ],
+        "curiosidad": "Las locomotoras diésel-eléctricas eran consideradas más peligrosas de maniobrar que las de vapor, pues su mayor velocidad y potencia exigía mayor precisión en el manejo de los sistemas de frenado.",
         "panorama": "https://pannellum.org/images/alma.jpg",
         "panorama_pitch": -8,
-        "imagen_thumb": "images/Defecto.png"
+        "imagen_thumb": "images/3.png"
+      },
+      {
+        "nombre": "El Último Recorrido (1992)",
+        "año": "1992",
+        "tipo": "historia",
+        "descripcion": "En 1992 se realizó el último recorrido de un tren en el Ferrocarril del Pacífico, cerrando más de un siglo de historia ferroviaria en el suroccidente colombiano. La construcción de la carretera Cali–Buenaventura, inaugurada en 1945, fue el inicio del fin: los dos medios terminaron en pugna por ganar los recursos, a detrimento de la vía férrea. La suspensión del ferrocarril provocó la decadencia de estaciones, talleres y toda la infraestructura construida durante décadas.",
+        "datos": [
+          "Último recorrido: 1992",
+          "Causa del cierre: Competencia con la carretera Cali–Buenaventura",
+          "Carretera inaugurada: 1945",
+          "Impacto: Abandono de estaciones y talleres en toda la región"
+        ],
+        "curiosidad": "El Ferrocarril del Pacífico murió a principios de los 90 en la última década de su funcionamiento, dejando atrás generaciones de maquinistas, fogoneros y familias que habían construido su vida alrededor del tren.",
+        "panorama": "https://pannellum.org/images/alma.jpg",
+        "panorama_pitch": 0,
+        "imagen_thumb": "images/1.png"
+      }
+    ]
+  },
+  "4": {
+    "nombre": "Viejos Edificios, Nuevos Usos",
+    "era": "1990 – Presente",
+    "año": "2000",
+    "historia": "La decadencia del ferrocarril provocó el abandono progresivo de las estaciones. En algunos casos el pueblo las recuperó e integró a la vida de la ciudad con reclamaciones ciudadanas ligadas a los centros de equipamiento colectivo. Hoy algunas de esas viejas estructuras viven una segunda vida como bibliotecas, museos, centros culturales y espacios comunitarios que guardan la memoria del ferrocarril. En la primera mitad del siglo XX el ferrocarril fue el principal medio de transporte de pasajeros del país, con notable incidencia y desarrollo económico y social; y por tanto la arquitectura de las estaciones fue en su momento, de vanguardia y ejemplo para otras edificaciones en las regiones.",
+    "color": "#5a3a6a",
+    "datos": [
+      "Nueva Estación de Cali: sede institucional y sala de exposiciones",
+      "Estación de Palmira: museo arqueológico y centro cultural",
+      "Estación de Buga: equipamiento del centro histórico",
+      "Estación de Jamundí: Biblioteca Municipal",
+      "Estación de Bugalagrande: gran potencial urbanístico"
+    ],
+    "curiosidades": [
+      "La Nueva Estación de Cali (Vásquez Cobo, 1953) es hoy sede institucional para el transporte colectivo y sala de exposiciones.",
+      "La Estación de Palmira fue restaurada junto con sus bodegas vecinas en la primera mitad de los años 90.",
+      "Algunos edificios de estación fueron recuperados por los municipios como centros culturales y puntos de encuentro.",
+      "La exposición 'Ferrocarril del Pacífico y sus Estaciones' está bajo custodia de la Biblioteca Departamental."
+    ],
+    "paradas": [
+      {
+        "nombre": "Nueva Estación de Cali – Vásquez Cobo",
+        "año": "1953",
+        "tipo": "destino",
+        "descripcion": "La Nueva Estación de Cali (1935), Vásquez Cobo, fue inaugurada en 1953. Es hoy una de las estaciones del Ferrocarril del Pacífico, sede institucional para el transporte colectivo como equipamiento urbano de la ciudad y sala de exposiciones. Representa la transformación de un espacio ferroviario en equipamiento urbano activo, integrando la memoria histórica del tren con las necesidades actuales de la ciudad.",
+        "datos": [
+          "Inauguración original: 1935",
+          "Inauguración nueva: 1953",
+          "Uso actual: Transporte colectivo y sala de exposiciones",
+          "Localización: Centro de Cali"
+        ],
+        "curiosidad": "La estación Vásquez Cobo fue el punto de llegada y partida del tren a Cali durante décadas, siendo testigo de incontables despedidas, reencuentros y momentos históricos de la ciudad.",
+        "panorama": "https://pannellum.org/images/alma.jpg",
+        "panorama_pitch": 0,
+        "imagen_thumb": "images/1.png"
+      },
+      {
+        "nombre": "Estación de Tuluá – Ferrocarril del Pacífico (1923)",
+        "año": "1920",
+        "tipo": "historia",
+        "descripcion": "La Estación de Tuluá, fotografiada en 1923, mostraba ya la arquitectura característica del Ferrocarril del Pacífico: arcos de medio punto, sala de segunda clase, y la imponente fachada del FC del Pacífico. El tren llegó a Tuluá en 1920, convirtiendo a la ciudad en un nodo comercial clave del centro del Valle del Cauca.",
+        "datos": [
+          "Llegada del tren: 1920",
+          "Fotografía histórica: 1923",
+          "Estilo arquitectónico: Republicano ferroviario",
+          "Importancia: Nodo comercial del centro del Valle"
+        ],
+        "curiosidad": "La estación de Tuluá contaba con una 'Sala de Segunda', una sala de espera diferenciada por clase social, costumbre habitual en los ferrocarriles colombianos de la época.",
+        "panorama": "https://pannellum.org/images/alma.jpg",
+        "panorama_pitch": -5,
+        "imagen_thumb": "images/2.png"
+      },
+      {
+        "nombre": "Puente a Nivel Calle 25 con Carrera 8 – Cali",
+        "año": "1950",
+        "tipo": "tecnica",
+        "descripcion": "El puente de la Calle 25 con Carrera 8 en Cali, hoy desaparecido, era un ejemplo de la infraestructura urbana que el ferrocarril construyó en la ciudad. Este paso a nivel, documentado por el Archivo de Patrimonio Fotográfico y Fílmico del Valle del Cauca (APFFVC), muestra cómo el tren convivía con el tráfico urbano de Cali en su época de mayor apogeo.",
+        "datos": [
+          "Ubicación: Calle 25 con Carrera 8, Cali",
+          "Estado actual: Desaparecido",
+          "Tipo: Paso a nivel urbano",
+          "Fuente documental: APFFVC"
+        ],
+        "curiosidad": "El ferrocarril cruzaba las calles de Cali a nivel del suelo, generando cruces con el tráfico urbano que hoy serían impensables en una ciudad moderna de este tamaño.",
+        "panorama": "https://pannellum.org/images/alma.jpg",
+        "panorama_pitch": -3,
+        "imagen_thumb": "images/3.png"
+      },
+      {
+        "nombre": "Estación de Bugalagrande – Patrimonio en Espera",
+        "año": "1923",
+        "tipo": "historia",
+        "descripcion": "La Estación de Bugalagrande, fotografiada en 2015 por el CITCE, conserva un gran potencial urbanístico con áreas generosas y gran calidad arquitectónica. Su edificio principal mantiene rasgos del estilo ferroviario original. La estación de Bugalagrande es un ejemplo de los inmuebles ferroviarios que aún esperan una segunda oportunidad de uso cultural o patrimonial.",
+        "datos": [
+          "Fotografía: CITCE 2015",
+          "Estado: Con gran potencial urbanístico",
+          "Calidad: Áreas generosas y buena arquitectura",
+          "Futuro: Pendiente de intervención patrimonial"
+        ],
+        "curiosidad": "El CITCE documentó extensamente las estaciones ferroviarias del Valle del Cauca como parte de los esfuerzos de preservación del patrimonio arquitectónico regional.",
+        "panorama": "https://pannellum.org/images/alma.jpg",
+        "panorama_pitch": 0,
+        "imagen_thumb": "images/1.png"
+      }
+    ]
+  },
+  "5": {
+    "nombre": "Un Nuevo Modo de Vida",
+    "era": "1882 – 1960",
+    "año": "1920",
+    "historia": "El ferrocarril no fue solo un medio de transporte: fue un modo de vida, una comunidad, una identidad colectiva que marcó a generaciones enteras del suroccidente colombiano. La sola mención de los ferrocarriles arrastra una buena cantidad de evocaciones: músicas que parecen el ritmo del tren, historias de abuelos y padres, fotografías familiares en estaciones que parecen no podrán repetirse más. Maquinistas, fogoneros, obreros, comerciantes y viajeros: todos fueron parte de esta gran comunidad ferroviaria que transformó para siempre la cultura del Valle del Cauca.",
+    "color": "#4a6a2a",
+    "datos": [
+      "El tren generó comunidades enteras alrededor de sus estaciones",
+      "Maquinistas, fogoneros y obreros: miles de familias vivían del ferrocarril",
+      "Las estaciones eran el centro social y económico de cada pueblo",
+      "La economía cafetera del Valle dependía del FC del Pacífico para exportar",
+      "El tren conectó el interior del país con el océano Pacífico por primera vez"
+    ],
+    "curiosidades": [
+      "En 1930 llegó a Colombia la misión Chandón, que concluyó que la caña de azúcar es el cultivo ideal para el Valle del Cauca.",
+      "La apertura de la vía férrea al mar impulsó el desarrollo de plantaciones agrícolas en toda la región del Valle.",
+      "Los obreros de los talleres de Chipichape y los maquinistas del FC formaban una comunidad técnica muy unida.",
+      "El tren llevaba en sí mismo el ritmo de la vida cotidiana: boderos, carteros y viajeros de toda condición social compartían los vagones."
+    ],
+    "paradas": [
+      {
+        "nombre": "Los Maquinistas y Fogoneros – Orgullo de una Profesión",
+        "año": "1920",
+        "tipo": "historia",
+        "descripcion": "Los maquinistas del Ferrocarril del Pacífico se sentían orgullosos de sus ocupaciones y cómo llevaban su elegante uniforme. Había tres categorías: el de primera, exclusivo para pasajeros y trenes especiales; el de segunda, para manejo de locomotoras de pasajeros; y el de tercera, para carga y ambulancias. Don Emilio Portilla, fogonero que inició su carrera en las locomotoras de carbón 'vaporinas las negras', recorrió toda la red del FC del Pacífico.",
+        "datos": [
+          "Categorías: Primera, Segunda y Tercera",
+          "Formación: Años de práctica y cursos técnicos",
+          "Ruta típica: Cali–Yumbo, hasta 3 viajes diarios",
+          "Horario: 24 horas hasta completar 20 años de edad"
+        ],
+        "curiosidad": "Destacaba la importancia que tenían los trenes para Armenia, Cartago y Popayán: el maquinista salía a la ruta Cali–Yumbo con 360 toneladas y regresaba llevando otras 300, llegando a hacer hasta 3 viajes con ida y vuelta al día.",
+        "panorama": "https://pannellum.org/images/alma.jpg",
+        "panorama_pitch": 0,
+        "imagen_thumb": "images/1.png"
+      },
+      {
+        "nombre": "La Economía Cafetera y el Ferrocarril",
+        "año": "1916",
+        "tipo": "industria",
+        "descripcion": "En 1890 comenzó a cobrar importancia la economía cafetera del sur de Antioquia y la Hoya del río Cauca, transportada en barcos de vapor hasta Cartago, y por los vapores del río Cauca hasta Cali, requiriendo ser posicionada en el mercado internacional. Esto dio un impulso definitivo a la construcción del FC desde Buenaventura. En 1916 se estableció el sistema intermodal tren–barco para llevar el café desde Caldas a Buenaventura.",
+        "datos": [
+          "Producto principal: Café del sur de Antioquia y Hoya del Cauca",
+          "Sistema intermodal: Tren-barco desde 1916",
+          "Ruta: Interior del país → Cali → Buenaventura → exportación",
+          "Impacto: Motor económico de toda la región"
+        ],
+        "curiosidad": "En 1959 el bloqueo de Cuba impulsó la producción de azúcar en el Valle del Cauca para exportación a través del FC del Pacífico, dándole una nueva vida económica al ferrocarril.",
+        "panorama": "https://pannellum.org/images/alma.jpg",
+        "panorama_pitch": -5,
+        "imagen_thumb": "images/2.png"
+      },
+      {
+        "nombre": "Obreros y Comunidades de las Estaciones",
+        "año": "1930",
+        "tipo": "historia",
+        "descripcion": "Obreros de los talleres de Chipichape en uno de los vagones del tren, Cartago, 1939. Locomotora y vía férrea en construcción, 1918. La Cumbre, 1926. Puente en construcción, 1918. Zarral, 1940. Estas imágenes reflejan las comunidades que se formaron alrededor del ferrocarril: trabajadores especializados, familias que vivían cerca de las vías y comerciantes que dependían del paso del tren. El ferrocarril creó un nuevo modo de vida en todo el suroccidente colombiano.",
+        "datos": [
+          "Comunidades en: Cartago, La Cumbre, Zarral y otros municipios",
+          "Fotografías: 1918, 1926, 1939, 1940",
+          "Trabajadores: Obreros de talleres, constructores de puentes, maquinistas",
+          "Identidad: Generaciones que vivieron del y para el ferrocarril"
+        ],
+        "curiosidad": "La sola mención de los ferrocarriles arrastra evocaciones: hay músicas que parecen el ritmo del tren, historias de abuelos y fotografías familiares en estaciones que parecen no podrán repetirse más.",
+        "panorama": "https://pannellum.org/images/alma.jpg",
+        "panorama_pitch": -3,
+        "imagen_thumb": "images/3.png"
+      }
+    ]
+  },
+  "6": {
+    "nombre": "Los Hilos de la Memoria — Testimonios",
+    "era": "1940 – 1992",
+    "año": "1956",
+    "historia": "Como producto del trabajo de investigación sobre las estaciones del Ferrocarril del Pacífico, la Vicerrectoría de Investigaciones de la Universidad del Valle adelantó un conversatorio en la Biblioteca Mario Carvajal, moderado por el profesor Carlos Enrique Botero. Tres testigos especiales compartieron sus experiencias: Portilla Ortiz, Emilio Portilla y Gildardo Guevara, maquinistas y técnicos cuyas memorias revelan la profundidad humana del ferrocarril colombiano y la vida cotidiana de quienes lo operaron durante décadas.",
+    "color": "#6a3a1a",
+    "datos": [
+      "Conversatorio: Biblioteca Mario Carvajal, Universidad del Valle",
+      "Moderador: Profesor Carlos Enrique Botero",
+      "Testigos: Portilla Ortiz, Emilio Portilla, Gildardo Guevara",
+      "Investigador: Profesor Ricardo Hincapié, CITCE",
+      "Investigación: Vicerrectoría de Investigaciones, Universidad del Valle"
+    ],
+    "curiosidades": [
+      "Portilla Ortiz inició su recorrido técnico como fogonero empírico en las locomotoras de carbón 'las negras'.",
+      "Emilio Portilla fue maquinista en la División Nariño, recorriendo la vía férrea hasta la altiplanicie nariñense.",
+      "Gildardo Guevara fue técnico del Ferrocarril de Cali, su primera aproximación fue tras la explosión del 7 de agosto de 1956.",
+      "El maquinista de primera estaba dedicado exclusivamente a pasajeros y trenes especiales, los más prestigiosos del FC."
+    ],
+    "paradas": [
+      {
+        "nombre": "Portilla Ortiz – El Fogonero que Recorrió la Red",
+        "año": "1940",
+        "tipo": "historia",
+        "descripcion": "Don Portilla Ortiz (q.e.p.d.) inició su recorrido técnico empírico como fogonero en las locomotoras de carbón, las llamadas 'vaporinas las negras', que se movían a vapor procedente de calderas alimentadas con carbón. Transitó la línea desde Tumaco hasta El Diviso y finalmente en Cali, en Chipichape y toda la red del Ferrocarril del Pacífico como maquinista. Su testimonio es un documento vivo de la era del vapor.",
+        "datos": [
+          "Cargo inicial: Fogonero en locomotoras de carbón",
+          "Red recorrida: Tumaco – El Diviso – Cali – Chipichape",
+          "Especialidad: Locomotoras de vapor 'vaporinas las negras'",
+          "Legado: Testimonio clave sobre la era del vapor en Colombia"
+        ],
+        "curiosidad": "Las vaporinas 'las negras' eran alimentadas con carbón en calderas, y la temperatura cerca de la caldera hacía el trabajo del fogonero extremadamente duro, especialmente en los tramos de montaña.",
+        "panorama": "https://pannellum.org/images/alma.jpg",
+        "panorama_pitch": 0,
+        "imagen_thumb": "images/1.png"
+      },
+      {
+        "nombre": "Emilio Portilla – Maquinista de la División Nariño",
+        "año": "1944",
+        "tipo": "historia",
+        "descripcion": "Emilio Portilla, maquinista que trabajó toda su carrera en el FC del Pacífico, narra cómo los ferrocarriles fueron la arteria principal de Colombia. Su carrera se inició en la División Nariño, el ferrocarril que se intentaba llevar hasta la altiplanicie nariñense. Bajo la dictadura de Gustavo Rojas Pinilla se decidió construir, además de la vía férrea, una carretera paralela, pero la eventual complementación entre los dos medios terminó en pugna por los recursos.",
+        "datos": [
+          "División: Nariño",
+          "Ruta: Desde Tumaco hacia la altiplanicie nariñense",
+          "Categorías alcanzadas: Maquinista de segunda y primera",
+          "Contexto: Dictadura de Rojas Pinilla afectó al FC"
+        ],
+        "curiosidad": "Emilio recuerda que las locomotoras diésel-eléctricas eran más peligrosas para maniobrar: 'iba despacio, bueno y cuando sentí fue el tren al suelo' — recordando un accidente de descarrilamiento en Tumaco.",
+        "panorama": "https://pannellum.org/images/alma.jpg",
+        "panorama_pitch": -5,
+        "imagen_thumb": "images/2.png"
+      },
+      {
+        "nombre": "Gildardo Guevara – Técnico del Ferrocarril de Cali",
+        "año": "1956",
+        "tipo": "historia",
+        "descripcion": "Gildardo Guevara, técnico del Ferrocarril de Cali, recuerda que su primera aproximación al ferrocarril fue tras la explosión del 7 de agosto de 1956, cuando aún era un niño. Su padre lo acercó a la estación de Cali. En esa época existían primera, segunda y tercera clase en los vagones. Se especializó en el sistema de frenos de la locomotora diésel eléctrica, que tiene tres frenos: el automático, el dinámico y el independiente.",
+        "datos": [
+          "Cargo: Técnico del Ferrocarril de Cali",
+          "Primera aproximación: Explosión del 7 de agosto de 1956",
+          "Especialidad: Sistema de frenos de locomotoras diésel-eléctricas",
+          "Clases de vagones en la época: Primera, segunda y tercera"
+        ],
+        "curiosidad": "La explosión de 7 camiones con dinamita frente a la estación del FC en Cali el 7 de agosto de 1956 fue tan destructiva que devastó el barrio San Nicolás, marcando para siempre la memoria de toda una generación.",
+        "panorama": "https://pannellum.org/images/alma.jpg",
+        "panorama_pitch": -3,
+        "imagen_thumb": "images/3.png"
+      }
+    ]
+  },
+  "7": {
+    "nombre": "Tren de Cercanías — El Hilo de la Nostalgia",
+    "era": "2019 – Futuro",
+    "año": "2019",
+    "historia": "El tren de cercanías adquiere un valor intangible y simbólico para el Valle del Cauca: todas las nostalgias que despierta la sola mención del Ferrocarril del Pacífico obligan a contribuir a empujar la iniciativa del llamado Tren de Cercanías del Valle, liderado por la Gobernación del Valle, la Secretaría de Infraestructura y Valorización con el apoyo de las alcaldías de Santiago de Cali, Palmira, Yumbo y Jamundí. El Plan de Ordenamiento Territorial Departamental (POTD) aprobado mediante Ordenanza 513 de 2019 contempla este sistema como el primero en su género en el país.",
+    "color": "#1a2a5a",
+    "datos": [
+      "Primer tramo: Cali – Jamundí",
+      "Tramos futuros: Cali–Palmira y Cali–Yumbo",
+      "Aprobación POTD: Ordenanza 513 de 2019, Asamblea del Valle del Cauca",
+      "Objetivo: Descongestionar el modo carretero",
+      "Ramal futuro: Aeropuerto a plaza de Caicedo en Cali"
+    ],
+    "curiosidades": [
+      "El POTD aprobado en 2019 contempla el Tren de Cercanías como el primero en su género en Colombia.",
+      "El Tren de Cercanías comunicaría Cali con cuatro municipios: Jamundí, Yumbo, Palmira y Candelaria.",
+      "El proyecto contempla la reconversión de la vía férrea para un sistema de pasajeros con matriz económica y comercial.",
+      "Hoy se avanza en la estructuración del primer tramo Cali–Jamundí con un horizonte de 10 años para su terminación."
+    ],
+    "paradas": [
+      {
+        "nombre": "El POTD y la Ordenanza 513 de 2019",
+        "año": "2019",
+        "tipo": "historia",
+        "descripcion": "El Plan de Ordenamiento Territorial Departamental (POTD) del Valle del Cauca, el primero en su género aprobado en el país mediante Ordenanza 513 de 2019, determinó que en la conurbación metropolitana de Cali y sus municipios vecinos (Palmira, Yumbo, Jamundí y Candelaria) se plantea el Sistema de Transporte de Cercanías del Valle, el cual permitirá descongestionar el modo carretero de esta zona y mejorar los tiempos de traslado de sus habitantes.",
+        "datos": [
+          "Aprobación: Ordenanza 513 de 2019",
+          "Municipios: Cali, Palmira, Yumbo, Jamundí, Candelaria",
+          "Objetivo: Descongestionar el modo carretero",
+          "Primero en su género en Colombia"
+        ],
+        "curiosidad": "El POTD contempla la reconexión del Valle con Buenaventura y hacia el norte del Departamento hasta El Cerrito, así como hacia el Eje Cafetero, generando una integración funcional de todo el Departamento.",
+        "panorama": "https://pannellum.org/images/alma.jpg",
+        "panorama_pitch": 0,
+        "imagen_thumb": "images/1.png"
+      },
+      {
+        "nombre": "Tramo Cali – Jamundí: El Primer Paso",
+        "año": "2022",
+        "tipo": "tecnica",
+        "descripcion": "Hoy se avanza con firmeza en la estructuración del primer tramo Cali–Jamundí, el cual comunica a dos de los cuatro municipios que integran la red férrea inicial. Posteriormente vendrán los tramos Cali–Yumbo y Cali–Palmira, que se plantea estén completamente terminados en un horizonte de 10 años. El ramal al aeropuerto y a la plaza de Caicedo en Cali complementaría el sistema.",
+        "datos": [
+          "Primer tramo: Cali – Jamundí",
+          "Tramos siguientes: Cali–Yumbo y Cali–Palmira",
+          "Horizonte: 10 años después del tramo inicial",
+          "Ramal: Aeropuerto – Plaza de Caicedo, Cali"
+        ],
+        "curiosidad": "La reconversión de la vía férrea propiciaría el desarrollo de proyectos de matriz económica (logística, empresarial, comercio y servicios) y espacios aptos para la renovación urbana e intensificación del ordenamiento urbanístico.",
+        "panorama": "https://pannellum.org/images/alma.jpg",
+        "panorama_pitch": -5,
+        "imagen_thumb": "images/2.png"
+      },
+      {
+        "nombre": "La Nostalgia como Motor del Futuro",
+        "año": "2019",
+        "tipo": "historia",
+        "descripcion": "Pero hay nostalgias directas, las de quienes tuvieron en el ferrocarril un medio para moverse más allá de su propio suelo — personas que hoy tienen alrededor de sesenta años y más. Y hay nostalgias indirectas, recibidas o heredadas, en las que el humo se ve pero no se huele, y el bamboleo no se siente ni lejano. La nostalgia colectiva por el tren, sumada a los beneficios técnicos y ambientales del transporte férreo, es el combustible que impulsa el Tren de Cercanías del Valle del Cauca.",
+        "datos": [
+          "Nostalgia: Motor social del proyecto",
+          "Beneficios: Descongestión, menor contaminación, integración regional",
+          "Participación: Gobernación, Secretaría de Infraestructura y alcaldías",
+          "Liderazgo: Subsecretaría de Macroproyectos – Gobernación del Valle"
+        ],
+        "curiosidad": "El proyecto reconoce las condiciones de alta conmutación cotidiana entre los municipios del área metropolitana de Cali por motivos laborales, de educación y salud, y la creciente dinámica de expansión residencial de los municipios del entorno de la capital vallecaucana.",
+        "panorama": "https://pannellum.org/images/alma.jpg",
+        "panorama_pitch": -3,
+        "imagen_thumb": "images/3.png"
       }
     ]
   }

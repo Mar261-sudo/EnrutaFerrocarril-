@@ -372,17 +372,34 @@ document.addEventListener("DOMContentLoaded", () => {
   };
  
   function acelerarPaisaje() {
+
     const landscape = document.getElementById("landscape");
     if (!landscape) return;
     landscape.style.animationDuration = "5s";
     setTimeout(() => { landscape.style.animationDuration = "20s"; }, 1500);
   }
+
  
+
+
+  const landscape = document.getElementById("landscape");
+  if (!landscape) return;
+  // Muestra el paisaje CSS brevemente simulando aceleración
+  landscape.style.opacity = "0.6";
+  landscape.style.animationDuration = "5s";
+  setTimeout(() => {
+    landscape.style.animationDuration = "20s";
+    landscape.style.opacity = "0";
+  }, 1500);
+});
+
+
+
   window.mostrarCuriosidad = function () {
     if (typeof curiosidades === "undefined" || !curiosidades.length) return;
     const random = curiosidades[Math.floor(Math.random() * curiosidades.length)];
     const el = document.getElementById("datoCurioso");
     if (el) el.textContent = random;
   };
- 
-});
+
+
