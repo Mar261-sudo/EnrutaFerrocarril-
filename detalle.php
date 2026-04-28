@@ -87,7 +87,7 @@ $parada = $tren["paradas"][$paradaId] ?? null;
           </a>
         <?php endif; ?>
           <a href="tren.php?id=<?= $trenId ?>" class="btn-volver-tren">
-            <img src="images/Defecto.png" alt="tren">
+            <img src="icons/icon-tren.svg" alt="tren">
             Volver al tren
           </a>
 
