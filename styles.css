@@ -288,6 +288,7 @@ button { font-family: var(--font-display); cursor: pointer; touch-action: manipu
   filter:drop-shadow(0 0 16px rgba(192, 112, 144, 0.5));
   animation:floatEmblem 4s ease-in-out infinite;
 }
+
 @keyframes floatEmblem {
   0%,100% { transform:translateY(0) rotate(-2deg); }
   50%      { transform:translateY(-8px) rotate(2deg); }

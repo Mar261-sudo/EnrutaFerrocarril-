@@ -31,9 +31,8 @@
           "Obstáculo: Inestabilidad política del siglo XIX"
         ],
         "curiosidad": "En 1847 se elaboró el primer mapa del camino carreteable a Buenaventura por el ingeniero Stanislas Zawadzky, un hito técnico para la época.",
-        "panorama": "https://pannellum.org/images/alma.jpg",
-        "panorama_pitch": 0,
-        "imagen_thumb": "images/1.png"
+        "panorama": "images/Comienzos.png",
+        "panorama_pitch": 0
       },
       {
         "nombre": "El Contrato con Smith Brothers (1872)",
@@ -47,9 +46,8 @@
           "Resultado: Nació La Regeneración, alianza nacionalista"
         ],
         "curiosidad": "La crisis económica exportadora de 1876 causó una profunda división política liberal que terminó creando la alianza conocida como La Regeneración.",
-        "panorama": "https://pannellum.org/images/alma.jpg",
-        "panorama_pitch": -5,
-        "imagen_thumb": "images/2.png"
+        "panorama": "images/Contrato.png",
+        "panorama_pitch": -5
       },
       {
         "nombre": "Francisco Javier Cisneros e Inicio Oficial de las Obras",
@@ -63,9 +61,8 @@
           "Constructor: Francisco Javier Cisneros"
         ],
         "curiosidad": "En 1897 se reconstruyó el tramo existente averiado por avalanchas del Río Dagua, y entre 1897 y 1899 se avanzó en la construcción de 10 km de vía férrea adicionales.",
-        "panorama": "https://pannellum.org/images/alma.jpg",
-        "panorama_pitch": -3,
-        "imagen_thumb": "images/3.png"
+        "panorama": "images/Locomotora.png",
+        "panorama_pitch": -3
       },
       {
         "nombre": "La Compañía del Ferrocarril del Pacífico (1908)",
@@ -79,9 +76,8 @@
           "Tramo final: Cali–Popayán completado en 1926"
         ],
         "curiosidad": "En 1920 Colombia recibió una indemnización de 25 millones de dólares por la pérdida de Panamá, parte de los cuales se destinó a los Ferrocarriles del país.",
-        "panorama": "https://pannellum.org/images/alma.jpg",
-        "panorama_pitch": 0,
-        "imagen_thumb": "images/1.png"
+        "panorama": "images/Barco.png",
+        "panorama_pitch": 0
       }
     ]
   },
@@ -117,9 +113,8 @@
           "Valor: Hito arquitectónico del siglo XX"
         ],
         "curiosidad": "Los aportes técnicos y estéticos de las estaciones ferroviarias contribuyeron notablemente al desarrollo de la arquitectura colombiana a principios del siglo XX.",
-        "panorama": "https://pannellum.org/images/alma.jpg",
-        "panorama_pitch": 0,
-        "imagen_thumb": "images/1.png"
+        "panorama": "images/Palmira.png",
+        "panorama_pitch": 0
       },
       {
         "nombre": "Estación de Buga – Equipamiento del Centro Histórico",
@@ -133,9 +128,8 @@
           "Llegada del tren a Buga: 1919"
         ],
         "curiosidad": "La restauración de la Estación de Buga respetó las características tipológicas y estructurales originales, convirtiéndola en un referente de patrimonio arquitectónico del Valle del Cauca.",
-        "panorama": "https://pannellum.org/images/alma.jpg",
-        "panorama_pitch": -5,
-        "imagen_thumb": "images/2.png"
+        "panorama": "images/Buga.png",
+        "panorama_pitch": -5
       },
       {
         "nombre": "Estación de Jamundí – Biblioteca Municipal",
@@ -149,9 +143,8 @@
           "Gestión: Comunidad local"
         ],
         "curiosidad": "La decadencia del ferrocarril provocó el abandono progresivo de las estaciones; en algunos casos el pueblo las recuperó con reclamaciones ciudadanas ligadas a los centros de equipamiento colectivo.",
-        "panorama": "https://pannellum.org/images/alma.jpg",
-        "panorama_pitch": -3,
-        "imagen_thumb": "images/3.png"
+        "panorama": "images/Jamundi.png",
+        "panorama_pitch": -3
       },
       {
         "nombre": "Estaciones de Bugalagrande y La Cumbre",
@@ -165,9 +158,8 @@
           "Arquitectura: De gran calidad técnica y estética"
         ],
         "curiosidad": "La Cumbre se convirtió en un popular destino de veraneo para las familias caleñas gracias al ferrocarril, que hacía el recorrido desde Cali en pocas horas.",
-        "panorama": "https://pannellum.org/images/alma.jpg",
-        "panorama_pitch": 0,
-        "imagen_thumb": "images/1.png"
+        "panorama": "images/Cumbre.png",
+        "panorama_pitch": 0
       }
     ]
   },
@@ -203,9 +195,8 @@
           "Combustible: Carbón mineral"
         ],
         "curiosidad": "Los maquinistas se sentían orgullosos de sus ocupaciones y ponían en marcha el automático sin perder de vista el velocímetro. Era obligatorio llamar a la jefatura para reportar las averías, salvo las pequeñas.",
-        "panorama": "https://pannellum.org/images/alma.jpg",
-        "panorama_pitch": 0,
-        "imagen_thumb": "images/1.png"
+        "panorama": "images/Vapor.png",
+        "panorama_pitch": 0
       },
       {
         "nombre": "Los Talleres de Chipichape (1932)",
@@ -219,9 +210,8 @@
           "Alcance: Centro técnico de toda la red del FC del Pacífico"
         ],
         "curiosidad": "Los maquinistas tenían tres categorías: de primera (exclusivo para pasajeros y trenes especiales), de segunda (manejo de locomotoras de pasajeros) y de tercera (engrasador, fogonero de segunda, ayudante de máquinas).",
-        "panorama": "https://pannellum.org/images/alma.jpg",
-        "panorama_pitch": -5,
-        "imagen_thumb": "images/2.png"
+        "panorama": "images/Talleres.png",
+        "panorama_pitch": -5
       },
       {
         "nombre": "Las Locomotoras Diésel-Eléctricas y los Autoferros",
@@ -235,9 +225,8 @@
           "Autoferros: Exclusivos para pasajeros"
         ],
         "curiosidad": "Las locomotoras diésel-eléctricas eran consideradas más peligrosas de maniobrar que las de vapor, pues su mayor velocidad y potencia exigía mayor precisión en el manejo de los sistemas de frenado.",
-        "panorama": "https://pannellum.org/images/alma.jpg",
-        "panorama_pitch": -8,
-        "imagen_thumb": "images/3.png"
+        "panorama": "images/Diesel.png",
+        "panorama_pitch": -8
       },
       {
         "nombre": "El Último Recorrido (1992)",
@@ -251,9 +240,8 @@
           "Impacto: Abandono de estaciones y talleres en toda la región"
         ],
         "curiosidad": "El Ferrocarril del Pacífico murió a principios de los 90 en la última década de su funcionamiento, dejando atrás generaciones de maquinistas, fogoneros y familias que habían construido su vida alrededor del tren.",
-        "panorama": "https://pannellum.org/images/alma.jpg",
-        "panorama_pitch": 0,
-        "imagen_thumb": "images/1.png"
+        "panorama": "images/UltimoViaje.png",
+        "panorama_pitch": 0
       }
     ]
   },
@@ -289,9 +277,8 @@
           "Localización: Centro de Cali"
         ],
         "curiosidad": "La estación Vásquez Cobo fue el punto de llegada y partida del tren a Cali durante décadas, siendo testigo de incontables despedidas, reencuentros y momentos históricos de la ciudad.",
-        "panorama": "https://pannellum.org/images/alma.jpg",
-        "panorama_pitch": 0,
-        "imagen_thumb": "images/1.png"
+        "panorama": "images/VasquezCobo.png",
+        "panorama_pitch": 0
       },
       {
         "nombre": "Estación de Tuluá – Ferrocarril del Pacífico (1923)",
@@ -305,9 +292,8 @@
           "Importancia: Nodo comercial del centro del Valle"
         ],
         "curiosidad": "La estación de Tuluá contaba con una 'Sala de Segunda', una sala de espera diferenciada por clase social, costumbre habitual en los ferrocarriles colombianos de la época.",
-        "panorama": "https://pannellum.org/images/alma.jpg",
-        "panorama_pitch": -5,
-        "imagen_thumb": "images/2.png"
+        "panorama": "images/Tulua.png",
+        "panorama_pitch": -5
       },
       {
         "nombre": "Puente a Nivel Calle 25 con Carrera 8 – Cali",
@@ -321,9 +307,8 @@
           "Fuente documental: APFFVC"
         ],
         "curiosidad": "El ferrocarril cruzaba las calles de Cali a nivel del suelo, generando cruces con el tráfico urbano que hoy serían impensables en una ciudad moderna de este tamaño.",
-        "panorama": "https://pannellum.org/images/alma.jpg",
-        "panorama_pitch": -3,
-        "imagen_thumb": "images/3.png"
+        "panorama": "images/Puente.png",
+        "panorama_pitch": -3
       },
       {
         "nombre": "Estación de Bugalagrande – Patrimonio en Espera",
@@ -337,9 +322,8 @@
           "Futuro: Pendiente de intervención patrimonial"
         ],
         "curiosidad": "El CITCE documentó extensamente las estaciones ferroviarias del Valle del Cauca como parte de los esfuerzos de preservación del patrimonio arquitectónico regional.",
-        "panorama": "https://pannellum.org/images/alma.jpg",
-        "panorama_pitch": 0,
-        "imagen_thumb": "images/1.png"
+        "panorama": "images/Bugalagrande.png",
+        "panorama_pitch": 0
       }
     ]
   },
@@ -375,9 +359,8 @@
           "Horario: 24 horas hasta completar 20 años de edad"
         ],
         "curiosidad": "Destacaba la importancia que tenían los trenes para Armenia, Cartago y Popayán: el maquinista salía a la ruta Cali–Yumbo con 360 toneladas y regresaba llevando otras 300, llegando a hacer hasta 3 viajes con ida y vuelta al día.",
-        "panorama": "https://pannellum.org/images/alma.jpg",
-        "panorama_pitch": 0,
-        "imagen_thumb": "images/1.png"
+        "panorama": "images/Trabajadores.png",
+        "panorama_pitch": 0
       },
       {
         "nombre": "La Economía Cafetera y el Ferrocarril",
@@ -391,9 +374,8 @@
           "Impacto: Motor económico de toda la región"
         ],
         "curiosidad": "En 1959 el bloqueo de Cuba impulsó la producción de azúcar en el Valle del Cauca para exportación a través del FC del Pacífico, dándole una nueva vida económica al ferrocarril.",
-        "panorama": "https://pannellum.org/images/alma.jpg",
-        "panorama_pitch": -5,
-        "imagen_thumb": "images/2.png"
+        "panorama": "images/Economia.png",
+        "panorama_pitch": -5
       },
       {
         "nombre": "Obreros y Comunidades de las Estaciones",
@@ -407,9 +389,8 @@
           "Identidad: Generaciones que vivieron del y para el ferrocarril"
         ],
         "curiosidad": "La sola mención de los ferrocarriles arrastra evocaciones: hay músicas que parecen el ritmo del tren, historias de abuelos y fotografías familiares en estaciones que parecen no podrán repetirse más.",
-        "panorama": "https://pannellum.org/images/alma.jpg",
-        "panorama_pitch": -3,
-        "imagen_thumb": "images/3.png"
+        "panorama": "images/Trabajadores.png",
+        "panorama_pitch": -3
       }
     ]
   },
@@ -445,9 +426,8 @@
           "Legado: Testimonio clave sobre la era del vapor en Colombia"
         ],
         "curiosidad": "Las vaporinas 'las negras' eran alimentadas con carbón en calderas, y la temperatura cerca de la caldera hacía el trabajo del fogonero extremadamente duro, especialmente en los tramos de montaña.",
-        "panorama": "https://pannellum.org/images/alma.jpg",
-        "panorama_pitch": 0,
-        "imagen_thumb": "images/1.png"
+        "panorama": "images/Locomotora.png",
+        "panorama_pitch": 0
       },
       {
         "nombre": "Emilio Portilla – Maquinista de la División Nariño",
@@ -461,9 +441,8 @@
           "Contexto: Dictadura de Rojas Pinilla afectó al FC"
         ],
         "curiosidad": "Emilio recuerda que las locomotoras diésel-eléctricas eran más peligrosas para maniobrar: 'iba despacio, bueno y cuando sentí fue el tren al suelo' — recordando un accidente de descarrilamiento en Tumaco.",
-        "panorama": "https://pannellum.org/images/alma.jpg",
-        "panorama_pitch": -5,
-        "imagen_thumb": "images/2.png"
+        "panorama": "images/maquinista.png",
+        "panorama_pitch": -5
       },
       {
         "nombre": "Gildardo Guevara – Técnico del Ferrocarril de Cali",
@@ -477,9 +456,8 @@
           "Clases de vagones en la época: Primera, segunda y tercera"
         ],
         "curiosidad": "La explosión de 7 camiones con dinamita frente a la estación del FC en Cali el 7 de agosto de 1956 fue tan destructiva que devastó el barrio San Nicolás, marcando para siempre la memoria de toda una generación.",
-        "panorama": "https://pannellum.org/images/alma.jpg",
-        "panorama_pitch": -3,
-        "imagen_thumb": "images/3.png"
+        "panorama": "images/Tecnico.png",
+        "panorama_pitch": -3
       }
     ]
   },
@@ -515,9 +493,8 @@
           "Primero en su género en Colombia"
         ],
         "curiosidad": "El POTD contempla la reconexión del Valle con Buenaventura y hacia el norte del Departamento hasta El Cerrito, así como hacia el Eje Cafetero, generando una integración funcional de todo el Departamento.",
-        "panorama": "https://pannellum.org/images/alma.jpg",
-        "panorama_pitch": 0,
-        "imagen_thumb": "images/1.png"
+        "panorama": "images/Podt.png",
+        "panorama_pitch": 0
       },
       {
         "nombre": "Tramo Cali – Jamundí: El Primer Paso",
@@ -531,9 +508,8 @@
           "Ramal: Aeropuerto – Plaza de Caicedo, Cali"
         ],
         "curiosidad": "La reconversión de la vía férrea propiciaría el desarrollo de proyectos de matriz económica (logística, empresarial, comercio y servicios) y espacios aptos para la renovación urbana e intensificación del ordenamiento urbanístico.",
-        "panorama": "https://pannellum.org/images/alma.jpg",
-        "panorama_pitch": -5,
-        "imagen_thumb": "images/2.png"
+        "panorama": "images/Caja.png",
+        "panorama_pitch": -5
       },
       {
         "nombre": "La Nostalgia como Motor del Futuro",
@@ -547,9 +523,44 @@
           "Liderazgo: Subsecretaría de Macroproyectos – Gobernación del Valle"
         ],
         "curiosidad": "El proyecto reconoce las condiciones de alta conmutación cotidiana entre los municipios del área metropolitana de Cali por motivos laborales, de educación y salud, y la creciente dinámica de expansión residencial de los municipios del entorno de la capital vallecaucana.",
-        "panorama": "https://pannellum.org/images/alma.jpg",
-        "panorama_pitch": -3,
-        "imagen_thumb": "images/3.png"
+        "panorama": "images/Nostalgia.png",
+        "panorama_pitch": -3
+      }
+    ]
+  },
+  "8": {
+    "nombre": "Herramientas del Mantenimiento Ferroviario",
+    "era": "Siglo XIX – Presente",
+    "año": "1900",
+    "historia": "Las herramientas ferroviarias han sido fundamentales para la construcción, mantenimiento y seguridad de las vías férreas. Desde la fuerza mecánica del gato ferroviario hasta la precisión de las llaves y palancas, cada instrumento cumple un papel clave en la estabilidad del sistema ferroviario y en el trabajo diario de los operarios.",
+    "color": "#6b4a2a",
+    "datos": [
+      "Permiten el mantenimiento y alineación de la vía férrea",
+      "Facilitan el trabajo con cargas de varias toneladas",
+      "Son esenciales para la seguridad del transporte ferroviario",
+      "Siguen siendo utilizadas en mantenimiento moderno"
+    ],
+    "curiosidades": [
+      "Un gato ferroviario puede levantar hasta 50 toneladas.",
+      "Un trabajador experto puede clavar un spike en solo 3 golpes.",
+      "Los rieles pueden expandirse hasta 30 mm por el calor."
+    ],
+    "paradas": [
+      {
+        "nombre": "Herramientas Ferroviarias Esenciales",
+        "año": "1900",
+        "tipo": "tecnica",
+        "descripcion": "En el mantenimiento ferroviario tradicional se utilizan diversas herramientas especializadas que permiten manipular, ajustar y alinear los rieles con precisión.\n\n1. Gato ferroviario: se utiliza para levantar rieles y durmientes, permitiendo su nivelación y mantenimiento.\n\n2. Martillo pico y llaves de vía: el martillo permite clavar y retirar los clavos del riel, mientras que las llaves ajustan los tornillos que unen los tramos.\n\n3. Barras de alineación: se emplean como palancas para mover lateralmente los rieles y posicionarlos correctamente.",
+        "datos": [
+          "Gato ferroviario: levanta entre 10 y 50 toneladas",
+          "Martillo pico: clava spikes en pocos golpes",
+          "Llaves de vía: permiten ajuste con alto torque",
+          "Barras: alineación manual de rieles"
+        ],
+        "curiosidad": "Estas herramientas, aunque simples en apariencia, fueron clave para construir y mantener cientos de kilómetros de vía férrea con precisión manual.",
+        "panorama": "",
+        "panorama_pitch": 0,
+        "imagen_thumb": "images/Herramientas.png"
       }
     ]
   }

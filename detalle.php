@@ -7,6 +7,11 @@ $paradaId = $_GET['parada'] ?? 0;
 
 $tren   = $trenes[$trenId] ?? null;
 $parada = $tren["paradas"][$paradaId] ?? null;
+
+// ── Detectar si esta parada tiene panorama 360 o imagen plana ──
+$panoramaUrl  = $parada["panorama"] ?? "";
+$esPanorama   = !empty($panoramaUrl);
+$imagenPlana  = $parada["imagen_thumb"] ?? $panoramaUrl; // usa imagen_thumb si existe, si no cae a panorama
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -17,8 +22,24 @@ $parada = $tren["paradas"][$paradaId] ?? null;
   <link rel="stylesheet" href="styles.css?v=11">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <?php if ($esPanorama): ?>
+  <!-- Pannellum solo se carga si hay panorama 360 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.css"/>
   <script src="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.js"></script>
+  <?php endif; ?>
+
+  <style>
+    /* Imagen plana: ocupa el mismo espacio que el visor 360 */
+    .detalle-imagen-plana {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;       /* muestra el collage completo sin recortar */
+      background: #111;          /* fondo oscuro igual que pannellum */
+      display: block;
+      border-radius: inherit;
+    }
+  </style>
 </head>
 <body class="page-detalle">
 
@@ -35,12 +56,28 @@ $parada = $tren["paradas"][$paradaId] ?? null;
 
   <div class="detalle-layout">
 
-    <!-- Visor 360° -->
+    <!-- Zona visual: 360° O imagen plana según el JSON -->
     <div class="detalle-360-wrapper">
-      <div class="detalle-360-label">
-        <span class="label-icon">⟳</span> Vista 360° — Gira para explorar
-      </div>
-      <div id="panoramaDetalle" class="panorama-full"></div>
+
+      <?php if ($esPanorama): ?>
+        <!-- ── MODO 360° ── -->
+        <div class="detalle-360-label">
+          <span class="label-icon">⟳</span> Vista 360° — Gira para explorar
+        </div>
+        <div id="panoramaDetalle" class="panorama-full"></div>
+
+      <?php else: ?>
+        <!-- ── MODO IMAGEN PLANA (collage, foto, etc.) ── -->
+        <div class="detalle-360-label">
+          <span class="label-icon">🖼</span> Imagen de referencia
+        </div>
+        <img
+          src="<?= htmlspecialchars($imagenPlana) ?>"
+          alt="<?= htmlspecialchars($parada["nombre"]) ?>"
+          class="detalle-imagen-plana"
+        >
+      <?php endif; ?>
+
     </div>
 
     <!-- Panel informativo lateral -->
@@ -101,8 +138,9 @@ $parada = $tren["paradas"][$paradaId] ?? null;
     </div>
   </div>
 
+  <?php if ($esPanorama): ?>
   <script>
-    const PANORAMA_URL   = <?= json_encode($parada["panorama"] ?? "https://pannellum.org/images/alma.jpg") ?>;
+    const PANORAMA_URL   = <?= json_encode($panoramaUrl) ?>;
     const PANORAMA_PITCH = <?= json_encode($parada["panorama_pitch"] ?? 0) ?>;
 
     document.addEventListener("DOMContentLoaded", () => {
@@ -117,6 +155,7 @@ $parada = $tren["paradas"][$paradaId] ?? null;
       });
     });
   </script>
+  <?php endif; ?>
 
 <?php else: ?>
   <div style="text-align:center; padding:100px 20px;">

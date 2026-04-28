@@ -1,9 +1,13 @@
 <?php
 $json = file_get_contents("contenido.json");
 $trenes = json_decode($json, true);
-
+ 
 $id = $_GET['id'] ?? null;
 $tren = $trenes[$id] ?? null;
+ 
+// ── Evitar división por cero cuando hay solo 1 parada ──
+$totalParadas = $tren ? count($tren["paradas"]) : 0;
+$divisor = max($totalParadas - 1, 1); // nunca será 0
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -18,7 +22,7 @@ $tren = $trenes[$id] ?? null;
   <script src="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.js"></script>
 </head>
 <body class="page-tren">
-
+ 
   <!-- Control de tamaño de letra -->
   <div class="font-controls" aria-label="Tamaño de letra">
     <button class="btn-font-decrease" onclick="decreaseFontSize()" title="Reducir letra">A−</button>
@@ -27,9 +31,9 @@ $tren = $trenes[$id] ?? null;
     <span class="fc-divider"></span>
     <button class="btn-font-increase" onclick="increaseFontSize()" title="Agrandar letra">A+</button>
   </div>
-
+ 
 <?php if ($tren): ?>
-
+ 
   <!-- ===================== PANTALLA DE EMBARQUE ===================== -->
   <div class="boarding-screen" id="boardingScreen">
     <div class="boarding-inner">
@@ -61,10 +65,10 @@ $tren = $trenes[$id] ?? null;
       <p class="boarding-hint">Haz clic para comenzar el recorrido</p>
     </div>
   </div>
-
+ 
   <!-- ===================== PANTALLA DE VIAJE ===================== -->
   <div class="journey-screen hidden" id="journeyScreen">
-
+ 
     <!-- Ventana del tren (efecto paisaje corriendo) -->
     <div class="train-window" id="trainWindow">
       <div class="window-frame">
@@ -73,8 +77,8 @@ $tren = $trenes[$id] ?? null;
           <iframe
             src="https://www.youtube.com/embed/Xw9bstYy80M?autoplay=1&mute=1&loop=1&controls=0&playlist=Xw9bstYy80M&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1"
             frameborder="0"
-             allow="autoplay; encrypted-media"
-        style="position:absolute; top:50%; left:50%; width:200%; height:100%; transform:translate(-50%,-50%); pointer-events:none; z-index:1;">
+            allow="autoplay; encrypted-media"
+            style="position:absolute; top:50%; left:50%; width:200%; height:100%; transform:translate(-50%,-50%); pointer-events:none; z-index:1;">
           </iframe>
           <!-- Paisaje JS encima (invisible normalmente, visible al acelerar) -->
           <div class="landscape" id="landscape" style="z-index:2; opacity:0;"></div>
@@ -86,27 +90,29 @@ $tren = $trenes[$id] ?? null;
       <div class="window-curtain left"></div>
       <div class="window-curtain right"></div>
     </div>
-
+ 
     <!-- Interior del tren (contenido principal) -->
     <div class="train-interior">
-
+ 
       <!-- Barra de progreso del viaje -->
       <div class="journey-progress">
         <div class="progress-track">
           <div class="progress-fill" id="progressFill"></div>
-          <div class="progress-train" id="progressTrain"><img src="icons/icon-tren.svg" alt="tren" class="icon-progress-train"></div>
+          <div class="progress-train" id="progressTrain">
+            <img src="icons/icon-tren.svg" alt="tren" class="icon-progress-train">
+          </div>
           <?php foreach ($tren["paradas"] as $i => $parada): ?>
-            <div class="progress-stop" style="left: <?= ($i / (count($tren["paradas"]) - 1)) * 100 ?>%">
+            <div class="progress-stop" style="left: <?= $totalParadas === 1 ? 50 : ($i / $divisor) * 100 ?>%">
               <div class="pstop-dot" data-index="<?= $i ?>"></div>
               <div class="pstop-name"><?= htmlspecialchars($parada["nombre"]) ?></div>
             </div>
           <?php endforeach; ?>
         </div>
       </div>
-
+ 
       <!-- Contenido de la parada actual -->
       <div class="station-content" id="stationContent">
-
+ 
         <!-- Anuncio de llegada a estación -->
         <div class="arrival-announcement hidden" id="arrivalAnnouncement">
           <div class="announcement-inner">
@@ -114,12 +120,12 @@ $tren = $trenes[$id] ?? null;
             <span class="announcement-text" id="announcementText"></span>
           </div>
         </div>
-
+ 
         <!-- Contenedor de paradas (se llena dinámicamente) -->
         <div id="paradaContainer"></div>
-
+ 
       </div>
-
+ 
       <!-- Controles de navegación -->
       <div class="journey-controls">
         <button class="ctrl-btn" id="btnAnterior" onclick="paradaAnterior()">
@@ -130,27 +136,27 @@ $tren = $trenes[$id] ?? null;
           Próxima estación ▶
         </button>
       </div>
-
+ 
     </div>
-
+ 
     <!-- Botón volver -->
     <a href="index.php" class="btn-volver">← Volver a la exposición</a>
-
+ 
   </div>
-
+ 
   <!-- Datos PHP para JavaScript -->
   <script>
     const TREN_DATA = <?= json_encode($tren, JSON_UNESCAPED_UNICODE) ?>;
     const TREN_ID   = <?= json_encode($id) ?>;
   </script>
-
+ 
 <?php else: ?>
   <div class="container" style="text-align:center; padding:100px 20px;">
     <h1 style="font-family:'Special Elite',serif; color:#c9a66b;">Tren no encontrado</h1>
     <a href="index.php"><button class="btn-embarcar">← Volver</button></a>
   </div>
 <?php endif; ?>
-
+ 
   <script src="script.js?v=11"></script>
 </body>
 </html>
