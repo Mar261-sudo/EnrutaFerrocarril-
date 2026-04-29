@@ -7,6 +7,14 @@ $tren = $trenes[$id] ?? null;
 
 $totalParadas = $tren ? count($tren["paradas"]) : 0;
 $divisor = max($totalParadas - 1, 1); // evita división por cero
+
+// Calcular el id del siguiente tren (cíclico o null si es el último)
+$idsOrdenados = array_keys($trenes);
+$posActual = array_search((string)$id, $idsOrdenados);
+$idSiguienteTren = null;
+if ($posActual !== false && isset($idsOrdenados[$posActual + 1])) {
+  $idSiguienteTren = $idsOrdenados[$posActual + 1];
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -14,7 +22,8 @@ $divisor = max($totalParadas - 1, 1); // evita división por cero
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?= $tren ? htmlspecialchars($tren["nombre"]) : "Tren" ?> — Exposición Ferroviaria</title>
-  <link rel="stylesheet" href="styles.css?v=11">
+  <link rel="icon" type="image/x-icon" href="icons/logo.ico">
+  <link rel="stylesheet" href="styles.css?v=12">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.css"/>
@@ -34,27 +43,67 @@ $divisor = max($totalParadas - 1, 1); // evita división por cero
 
   <div class="boarding-screen" id="boardingScreen">
     <div class="boarding-inner">
-      <div class="boarding-ticket">
+
+      <!-- ══════════════════════════════════
+           TICKET VINTAGE REDISEÑADO
+           ══════════════════════════════════ -->
+      <div class="boarding-ticket vintage-ticket">
+
+        <!-- Cabecera del ticket -->
         <div class="ticket-top">
-          <span class="ticket-label">BOLETO DE EMBARQUE</span>
-          <span class="ticket-num">#<?= str_pad($id, 4, '0', STR_PAD_LEFT) ?></span>
+          <div class="ticket-header-left">
+            <span class="ticket-company">FERROCARRIL DEL PACÍFICO</span>
+            <span class="ticket-label">BOLETO DE EMBARQUE</span>
+          </div>
+          <div class="ticket-num-stamp">
+            <span class="ticket-num-label">Nº</span>
+            <span class="ticket-num"><?= str_pad($id, 4, '0', STR_PAD_LEFT) ?></span>
+          </div>
         </div>
-        <div class="ticket-divider"><span></span></div>
-        <div class="ticket-destination"><?= htmlspecialchars($tren["nombre"]) ?></div>
-        <div class="ticket-era"><?= htmlspecialchars($tren["era"] ?? "Siglo XIX") ?></div>
-        <div class="ticket-divider"><span></span></div>
+
+        <!-- Franja roja decorativa -->
+        <div class="ticket-stripe"></div>
+
+        <!-- Destino principal -->
+        <div class="ticket-destination-block">
+          <span class="ticket-dest-label">DESTINO</span>
+          <div class="ticket-destination"><?= htmlspecialchars($tren["nombre"]) ?></div>
+          <div class="ticket-era"><?= htmlspecialchars($tren["era"] ?? "Siglo XIX") ?></div>
+        </div>
+
+        <!-- Divisor dentado / perforado -->
+        <div class="ticket-tear-line">
+          <div class="ticket-tear-circle left"></div>
+          <div class="ticket-tear-dashes"></div>
+          <div class="ticket-tear-circle right"></div>
+        </div>
+
+        <!-- Datos del viaje -->
         <div class="ticket-bottom">
-          <div>
-            <span class="ticket-label">PARTIDA</span>
-            <span class="ticket-val">Estación Central</span>
+          <div class="ticket-field">
+            <span class="ticket-field-label">PARTIDA</span>
+            <span class="ticket-field-value">Estación Central</span>
           </div>
-          <div class="ticket-train-icon"><img src="icons/icon-tren.svg" alt="tren" class="icon-btn"></div>
-          <div>
-            <span class="ticket-label">LLEGADA</span>
-            <span class="ticket-val">Estación Final</span>
+          <div class="ticket-train-icon">
+            <img src="icons/icon-tren.svg" alt="tren" class="icon-btn">
+          </div>
+          <div class="ticket-field ticket-field-right">
+            <span class="ticket-field-label">LLEGADA</span>
+            <span class="ticket-field-value">Estación Final</span>
           </div>
         </div>
+
+        <!-- Talón: paradas -->
+        <div class="ticket-stub">
+          <span class="ticket-stub-text">
+            <?= $totalParadas ?> PARADA<?= $totalParadas !== 1 ? 'S' : '' ?> · CLASE ÚNICA
+          </span>
+          <span class="ticket-stub-icon">✦</span>
+        </div>
+
       </div>
+      <!-- FIN TICKET VINTAGE -->
+
       <button class="btn-embarcar" id="btnEmbarcar" onclick="iniciarViaje()">
         <span class="btn-text">SUBIR AL TREN</span>
         <span class="btn-whistle"><img src="icons/icon-campana.svg" alt="campana" class="icon-btn"></span>
@@ -130,6 +179,7 @@ $divisor = max($totalParadas - 1, 1); // evita división por cero
   <script>
     const TREN_DATA = <?= json_encode($tren, JSON_UNESCAPED_UNICODE) ?>;
     const TREN_ID   = <?= json_encode($id) ?>;
+    const TREN_ID_SIGUIENTE = <?= json_encode($idSiguienteTren) ?>;
   </script>
 
 <?php else: ?>
@@ -139,6 +189,6 @@ $divisor = max($totalParadas - 1, 1); // evita división por cero
   </div>
 <?php endif; ?>
 
-  <script src="script.js?v=11"></script>
+  <script src="script.js?v=12"></script>
 </body>
 </html>

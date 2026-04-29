@@ -8,8 +8,8 @@ $trenes = json_decode($json, true);
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Exposición Ferroviaria</title>
-  
-  <link rel="stylesheet" href="styles.css?v=11">
+  <link rel="icon" type="image/x-icon" href="icons/logo.ico">
+  <link rel="stylesheet" href="styles.css?v=13">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
@@ -49,10 +49,15 @@ $trenes = json_decode($json, true);
       <button class="btn-font-increase" onclick="increaseFontSize()" title="Agrandar letra">A+</button>
     </div>
 
-  <!-- Header -->
-  <header class="main-header">
+  <!-- Header — clickeable abre el modal de trenes -->
+  <header class="main-header header-clickeable" id="mainHeader" onclick="abrirModalTrenes()" role="button" tabindex="0" aria-label="Ver lista de trenes" title="Haz clic para ver los trenes">
     <div class="header-inner">
-      <div class="header-emblem"><img src="icons/logo.ico" alt="Locomotora"</div>
+      <div class="header-emblem">
+        <img src="icons/logo.ico" alt="Locomotora" class="header-logo-img">
+        <div class="header-click-hint">
+          <span class="hint-text">Toca para ver los trenes</span>
+        </div>
+      </div>
       <div class="header-text">
         <p class="header-sub">Exposición</p>
         <h1 class="header-title">Ferrocarriles<br><em>Históricos</em></h1>
@@ -63,31 +68,6 @@ $trenes = json_decode($json, true);
       <span>— ✦ —</span>
     </div>
   </header>
-
-  <!-- Tablero de horarios estilo vintage -->
-  <section class="departure-board">
-    <div class="board-header">
-      <span class="board-label">SALIDAS</span>
-      <span class="board-label">DESTINOS</span>
-    </div>
-
-    <div class="board-rows" id="boardRows">
-      <?php foreach ($trenes as $id => $tren): ?>
-      <a href="tren.php?id=<?= $id ?>" class="board-row" data-delay="<?= $id ?>">
-        <div class="row-number"><?= str_pad($id, 3, '0', STR_PAD_LEFT) ?></div>
-        <div class="row-flip">
-          <div class="row-name"><?= htmlspecialchars($tren["nombre"]) ?></div>
-        </div>
-        <div class="row-era"><?= htmlspecialchars($tren["era"] ?? "Siglo XIX") ?></div>
-        <div class="row-status">
-          <span class="status-dot"></span>
-          EN SERVICIO
-        </div>
-        <div class="row-arrow">→</div>
-      </a>
-      <?php endforeach; ?>
-    </div>
-  </section>
 
   <!-- Línea de tiempo decorativa -->
   <section class="timeline-strip">
@@ -111,9 +91,52 @@ $trenes = json_decode($json, true);
       <div class="track-dots"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
       <div class="track-line"></div>
     </div>
-
   </footer>
 
-  <script src="script.js?v=11"></script>
+  <!-- ═══════════════════════════════════════════════
+       MODAL — Tablero de Trenes
+       ═══════════════════════════════════════════════ -->
+  <div class="modal-trenes-overlay" id="modalTrenesOverlay" onclick="cerrarModalTrenes(event)" aria-modal="true" role="dialog" aria-label="Lista de trenes">
+    <div class="modal-trenes-inner" id="modalTrenesInner">
+
+      <!-- Cabecera del modal -->
+      <div class="modal-header">
+        <div class="modal-header-left">
+          <span class="modal-steam-icon">♨</span>
+          <span class="modal-title-text">TABLERO DE SALIDAS</span>
+        </div>
+        <button class="modal-close-btn" onclick="cerrarModalTrenes(event)" aria-label="Cerrar">✕</button>
+      </div>
+
+      <!-- Tablero de horarios estilo vintage -->
+      <section class="departure-board departure-board-modal">
+        <div class="board-header">
+          <span class="board-label">SALIDAS</span>
+          <span class="board-label">DESTINOS</span>
+        </div>
+
+        <div class="board-rows" id="boardRows">
+          <?php foreach ($trenes as $id => $tren): ?>
+          <a href="tren.php?id=<?= $id ?>" class="board-row" data-delay="<?= $id ?>">
+            <div class="row-number"><?= str_pad($id, 3, '0', STR_PAD_LEFT) ?></div>
+            <div class="row-flip">
+              <div class="row-name"><?= htmlspecialchars($tren["nombre"]) ?></div>
+            </div>
+            <div class="row-era"><?= htmlspecialchars($tren["era"] ?? "Siglo XIX") ?></div>
+            <div class="row-status">
+              <span class="status-dot"></span>
+              EN SERVICIO
+            </div>
+            <div class="row-arrow">→</div>
+          </a>
+          <?php endforeach; ?>
+        </div>
+      </section>
+
+      <p class="modal-footer-hint">Selecciona un tren para comenzar el recorrido</p>
+    </div>
+  </div>
+
+  <script src="script.js?v=12"></script>
 </body>
 </html>

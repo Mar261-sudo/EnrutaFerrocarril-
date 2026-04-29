@@ -19,7 +19,8 @@ $esPanorama  = !empty($panoramaUrl);
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?= $parada ? htmlspecialchars($parada["nombre"]) : "Detalle" ?> — Ferroviaria</title>
-  <link rel="stylesheet" href="styles.css?v=11">
+  <link rel="icon" type="image/x-icon" href="icons/logo.ico">
+  <link rel="stylesheet" href="styles.css?v=12">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.css"/>
@@ -134,7 +135,7 @@ $esPanorama  = !empty($panoramaUrl);
             ◀ Parada anterior
           </a>
         <?php endif; ?>
-        <a href="tren.php?id=<?= $trenId ?>" class="btn-volver-tren">
+        <a href="tren.php?id=<?= $trenId ?>&inicio=1&parada=<?= $paradaId ?>" class="btn-volver-tren">
           <img src="icons/icon-tren.svg" alt="tren"> Volver al tren
         </a>
         <?php if ($paradaId < count($tren["paradas"]) - 1): ?>

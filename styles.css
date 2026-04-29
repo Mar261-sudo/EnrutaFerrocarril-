@@ -900,6 +900,276 @@ button {
   font-size: 1.6rem;
 }
 
+/* ================================================================
+   TICKET VINTAGE — Boleto de embarque estilo antiguo
+   ================================================================ */
+
+/* Papel envejecido con textura */
+.vintage-ticket {
+  background: #f2e4c8;
+  background-image:
+    radial-gradient(ellipse at top left, rgba(180,130,60,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse at bottom right, rgba(120,70,30,0.10) 0%, transparent 55%);
+  color: #2a1a0e;
+  border-radius: 2px;
+  box-shadow:
+    0 6px 28px rgba(0,0,0,0.65),
+    inset 0 0 80px rgba(139,100,50,0.10),
+    0 0 0 1px rgba(110,70,25,0.35);
+  max-width: 370px;
+}
+
+/* Forzar pseudo-cutouts al color del fondo oscuro de la página */
+.vintage-ticket::before,
+.vintage-ticket::after {
+  background: var(--carbon-medio) !important;
+  box-shadow: none !important;
+}
+
+/* ── Cabecera rojiza estilo telegrama ── */
+.ticket-top {
+  background: linear-gradient(135deg, #6b1a14 0%, #8b2a1c 60%, #5a1410 100%);
+  background-image: repeating-linear-gradient(
+    to right,
+    transparent 0px, transparent 8px,
+    rgba(255,255,255,0.03) 8px, rgba(255,255,255,0.03) 9px
+  );
+  padding: 10px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 3px solid #8b3010;
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,0.3);
+}
+
+.ticket-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.ticket-company {
+  font-family: 'Special Elite', monospace;
+  font-size: 0.60rem;
+  letter-spacing: 2.5px;
+  color: #f5e8d0;
+  text-transform: uppercase;
+  opacity: 0.95;
+  line-height: 1;
+}
+
+.ticket-top .ticket-label {
+  color: #f5e8d0 !important;
+  opacity: 0.55 !important;
+  font-size: 0.44rem !important;
+  letter-spacing: 3px;
+}
+
+.ticket-num-stamp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(0,0,0,0.28);
+  border: 1px solid rgba(245,232,208,0.20);
+  border-radius: 2px;
+  padding: 4px 10px;
+  min-width: 56px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.ticket-num-label {
+  font-family: 'Special Elite', monospace;
+  font-size: 0.42rem;
+  letter-spacing: 3px;
+  color: #f5e8d0;
+  opacity: 0.50;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.ticket-num {
+  font-family: 'Special Elite', monospace !important;
+  font-size: 1.05rem !important;
+  color: #f5e8d0 !important;
+  opacity: 1 !important;
+  letter-spacing: 3px;
+  line-height: 1;
+}
+
+/* ── Franja decorativa tipo galón de tren ── */
+.ticket-stripe {
+  height: 6px;
+  background: repeating-linear-gradient(
+    to right,
+    #7a2a10 0px,  #7a2a10 10px,
+    #c07830 10px, #c07830 12px,
+    #4a1008 12px, #4a1008 22px,
+    #c07830 22px, #c07830 24px
+  );
+}
+
+/* ── Bloque de destino — corazón del ticket ── */
+.ticket-destination-block {
+  padding: 14px 20px 10px;
+  text-align: center;
+  position: relative;
+  background: rgba(139,90,40,0.04);
+}
+
+.ticket-destination-block::before {
+  content: "── ✦ ──────────────── ✦ ──";
+  display: block;
+  font-size: 0.46rem;
+  letter-spacing: 1px;
+  color: #7a4a1a;
+  opacity: 0.40;
+  margin-bottom: 6px;
+  font-family: 'Special Elite', monospace;
+}
+
+.ticket-dest-label {
+  display: block;
+  font-family: 'Special Elite', monospace;
+  font-size: 0.44rem;
+  letter-spacing: 6px;
+  color: #6b3a14;
+  text-transform: uppercase;
+  opacity: 0.65;
+  margin-bottom: 5px;
+}
+
+.ticket-destination {
+  font-family: 'Libre Baskerville', Georgia, serif !important;
+  font-size: clamp(0.95rem, 4vw, 1.35rem) !important;
+  color: #1e0f08 !important;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1.15;
+  padding: 0 !important;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0 rgba(255,255,255,0.4), 0 0 8px rgba(180,130,60,0.2);
+}
+
+.ticket-era {
+  font-family: 'Libre Baskerville', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 0.72rem !important;
+  color: #7a4818 !important;
+  opacity: 0.80;
+  margin-top: 5px;
+  padding-bottom: 0 !important;
+  letter-spacing: 0.5px;
+}
+
+/* ── Línea de separación perforada ── */
+.ticket-tear-line {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 0;
+  height: 20px;
+}
+
+.ticket-tear-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--carbon-medio);
+  flex-shrink: 0;
+  z-index: 2;
+  box-shadow: inset 0 0 4px rgba(0,0,0,0.4);
+}
+
+.ticket-tear-circle.left  { margin-left:  -10px; }
+.ticket-tear-circle.right { margin-right: -10px; }
+
+.ticket-tear-dashes {
+  flex: 1;
+  height: 0;
+  border-top: 1px dashed rgba(90,50,15,0.40);
+  margin: 0 6px;
+}
+
+/* ── Campos PARTIDA / LLEGADA ── */
+.ticket-bottom {
+  padding: 10px 18px !important;
+  background: rgba(139,90,40,0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.ticket-field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.ticket-field-right {
+  text-align: right;
+}
+
+.ticket-field-label {
+  font-family: 'Special Elite', monospace;
+  font-size: 0.42rem;
+  letter-spacing: 4px;
+  color: #6b3a14;
+  text-transform: uppercase;
+  opacity: 0.60;
+}
+
+.ticket-field-value {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: 0.70rem;
+  color: #1e0f08;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* ── Talón / Talonario inferior ── */
+.ticket-stub {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 16px;
+  background: linear-gradient(135deg, #5a1410 0%, #7a2018 60%, #4a1008 100%);
+  background-image: repeating-linear-gradient(
+    to right,
+    transparent 0px, transparent 8px,
+    rgba(255,255,255,0.03) 8px, rgba(255,255,255,0.03) 9px
+  );
+  border-top: 2px solid #8b3010;
+}
+
+.ticket-stub-text {
+  font-family: 'Special Elite', monospace;
+  font-size: 0.46rem;
+  letter-spacing: 3px;
+  color: #f5e8d0;
+  opacity: 0.70;
+  text-transform: uppercase;
+}
+
+.ticket-stub-icon {
+  color: #c08030;
+  font-size: 0.90rem;
+  opacity: 0.85;
+  text-shadow: 0 0 6px rgba(192,128,48,0.5);
+}
+
+/* ── Animación sutil de latido del ticket ── */
+@keyframes ticketBreath {
+  0%, 100% { box-shadow: 0 6px 28px rgba(0,0,0,0.65), inset 0 0 80px rgba(139,100,50,0.10), 0 0 0 1px rgba(110,70,25,0.35); }
+  50%       { box-shadow: 0 8px 35px rgba(0,0,0,0.70), inset 0 0 80px rgba(139,100,50,0.14), 0 0 12px rgba(192,120,48,0.18); }
+}
+
+.vintage-ticket {
+  animation: ticketBreath 5s ease-in-out infinite;
+}
+
 .btn-embarcar {
   font-family: 'Special Elite', monospace;
   font-size: clamp(0.8rem, 3vw, 0.95rem);
@@ -2092,7 +2362,7 @@ MÓVIL — evitar solapamiento btn-volver y font-controls
 }
 
 .detalle-360-wrapper {
- position: relative;
+  position: relative;
   width: 100%;
   height: auto;
   aspect-ratio: 4 / 3;
@@ -2315,25 +2585,29 @@ MÓVIL — evitar solapamiento btn-volver y font-controls
   }
 
   /* Texto del footer sube encima de las vías */
-.main-footer {
-  display: flex;
-  flex-direction: column;
+  .main-footer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-text-principal {
+    order: -1;
+    /* el texto va primero */
+    text-align: center;
+    padding-bottom: 6px;
+  }
+
+  .footer-tracks {
+    order: 1;
+    /* las vías van al final */
+  }
 }
 
-.footer-text-principal {
-  order: -1; /* el texto va primero */
-  text-align: center;
-  padding-bottom: 6px;
-}
-
-.footer-tracks {
-  order: 1; /* las vías van al final */
-}
-}
 .expand-overlay {
   position: absolute;
   inset: 0;
-  background: transparent;  /* ← quita el rgba(0,0,0,0.5) */
+  background: transparent;
+  /* ← quita el rgba(0,0,0,0.5) */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2343,11 +2617,11 @@ MÓVIL — evitar solapamiento btn-volver y font-controls
   cursor: pointer;
   transition: opacity 0.35s ease;
 }
-cambios del css .imagen-credito {
+
+.imagen-credito {
   display: block;
-  margin-top: 8px; /* 👈 separación del botón */
+  margin-top: 8px;
   font-family: var(--font-display);
-  font-display: 'Crimson Text', Georgia, serif;
   font-size: 0.65rem;
   letter-spacing: 1px;
   color: var(--ocre-oscuro);
@@ -2357,12 +2631,705 @@ cambios del css .imagen-credito {
   color: white;
 }
 
+/* ================================================================
+   HEADER CLICKEABLE (index.php)
+   ================================================================ */
+.header-clickeable {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.header-clickeable:hover .header-title,
+.header-clickeable:focus .header-title {
+  text-shadow: 0 0 40px rgba(192, 112, 144, 0.6), 0 0 80px rgba(192, 112, 144, 0.2);
+}
+
+.header-clickeable:hover .header-emblem,
+.header-clickeable:focus .header-emblem {
+  filter: drop-shadow(0 0 20px rgba(192, 112, 144, 0.7));
+}
+
+.header-clickeable:active {
+  transform: scale(0.99);
+}
+
+.header-clickeable:focus {
+  outline: none;
+}
+
+.header-logo-img {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  animation: floatEmblem 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 12px rgba(192, 112, 144, 0.4));
+  transition: filter 0.3s;
+}
+
+.header-click-hint {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  font-family: 'Special Elite', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  color: var(--ocre);
+  text-transform: uppercase;
+  animation: hintPulse 3s ease-in-out infinite;
+}
+
+@keyframes hintPulse {
+
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: translateY(-3px);
+  }
+}
+
+.hint-icon {
+  font-size: 0.9rem;
+}
+
+/* ================================================================
+   MODAL DE TRENES (index.php)
+   ================================================================ */
+.modal-trenes-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 5, 3, 0.88);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.modal-trenes-overlay.activo {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-trenes-inner {
+  background: linear-gradient(160deg, var(--carbon-claro) 0%, var(--carbon-medio) 100%);
+  border: 2px solid var(--ocre-oscuro);
+  border-radius: 4px;
+  width: 100%;
+  max-width: 700px;
+  max-height: 88vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 0 60px rgba(192, 112, 144, 0.15), 0 20px 80px rgba(0, 0, 0, 0.8);
+  transform: scale(0.96) translateY(10px);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.modal-trenes-overlay.activo .modal-trenes-inner {
+  transform: scale(1) translateY(0);
+}
+
+/* Scrollbar estilo vintage */
+.modal-trenes-inner::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-trenes-inner::-webkit-scrollbar-track {
+  background: var(--carbon);
+}
+
+.modal-trenes-inner::-webkit-scrollbar-thumb {
+  background: var(--ocre-oscuro);
+  border-radius: 3px;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background: linear-gradient(135deg, var(--rojo-tren), #4a1008);
+  border-bottom: 1px solid var(--ocre-oscuro);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.modal-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.modal-steam-icon {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  animation: steamFloat 2s ease-in-out infinite;
+}
+
+@keyframes steamFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: translateY(-3px);
+    opacity: 1;
+  }
+}
+
+.modal-title-text {
+  font-family: 'Special Elite', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 4px;
+  color: var(--marfil-claro);
+  text-transform: uppercase;
+}
+
+.modal-close-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  color: var(--marfil-claro);
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  font-family: 'Special Elite', monospace;
+}
+
+.modal-close-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--ocre);
+  color: var(--ocre);
+}
+
+.departure-board-modal {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+.departure-board-modal .board-header {
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+}
+
+.departure-board-modal .board-rows {
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  border-radius: 0;
+}
+
+.modal-footer-hint {
+  text-align: center;
+  padding: 14px;
+  font-style: italic;
+  opacity: 0.35;
+  font-size: 0.75rem;
+  font-family: 'Special Elite', monospace;
+  letter-spacing: 1px;
+}
+
+/* ================================================================
+   TICKET VINTAGE — REDISEÑO COMPLETO
+   ================================================================ */
+.vintage-ticket {
+  background: #f5ead5 !important;
+  /* papel envejecido */
+  background-image:
+    repeating-linear-gradient(0deg,
+      transparent,
+      transparent 24px,
+      rgba(160, 120, 60, 0.08) 24px,
+      rgba(160, 120, 60, 0.08) 25px),
+    repeating-linear-gradient(90deg,
+      transparent,
+      transparent 24px,
+      rgba(160, 120, 60, 0.04) 24px,
+      rgba(160, 120, 60, 0.04) 25px) !important;
+  color: #2a1a0a !important;
+  border: none !important;
+  border-radius: 2px !important;
+  box-shadow:
+    0 0 0 1px rgba(120, 80, 30, 0.4),
+    0 0 0 3px rgba(120, 80, 30, 0.12),
+    4px 6px 20px rgba(0, 0, 0, 0.5),
+    inset 0 0 40px rgba(180, 130, 60, 0.06) !important;
+  position: relative;
+  overflow: hidden;
+  max-width: 360px !important;
+}
+
+/* Marca de agua decorativa */
+.vintage-ticket::before {
+  content: "✦";
+  position: absolute;
+  font-size: 8rem;
+  color: rgba(160, 100, 30, 0.06);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  font-family: serif;
+  z-index: 0;
+}
+
+/* Esquinas dobladas */
+.vintage-ticket::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  background: linear-gradient(135deg, transparent 50%, rgba(120, 80, 30, 0.25) 50%);
+  pointer-events: none;
+}
+
+/* ── Perforaciones ── */
+.ticket-punch-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 8px;
+  height: 16px;
+  background: #e8d8b8;
+  position: relative;
+  z-index: 1;
+}
+
+.ticket-punch {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--carbon, #1a0a04);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Cabecera del ticket ── */
+.vintage-ticket .ticket-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 12px 18px 10px;
+  background: #7a1818;
+  background-image: repeating-linear-gradient(45deg,
+      transparent,
+      transparent 3px,
+      rgba(0, 0, 0, 0.06) 3px,
+      rgba(0, 0, 0, 0.06) 6px);
+  color: #f5e8cc;
+  position: relative;
+  z-index: 1;
+}
+
+.ticket-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.ticket-company {
+  font-family: 'Special Elite', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 2px;
+  color: #f5e8cc;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.vintage-ticket .ticket-label {
+  font-family: 'Special Elite', monospace;
+  font-size: 0.52rem;
+  letter-spacing: 1.5px;
+  color: #f5e8cc;
+  opacity: 0.65;
+  text-transform: uppercase;
+}
+
+.ticket-num-stamp {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1px;
+}
+
+.ticket-num-label {
+  font-family: 'Special Elite', monospace;
+  font-size: 0.45rem;
+  letter-spacing: 2px;
+  color: #f5e8cc;
+  opacity: 0.6;
+}
+
+.vintage-ticket .ticket-num {
+  font-family: 'Special Elite', monospace;
+  font-size: 1.1rem;
+  color: #f5e8cc;
+  letter-spacing: 2px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* ── Franja decorativa ── */
+.ticket-stripe {
+  height: 4px;
+  background: repeating-linear-gradient(90deg,
+      #7a1818 0px,
+      #7a1818 12px,
+      #f0c060 12px,
+      #f0c060 14px);
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Bloque de destino ── */
+.ticket-destination-block {
+  padding: 16px 18px 10px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.ticket-dest-label {
+  display: block;
+  font-family: 'Special Elite', monospace;
+  font-size: 0.5rem;
+  letter-spacing: 4px;
+  color: rgba(80, 40, 10, 0.55);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.vintage-ticket .ticket-destination {
+  font-family: 'Playfair Display', 'Libre Baskerville', Georgia, serif;
+  font-size: clamp(1rem, 4.5vw, 1.35rem);
+  font-weight: 700;
+  color: #2a1005;
+  line-height: 1.25;
+  padding: 0;
+  text-shadow: 1px 1px 0 rgba(180, 120, 40, 0.2);
+}
+
+.vintage-ticket .ticket-era {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-style: italic;
+  font-size: 0.78rem;
+  color: #7a4a18;
+  padding: 6px 0 0;
+  text-align: center;
+}
+
+/* ── Línea de corte ── */
+.ticket-tear-line {
+  display: flex;
+  align-items: center;
+  margin: 2px 0;
+  position: relative;
+  z-index: 1;
+  height: 16px;
+}
+
+.ticket-tear-circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--carbon, #140206);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.ticket-tear-circle.left {
+  margin-left: -8px;
+}
+
+.ticket-tear-circle.right {
+  margin-right: -8px;
+}
+
+.ticket-tear-dashes {
+  flex: 1;
+  height: 1px;
+  background: repeating-linear-gradient(90deg,
+      rgba(100, 60, 20, 0.5) 0px,
+      rgba(100, 60, 20, 0.5) 8px,
+      transparent 8px,
+      transparent 13px);
+}
+
+/* ── Datos del viaje ── */
+.vintage-ticket .ticket-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 18px 8px;
+  gap: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.ticket-field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ticket-field-right {
+  text-align: right;
+}
+
+.ticket-field-label {
+  font-family: 'Special Elite', monospace;
+  font-size: 0.45rem;
+  letter-spacing: 2px;
+  color: rgba(80, 40, 10, 0.5);
+  text-transform: uppercase;
+}
+
+.ticket-field-value {
+  font-family: 'Special Elite', monospace;
+  font-size: 0.7rem;
+  color: #3a1a08;
+}
+
+.vintage-ticket .ticket-train-icon {
+  font-size: 1.2rem;
+  filter: sepia(1) saturate(0.5) hue-rotate(5deg);
+}
+
+/* ── Talón inferior ── */
+.ticket-stub {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 18px;
+  background: #e0cab0;
+  border-top: 1px dashed rgba(120, 80, 30, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.ticket-stub-text {
+  font-family: 'Special Elite', monospace;
+  font-size: 0.5rem;
+  letter-spacing: 2px;
+  color: rgba(80, 40, 10, 0.6);
+  text-transform: uppercase;
+}
+
+.ticket-stub-icon {
+  color: rgba(120, 80, 30, 0.4);
+  font-size: 0.7rem;
+}
+
+/* ================================================================
+   BOTÓN "SIGUIENTE TREN"
+   ================================================================ */
+.btn-siguiente-tren {
+  background: linear-gradient(135deg, #8a3a12, #5a1a08) !important;
+  border: 1px solid var(--ocre-oscuro) !important;
+  color: var(--ocre-claro) !important;
+  animation: nextTrainPulse 2s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-siguiente-tren::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.06), transparent);
+  transform: translateX(-100%);
+  animation: nextTrainShine 2.5s ease-in-out infinite;
+}
+
+@keyframes nextTrainPulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 12px rgba(212, 140, 60, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 24px rgba(212, 140, 60, 0.6), 0 0 40px rgba(212, 140, 60, 0.2);
+  }
+}
+
+@keyframes nextTrainShine {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  60%,
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+/* ================================================================
+   TRANSICIÓN ENTRE TRENES — overlay vintage pantalla completa
+   ================================================================ */
+.tren-transition-overlay {
+  position: fixed;
+  inset: 0;
+  background: #0a0604;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.tren-transition-overlay.activo {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.tren-tr-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 40px 20px;
+}
+
+.tren-tr-steam {
+  font-size: 1.8rem;
+  color: var(--ocre, #c0a060);
+  letter-spacing: 16px;
+  opacity: 0.6;
+  animation: steamDrift 2s ease-in-out infinite;
+}
+
+@keyframes steamDrift {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: translateY(-10px) scale(1.1);
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.5;
+  }
+}
+
+.tren-tr-train-anim {
+  display: flex;
+  align-items: center;
+}
+
+.tren-tr-icon {
+  width: 80px;
+  height: 80px;
+  filter: brightness(0) invert(0.85) sepia(1) saturate(2) hue-rotate(5deg);
+  transform: scaleX(-1);
+  animation: trainRide 0.15s ease-in-out infinite alternate;
+}
+
+@keyframes trainRide {
+  0% {
+    transform: scaleX(-1) translateY(0);
+  }
+
+  100% {
+    transform: scaleX(-1) translateY(-4px);
+  }
+}
+
+.tren-tr-text {
+  font-family: 'Special Elite', monospace;
+  font-size: clamp(0.9rem, 3vw, 1.3rem);
+  color: var(--ocre, #c0a060);
+  letter-spacing: 2px;
+  min-height: 2em;
+  min-width: 260px;
+  text-shadow: 0 0 20px rgba(192, 160, 96, 0.5);
+}
+
+.tren-tr-track {
+  position: relative;
+  width: 280px;
+  height: 20px;
+  overflow: hidden;
+}
+
+.tren-tr-rail {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--ocre-oscuro, #8a6030);
+  opacity: 0.6;
+}
+
+.tren-tr-rail:first-child {
+  top: 3px;
+}
+
+.tren-tr-rail:nth-child(2) {
+  top: 12px;
+}
+
+.tren-tr-ties {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(90deg,
+      var(--carbon-claro, #2a1408) 0px,
+      var(--carbon-claro, #2a1408) 12px,
+      transparent 12px,
+      transparent 28px);
+  animation: tiesScroll 0.4s linear infinite;
+  opacity: 0.5;
+}
+
+@keyframes tiesScroll {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: -28px 0;
+  }
+}
+
 .detalle-credito {
   position: relative;
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(26,20,17,0.75);
+  background: rgba(26, 20, 17, 0.75);
   font-family: var(--font-display);
   font-size: 0.6rem;
   letter-spacing: 1px;
@@ -2372,6 +3339,7 @@ cambios del css .imagen-credito {
   font-style: italic;
   z-index: 10;
 }
+
 footer {
   text-align: center;
   padding: 20px;
@@ -2380,41 +3348,48 @@ footer {
 }
 
 .creditos {
-  font-size: 16px;   /* antes estaba muy pequeño */
-  color: #f5e6c8;    /* color más claro (mejor contraste) */
+  font-size: 16px;
+  /* antes estaba muy pequeño */
+  color: #f5e6c8;
+  /* color más claro (mejor contraste) */
   font-weight: 500;
   letter-spacing: 0.5px;
 }
+
 .main-footer {
-  margin-top: 60px; /* ajusta: 20px, 60px, etc */
+  margin-top: 60px;
+  /* ajusta: 20px, 60px, etc */
 }
 
-  .page-tren .font-controls {
-    position: fixed;
-    top: 52px;
-    right: 14px;
-  }
+.page-tren .font-controls {
+  position: fixed;
+  top: 52px;
+  right: 14px;
+}
 
-  /* Texto del footer sube encima de las vías */
+/* Texto del footer sube encima de las vías */
 .main-footer {
   display: flex;
   flex-direction: column;
 }
 
 .footer-text-principal {
-  order: -1; /* el texto va primero */
+  order: -1;
+  /* el texto va primero */
   text-align: center;
   padding-bottom: 6px;
 }
 
 .footer-tracks {
-  order: 1; /* las vías van al final */
+  order: 1;
+  /* las vías van al final */
 }
 
 .expand-overlay {
   position: absolute;
   inset: 0;
-  background: transparent;  /* ← quita el rgba(0,0,0,0.5) */
+  background: transparent;
+  /* ← quita el rgba(0,0,0,0.5) */
   display: flex;
   flex-direction: column;
   align-items: center;
