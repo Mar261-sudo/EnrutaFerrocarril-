@@ -51,7 +51,7 @@ $trenes = json_decode($json, true);
   <!-- Header -->
   <header class="main-header">
     <div class="header-inner">
-      <div class="header-emblem"><img src="icons/icon-tren.svg" alt="Locomotora" class="icon-tren-header"></div>
+      <div class="header-emblem"><img src="icons/logo.ico" alt="Locomotora"</div>
       <div class="header-text">
         <p class="header-sub">Exposición</p>
         <h1 class="header-title">Ferrocarriles<br><em>Históricos</em></h1>
