@@ -8,6 +8,7 @@ $trenes = json_decode($json, true);
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Exposición Ferroviaria</title>
+  
   <link rel="stylesheet" href="styles.css?v=11">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -67,7 +68,6 @@ $trenes = json_decode($json, true);
   <section class="departure-board">
     <div class="board-header">
       <span class="board-label">SALIDAS</span>
-      <span class="board-clock" id="reloj">00:00:00</span>
       <span class="board-label">DESTINOS</span>
     </div>
 
@@ -111,12 +111,7 @@ $trenes = json_decode($json, true);
       <div class="track-dots"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
       <div class="track-line"></div>
     </div>
-    <p class="creditos">
-    Producido y desarrollado por: 
-    Maria del Mar Murillo, 
-    Angie Lorena Riascos y 
-    Daniel Alejandro Ramos
-  </p>
+
   </footer>
 
   <script src="script.js?v=11"></script>
