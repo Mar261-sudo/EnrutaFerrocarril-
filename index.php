@@ -34,7 +34,7 @@ $trenes = json_decode($json, true);
       <div class="banner-divider-vertical">
       </div>
       <div class="banner-patrocinador">
-        <img src="images/bibloteca.png" alt="Biblioteca" class="banner-logo">
+        <img src="images/biblioteca.png" alt="Biblioteca" class="banner-logo">
         
       </div>  
     </div>
