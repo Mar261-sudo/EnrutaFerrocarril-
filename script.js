@@ -333,6 +333,8 @@ document.addEventListener("DOMContentLoaded", () => {
           <a href="detalle.php?tren=${TREN_ID}&parada=${index}" class="parada-ver-detalle">
             ↗ ABRIR EN PANTALLA COMPLETA
           </a>
+            ${parada.credito ? `<div class="imagen-credito">© ${parada.credito}</div>` : ""}
+
         </div>
       </div>`;
  

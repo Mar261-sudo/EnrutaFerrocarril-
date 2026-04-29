@@ -2343,3 +2343,84 @@ MÓVIL — evitar solapamiento btn-volver y font-controls
   cursor: pointer;
   transition: opacity 0.35s ease;
 }
+cambios del css .imagen-credito {
+  display: block;
+  margin-top: 8px; /* 👈 separación del botón */
+  font-family: var(--font-display);
+  font-display: 'Crimson Text', Georgia, serif;
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+  color: var(--ocre-oscuro);
+  opacity: 0.8;
+  text-align: right;
+  font-style: italic;
+  color: white;
+}
+
+.detalle-credito {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(26,20,17,0.75);
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  letter-spacing: 1px;
+  color: var(--ocre-oscuro);
+  text-align: center;
+  padding: 5px 10px;
+  font-style: italic;
+  z-index: 10;
+}
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+  position: relative;
+}
+
+.creditos {
+  font-size: 16px;   /* antes estaba muy pequeño */
+  color: #f5e6c8;    /* color más claro (mejor contraste) */
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+.main-footer {
+  margin-top: 60px; /* ajusta: 20px, 60px, etc */
+}
+
+  .page-tren .font-controls {
+    position: fixed;
+    top: 52px;
+    right: 14px;
+  }
+
+  /* Texto del footer sube encima de las vías */
+.main-footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-text-principal {
+  order: -1; /* el texto va primero */
+  text-align: center;
+  padding-bottom: 6px;
+}
+
+.footer-tracks {
+  order: 1; /* las vías van al final */
+}
+
+.expand-overlay {
+  position: absolute;
+  inset: 0;
+  background: transparent;  /* ← quita el rgba(0,0,0,0.5) */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  z-index: 10;
+  cursor: pointer;
+  transition: opacity 0.35s ease;
+}

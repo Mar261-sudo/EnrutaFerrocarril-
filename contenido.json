@@ -32,8 +32,10 @@
         ],
         "curiosidad": "En 1847 se elaboró el primer mapa del camino carreteable a Buenaventura por el ingeniero Stanislas Zawadzky, un hito técnico para la época.",
         "panorama": "images/Comienzos.png",
-        "panorama_pitch": 0
+        "panorama_pitch": 0,
+        "credito": "APFFVC — Archivo de Patrimonio Fotográfico y Fílmico del Valle del Cauca"
       },
+      
       {
         "nombre": "El Contrato con Smith Brothers (1872)",
         "año": "1872",
@@ -47,7 +49,9 @@
         ],
         "curiosidad": "La crisis económica exportadora de 1876 causó una profunda división política liberal que terminó creando la alianza conocida como La Regeneración.",
         "panorama": "images/Contrato.png",
-        "panorama_pitch": -5
+        "panorama_pitch": -5,
+        "credito": "APFFVC — Archivo de Patrimonio Fotográfico y Fílmico del Valle del Cauca"
+
       },
       {
         "nombre": "Francisco Javier Cisneros e Inicio Oficial de las Obras",
@@ -62,7 +66,8 @@
         ],
         "curiosidad": "En 1897 se reconstruyó el tramo existente averiado por avalanchas del Río Dagua, y entre 1897 y 1899 se avanzó en la construcción de 10 km de vía férrea adicionales.",
         "panorama": "images/Locomotora.png",
-        "panorama_pitch": -3
+        "panorama_pitch": -3,
+        "credito": "APFFVC — Archivo de Patrimonio Fotográfico y Fílmico del Valle del Cauca"
       },
       {
         "nombre": "La Compañía del Ferrocarril del Pacífico (1908)",
@@ -77,7 +82,8 @@
         ],
         "curiosidad": "En 1920 Colombia recibió una indemnización de 25 millones de dólares por la pérdida de Panamá, parte de los cuales se destinó a los Ferrocarriles del país.",
         "panorama": "images/Barco.png",
-        "panorama_pitch": 0
+        "panorama_pitch": 0,
+        "credito": "APFFVC — Archivo de Patrimonio Fotográfico y Fílmico del Valle del Cauca"
       }
     ]
   },
@@ -114,7 +120,8 @@
         ],
         "curiosidad": "Los aportes técnicos y estéticos de las estaciones ferroviarias contribuyeron notablemente al desarrollo de la arquitectura colombiana a principios del siglo XX.",
         "panorama": "images/Palmira.png",
-        "panorama_pitch": 0
+        "panorama_pitch": 0,
+        "credito": "APFFVC — Archivo de Patrimonio Fotográfico y Fílmico del Valle del Cauca"
       },
       {
         "nombre": "Estación de Buga – Equipamiento del Centro Histórico",
@@ -129,7 +136,8 @@
         ],
         "curiosidad": "La restauración de la Estación de Buga respetó las características tipológicas y estructurales originales.",
         "panorama": "images/Buga.png",
-        "panorama_pitch": -5
+        "panorama_pitch": -5,
+        "credito": "CITCE — Centro de Investigaciones Territorio Construcción Espacio, Universidad del Valle"
       },
       {
         "nombre": "Estación de Jamundí – Biblioteca Municipal",
@@ -144,7 +152,8 @@
         ],
         "curiosidad": "La decadencia del ferrocarril provocó el abandono progresivo de las estaciones; en algunos casos el pueblo las recuperó con reclamaciones ciudadanas.",
         "panorama": "images/Jamundi.png",
-        "panorama_pitch": -3
+        "panorama_pitch": -3,
+        "credito": "Colectivo GRIOT / CITCE — Universidad del Valle"
       },
       {
         "nombre": "Estaciones de Bugalagrande y La Cumbre",
@@ -159,7 +168,8 @@
         ],
         "curiosidad": "La Cumbre se convirtió en un popular destino de veraneo para las familias caleñas gracias al ferrocarril.",
         "panorama": "images/Cumbre.png",
-        "panorama_pitch": 0
+        "panorama_pitch": 0,
+        "credito": "APFFVC — Archivo de Patrimonio Fotográfico y Fílmico del Valle del Cauca"
       }
     ]
   },
@@ -196,7 +206,8 @@
         ],
         "curiosidad": "Los maquinistas se sentían orgullosos de sus ocupaciones y ponían en marcha el automático sin perder de vista el velocímetro.",
         "panorama": "images/Vapor.png",
-        "panorama_pitch": 0
+        "panorama_pitch": 0,
+        "credito": "APFFVC — Archivo de Patrimonio Fotográfico y Fílmico del Valle del Cauca"
       },
       {
         "nombre": "Los Talleres de Chipichape (1932)",
@@ -211,7 +222,8 @@
         ],
         "curiosidad": "Los maquinistas tenían tres categorías: de primera, de segunda y de tercera, según su especialización.",
         "panorama": "images/Talleres.png",
-        "panorama_pitch": -5
+        "panorama_pitch": -5,
+        "credito": "APFFVC — Archivo de Patrimonio Fotográfico y Fílmico del Valle del Cauca"
       },
       {
         "nombre": "Las Locomotoras Diésel-Eléctricas y los Autoferros",
@@ -226,7 +238,8 @@
         ],
         "curiosidad": "Las locomotoras diésel-eléctricas eran consideradas más peligrosas de maniobrar que las de vapor.",
         "panorama": "images/Diesel.png",
-        "panorama_pitch": -8
+        "panorama_pitch": -8,
+        "credito": "APFFVC — Archivo de Patrimonio Fotográfico y Fílmico del Valle del Cauca"
       },
       {
         "nombre": "El Último Recorrido (1992)",
@@ -241,7 +254,8 @@
         ],
         "curiosidad": "El Ferrocarril del Pacífico murió a principios de los 90, dejando atrás generaciones de maquinistas y familias que habían construido su vida alrededor del tren.",
         "panorama": "images/UltimoViaje.png",
-        "panorama_pitch": 0
+        "panorama_pitch": 0,
+        "credito": "APFFVC — Archivo de Patrimonio Fotográfico y Fílmico del Valle del Cauca"
       }
     ]
   },
@@ -278,7 +292,8 @@
         ],
         "curiosidad": "La estación Vásquez Cobo fue el punto de llegada y partida del tren a Cali durante décadas.",
         "panorama": "images/VasquezCobo.png",
-        "panorama_pitch": 0
+        "panorama_pitch": 0,
+        "credito": "CITCE — Centro de Investigaciones Territorio Construcción Espacio, Universidad del Valle"
       },
       {
         "nombre": "Estación de Tuluá – Ferrocarril del Pacífico (1923)",
@@ -293,7 +308,8 @@
         ],
         "curiosidad": "La estación de Tuluá contaba con una 'Sala de Segunda', diferenciada por clase social.",
         "panorama": "images/Tulua.png",
-        "panorama_pitch": -5
+        "panorama_pitch": -5,
+        "credito": "APFFVC — Archivo de Patrimonio Fotográfico y Fílmico del Valle del Cauca"
       },
       {
         "nombre": "Puente a Nivel Calle 25 con Carrera 8 – Cali",
@@ -308,7 +324,8 @@
         ],
         "curiosidad": "El ferrocarril cruzaba las calles de Cali a nivel del suelo, cruces que hoy serían impensables en una ciudad moderna.",
         "panorama": "images/Puente.png",
-        "panorama_pitch": -3
+        "panorama_pitch": -3,
+        "credito": "APFFVC — Archivo de Patrimonio Fotográfico y Fílmico del Valle del Cauca"
       },
       {
         "nombre": "Estación de Bugalagrande – Patrimonio en Espera",
@@ -323,7 +340,8 @@
         ],
         "curiosidad": "El CITCE documentó extensamente las estaciones ferroviarias del Valle del Cauca como parte de los esfuerzos de preservación del patrimonio arquitectónico regional.",
         "panorama": "images/Bugalagrande.png",
-        "panorama_pitch": 0
+        "panorama_pitch": 0,
+        "credito": "CITCE — Centro de Investigaciones Territorio Construcción Espacio, Universidad del Valle"
       }
     ]
   },
@@ -360,7 +378,8 @@
         ],
         "curiosidad": "El maquinista salía a la ruta Cali–Yumbo con 360 toneladas y regresaba llevando otras 300, llegando a hacer hasta 3 viajes con ida y vuelta al día.",
         "panorama": "images/Trabajadores.png",
-        "panorama_pitch": 0
+        "panorama_pitch": 0,
+        "credito": "APFFVC — Archivo de Patrimonio Fotográfico y Fílmico del Valle del Cauca"
       },
       {
         "nombre": "La Economía Cafetera y el Ferrocarril",
@@ -375,7 +394,8 @@
         ],
         "curiosidad": "En 1959 el bloqueo de Cuba impulsó la producción de azúcar en el Valle del Cauca para exportación a través del FC del Pacífico.",
         "panorama": "images/Economia.png",
-        "panorama_pitch": -5
+        "panorama_pitch": -5,
+        "credito": "APFFVC — Archivo de Patrimonio Fotográfico y Fílmico del Valle del Cauca"
       },
       {
         "nombre": "Obreros y Comunidades de las Estaciones",
@@ -390,7 +410,8 @@
         ],
         "curiosidad": "La sola mención de los ferrocarriles arrastra evocaciones: hay músicas que parecen el ritmo del tren, historias de abuelos y fotografías familiares en estaciones.",
         "panorama": "images/Trabajadores.png",
-        "panorama_pitch": -3
+        "panorama_pitch": -3,
+        "credito": "APFFVC — Archivo de Patrimonio Fotográfico y Fílmico del Valle del Cauca"
       }
     ]
   },
@@ -427,7 +448,8 @@
         ],
         "curiosidad": "Las vaporinas 'las negras' eran alimentadas con carbón en calderas, y la temperatura cerca de la caldera hacía el trabajo del fogonero extremadamente duro.",
         "panorama": "images/Locomotora.png",
-        "panorama_pitch": 0
+        "panorama_pitch": 0,
+        "credito": "APFFVC — Archivo de Patrimonio Fotográfico y Fílmico del Valle del Cauca"
       },
       {
         "nombre": "Emilio Portilla – Maquinista de la División Nariño",
@@ -442,7 +464,8 @@
         ],
         "curiosidad": "Emilio recuerda: 'iba despacio, bueno y cuando sentí fue el tren al suelo' — un accidente de descarrilamiento en Tumaco.",
         "panorama": "images/maquinista.png",
-        "panorama_pitch": -5
+        "panorama_pitch": -5,
+        "credito": "Biblioteca Departamental del Valle del Cauca"
       },
       {
         "nombre": "Gildardo Guevara – Técnico del Ferrocarril de Cali",
@@ -457,7 +480,8 @@
         ],
         "curiosidad": "La explosión de 7 camiones con dinamita el 7 de agosto de 1956 devastó el barrio San Nicolás, marcando para siempre la memoria de toda una generación.",
         "panorama": "images/Tecnico.png",
-        "panorama_pitch": -3
+        "panorama_pitch": -3,
+        "credito": "APFFVC — Archivo de Patrimonio Fotográfico y Fílmico del Valle del Cauca"
       }
     ]
   },
@@ -494,7 +518,8 @@
         ],
         "curiosidad": "El POTD contempla la reconexión del Valle con Buenaventura y hacia el norte hasta El Cerrito, así como hacia el Eje Cafetero.",
         "panorama": "images/Podt.png",
-        "panorama_pitch": 0
+        "panorama_pitch": 0,
+        "credito": "Gobernación del Valle del Cauca"
       },
       {
         "nombre": "Tramo Cali – Jamundí: El Primer Paso",
@@ -509,7 +534,8 @@
         ],
         "curiosidad": "La reconversión de la vía férrea propiciaría el desarrollo de proyectos de matriz económica (logística, empresarial, comercio y servicios).",
         "panorama": "images/Caja.png",
-        "panorama_pitch": -5
+        "panorama_pitch": -5,
+        "credito": "Dominio público — Fuente: Internet"
       },
       {
         "nombre": "La Nostalgia como Motor del Futuro",
@@ -524,7 +550,8 @@
         ],
         "curiosidad": "El proyecto reconoce la alta conmutación cotidiana entre los municipios del área metropolitana de Cali por motivos laborales, de educación y salud.",
         "panorama": "images/Nostalgia.png",
-        "panorama_pitch": -3
+        "panorama_pitch": -3,
+        "credito": "APFFVC — Archivo de Patrimonio Fotográfico y Fílmico del Valle del Cauca"
       }
     ]
   },
@@ -560,6 +587,7 @@
         "curiosidad": "Estas herramientas, aunque simples en apariencia, fueron clave para construir y mantener cientos de kilómetros de vía férrea con precisión manual.",
         "panorama": "",
         "panorama_pitch": 0,
+        "credito": "Biblioteca Departamental del Valle del Cauca",
         "imagen_thumb": "images/herramientas.png"
       }
     ]

@@ -111,6 +111,12 @@ $trenes = json_decode($json, true);
       <div class="track-dots"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
       <div class="track-line"></div>
     </div>
+    <p class="creditos">
+    Producido y desarrollado por: 
+    Maria del Mar Murillo, 
+    Angie Lorena Riascos y 
+    Daniel Alejandro Ramos
+  </p>
   </footer>
 
   <script src="script.js?v=11"></script>
