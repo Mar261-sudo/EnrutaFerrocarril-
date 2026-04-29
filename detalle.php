@@ -71,9 +71,8 @@ $esPanorama  = !empty($panoramaUrl);
           class="capa-imagen"
           src="<?= htmlspecialchars($imagenPlana) ?>"
           alt="<?= htmlspecialchars($parada["nombre"]) ?>"
-          style="object-fit: cover;"
+          style="object-fit: <?= $esPanorama ? 'cover' : 'contain' ?>; background: #111;"
         >
- 
       <?php endif; ?>
  
       <!-- Overlay invitación -->
