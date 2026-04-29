@@ -69,9 +69,9 @@ $divisor = max($totalParadas - 1, 1); // evita división por cero
       <div class="window-frame">
         <div class="window-glass">
           <iframe
-            src="https://www.youtube.com/embed/Xw9bstYy80M?autoplay=1&mute=1&loop=1&controls=0&playlist=Xw9bstYy80M&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1"
+           src="video/video.mp4"
             frameborder="0"
-            allow="autoplay; encrypted-media"
+            allow="autoplay"
             style="position:absolute; top:50%; left:50%; width:200%; height:100%; transform:translate(-50%,-50%); pointer-events:none; z-index:1;">
           </iframe>
           <div class="landscape" id="landscape" style="z-index:2; opacity:0;"></div>

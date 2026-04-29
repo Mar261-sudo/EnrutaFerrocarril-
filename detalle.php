@@ -71,16 +71,16 @@ $esPanorama  = !empty($panoramaUrl);
           class="capa-imagen"
           src="<?= htmlspecialchars($imagenPlana) ?>"
           alt="<?= htmlspecialchars($parada["nombre"]) ?>"
-          style="object-fit:contain;"
+          style="object-fit: cover;"
         >
  
       <?php endif; ?>
  
       <!-- Overlay invitación -->
       <div class="expand-overlay" onclick="expandirVista()">
-        <div class="expand-overlay-icon"><?= $esPanorama ? '⟳' : '' ?></div>
+        <div class="expand-overlay-icon"><?= $esPanorama ? '' : '' ?></div>
         <div class="expand-overlay-text">
-          <?= $esPanorama ? 'Clic para explorar en 360°' : 'Clic para ampliar imagen' ?>
+          <?= $esPanorama ? '' : '' ?>
         </div>
       </div>
  

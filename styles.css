@@ -2,7 +2,6 @@
 FERROCARRIL — Estilos Mobile-First Completo
    ======================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Special+Elite&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Merriweather:ital,wght@0,300;0,400;1,300&display=swap');
 
 :root {
@@ -31,7 +30,7 @@ FERROCARRIL — Estilos Mobile-First Completo
 TAMAÑO DE LETRA — controlado desde JS via font-size en <html>
    ================================================================ */
 html {
-  font-size: 16px;
+  font-size: 20px;
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
 }
@@ -360,10 +359,6 @@ button {
 .bg-smoke span {
   position: absolute;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.04);
-  animation: bgSmoke 12s infinite ease-out;
-  filter: blur(8px);
-
   background: rgba(192, 112, 144, 0.04);
   animation: bgSmoke 12s infinite ease-out;
   filter: blur(8px);
@@ -476,7 +471,6 @@ button {
 }
 
 .header-emblem {
-  filter: drop-shadow(0 0 16px rgba(201, 166, 107, 0.5));
   font-size: 3.5rem;
   filter: drop-shadow(0 0 16px rgba(192, 112, 144, 0.5));
   animation: floatEmblem 4s ease-in-out infinite;
@@ -492,24 +486,6 @@ button {
   50% {
     transform: translateY(-8px) rotate(2deg);
   }
-}
-
-.header-sub {
-  font-family: var(--font-display);
-  font-size: 0.7rem;
-  letter-spacing: 5px;
-  color: var(--ocre);
-  text-transform: uppercase;
-  opacity: 0.8;
-  margin-bottom: 4px;
-}
-
-.header-title {
-  font-family: var(--font-display);
-  font-size: clamp(1.8rem, 8vw, 4.5rem);
-  line-height: 1.1;
-  color: var(--marfil-claro);
-  text-shadow: 0 0 30px rgba(201, 166, 107, 0.3);
 }
 
 .header-sub {
@@ -601,12 +577,6 @@ button {
   align-items: center;
   gap: 10px;
   padding: 16px;
-  border-bottom: 1px solid rgba(201, 166, 107, 0.1);
-  display: grid;
-  grid-template-columns: 44px 1fr auto;
-  align-items: center;
-  gap: 10px;
-  padding: 16px;
   border-bottom: 1px solid rgba(140, 40, 72, 0.15);
   cursor: pointer;
   transition: all 0.25s ease;
@@ -619,13 +589,6 @@ button {
 
 .board-row:last-child {
   border-bottom: none;
-}
-
-.board-row:hover,
-.board-row:active {
-  background: rgba(201, 166, 107, 0.08);
-  border-left: 3px solid var(--ocre);
-  padding-left: 13px;
 }
 
 .board-row:hover,
@@ -1048,7 +1011,7 @@ button {
 .window-reflections {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, transparent 40%, rgba(255, 255, 255, 0.02) 60%, transparent 100%);
+  background: transparent;
   pointer-events: none;
 }
 
@@ -1566,7 +1529,7 @@ button {
 .overlay-contexto {
   position: absolute;
   inset: 0;
-  background: #000;
+  background: transparent;
   z-index: 5;
   display: flex;
   flex-direction: column;
@@ -2129,9 +2092,10 @@ MÓVIL — evitar solapamiento btn-volver y font-controls
 }
 
 .detalle-360-wrapper {
-  position: relative;
+ position: relative;
   width: 100%;
-  height: 200px;
+  height: auto;
+  aspect-ratio: 4 / 3;
   border-radius: 10px;
   overflow: hidden;
   transition: height 0.5s cubic-bezier(.4, 0, .2, 1), box-shadow 0.3s ease;
@@ -2140,8 +2104,8 @@ MÓVIL — evitar solapamiento btn-volver y font-controls
 }
 
 .detalle-360-wrapper.expandido {
-  height: 500px;
-  box-shadow: 0 8px 36px rgba(0, 0, 0, 0.75);
+  aspect-ratio: unset;
+  height: 80vh;
 }
 
 /* ── Capa 1: imagen plana (siempre presente) ── */
@@ -2284,4 +2248,98 @@ MÓVIL — evitar solapamiento btn-volver y font-controls
   object-fit: contain;
   background: #111;
   display: block;
+}
+
+/* ================================================================
+   BANNER INSTITUCIONAL
+   ================================================================ */
+.banner-institucional {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0.6rem 1.5rem;
+  background: rgba(10, 8, 5, 0.85);
+  border-bottom: 1px solid var(--ocre-oscuro);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  position: relative;
+  z-index: 10;
+}
+
+.banner-patrocinador {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.banner-logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0.9) sepia(0.2);
+}
+
+.banner-nombre {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: var(--ocre);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.banner-divider-vertical {
+  width: 1px;
+  height: 30px;
+  background: var(--ocre-oscuro);
+  opacity: 0.5;
+}
+
+/* ================================================================
+   MÓVIL ≤ 599px
+   ================================================================ */
+@media (max-width: 599px) {
+
+  /* font-controls queda justo debajo del banner (~52px de alto) */
+  .page-index .font-controls {
+    position: fixed;
+    top: 52px;
+    right: 14px;
+  }
+
+  .page-tren .font-controls {
+    position: fixed;
+    top: 52px;
+    right: 14px;
+  }
+
+  /* Texto del footer sube encima de las vías */
+.main-footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-text-principal {
+  order: -1; /* el texto va primero */
+  text-align: center;
+  padding-bottom: 6px;
+}
+
+.footer-tracks {
+  order: 1; /* las vías van al final */
+}
+}
+.expand-overlay {
+  position: absolute;
+  inset: 0;
+  background: transparent;  /* ← quita el rgba(0,0,0,0.5) */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  z-index: 10;
+  cursor: pointer;
+  transition: opacity 0.35s ease;
 }

@@ -13,16 +13,6 @@ $trenes = json_decode($json, true);
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body class="page-index">
-
-  <!-- Control de tamaño de letra -->
-  <div class="font-controls" aria-label="Tamaño de letra">
-    <button class="btn-font-decrease" onclick="decreaseFontSize()" title="Reducir letra">A−</button>
-    <span class="fc-divider"></span>
-    <span class="font-size-indicator">A</span>
-    <span class="fc-divider"></span>
-    <button class="btn-font-increase" onclick="increaseFontSize()" title="Agrandar letra">A+</button>
-  </div>
-
   <!-- Partículas de humo de fondo -->
   <div class="bg-smoke">
     <span></span><span></span><span></span><span></span><span></span>
@@ -34,6 +24,29 @@ $trenes = json_decode($json, true);
     <div class="rail"></div>
     <div class="ties"></div>
   </div>
+
+    <!--Banner institucional-->
+    <div class="banner-institucional"> 
+      <div class="banner-patrocinador">
+        <img src="images/enRuta.png" alt="Empresa" class="banner-logo">
+        
+      </div>
+      <div class="banner-divider-vertical">
+      </div>
+      <div class="banner-patrocinador">
+        <img src="images/bibloteca.png" alt="Biblioteca" class="banner-logo">
+        
+      </div>  
+    </div>
+
+    <!-- Control de tamaño de letra -->
+    <div class="font-controls" aria-label="Tamaño de letra">
+      <button class="btn-font-decrease" onclick="decreaseFontSize()" title="Reducir letra">A−</button>
+      <span class="fc-divider"></span>
+      <span class="font-size-indicator">A</span>
+      <span class="fc-divider"></span>
+      <button class="btn-font-increase" onclick="increaseFontSize()" title="Agrandar letra">A+</button>
+    </div>
 
   <!-- Header -->
   <header class="main-header">
@@ -92,7 +105,7 @@ $trenes = json_decode($json, true);
 
   <!-- Footer -->
   <footer class="main-footer">
-    <p>Exposición Ferroviaria &mdash; Patrimonio sobre Rieles</p>
+    <p class="footer-text-principal">Exposición Ferroviaria &mdash; Patrimonio sobre Rieles</p>
     <div class="footer-tracks">
       <div class="track-line"></div>
       <div class="track-dots"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
