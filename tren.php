@@ -6,9 +6,8 @@ $id = $_GET['id'] ?? null;
 $tren = $trenes[$id] ?? null;
 
 $totalParadas = $tren ? count($tren["paradas"]) : 0;
-$divisor = max($totalParadas - 1, 1); // evita división por cero
+$divisor = max($totalParadas - 1, 1);
 
-// Calcular el id del siguiente tren (cíclico o null si es el último)
 $idsOrdenados = array_keys($trenes);
 $posActual = array_search((string)$id, $idsOrdenados);
 $idSiguienteTren = null;
@@ -23,7 +22,7 @@ if ($posActual !== false && isset($idsOrdenados[$posActual + 1])) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?= $tren ? htmlspecialchars($tren["nombre"]) : "Tren" ?> — Exposición Ferroviaria</title>
   <link rel="icon" type="image/x-icon" href="icons/logo.ico">
-  <link rel="stylesheet" href="styles.css?v=12">
+  <link rel="stylesheet" href="styles.css?v=13">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.css"/>
@@ -44,12 +43,8 @@ if ($posActual !== false && isset($idsOrdenados[$posActual + 1])) {
   <div class="boarding-screen" id="boardingScreen">
     <div class="boarding-inner">
 
-      <!-- ══════════════════════════════════
-           TICKET VINTAGE REDISEÑADO
-           ══════════════════════════════════ -->
       <div class="boarding-ticket vintage-ticket">
 
-        <!-- Cabecera del ticket -->
         <div class="ticket-top">
           <div class="ticket-header-left">
             <span class="ticket-company">FERROCARRIL DEL PACÍFICO</span>
@@ -61,24 +56,20 @@ if ($posActual !== false && isset($idsOrdenados[$posActual + 1])) {
           </div>
         </div>
 
-        <!-- Franja roja decorativa -->
         <div class="ticket-stripe"></div>
 
-        <!-- Destino principal -->
         <div class="ticket-destination-block">
           <span class="ticket-dest-label">DESTINO</span>
           <div class="ticket-destination"><?= htmlspecialchars($tren["nombre"]) ?></div>
           <div class="ticket-era"><?= htmlspecialchars($tren["era"] ?? "Siglo XIX") ?></div>
         </div>
 
-        <!-- Divisor dentado / perforado -->
         <div class="ticket-tear-line">
           <div class="ticket-tear-circle left"></div>
           <div class="ticket-tear-dashes"></div>
           <div class="ticket-tear-circle right"></div>
         </div>
 
-        <!-- Datos del viaje -->
         <div class="ticket-bottom">
           <div class="ticket-field">
             <span class="ticket-field-label">PARTIDA</span>
@@ -93,7 +84,6 @@ if ($posActual !== false && isset($idsOrdenados[$posActual + 1])) {
           </div>
         </div>
 
-        <!-- Talón: paradas -->
         <div class="ticket-stub">
           <span class="ticket-stub-text">
             <?= $totalParadas ?> PARADA<?= $totalParadas !== 1 ? 'S' : '' ?> · CLASE ÚNICA
@@ -102,7 +92,6 @@ if ($posActual !== false && isset($idsOrdenados[$posActual + 1])) {
         </div>
 
       </div>
-      <!-- FIN TICKET VINTAGE -->
 
       <button class="btn-embarcar" id="btnEmbarcar" onclick="iniciarViaje()">
         <span class="btn-text">SUBIR AL FERROCARRIL</span>
@@ -118,7 +107,7 @@ if ($posActual !== false && isset($idsOrdenados[$posActual + 1])) {
       <div class="window-frame">
         <div class="window-glass">
           <iframe
-           src="video/video.mp4"
+            src="video/video.mp4"
             frameborder="0"
             allow="autoplay"
             style="position:absolute; top:50%; left:50%; width:200%; height:100%; transform:translate(-50%,-50%); pointer-events:none; z-index:1;">
@@ -189,6 +178,6 @@ if ($posActual !== false && isset($idsOrdenados[$posActual + 1])) {
   </div>
 <?php endif; ?>
 
-  <script src="script.js?v=12"></script>
+  <script src="script.js?v=13"></script>
 </body>
 </html>

@@ -26,28 +26,25 @@ $trenes = json_decode($json, true);
     <div class="ties"></div>
   </div>
 
-    <!--Banner institucional-->
-    <div class="banner-institucional"> 
-      <div class="banner-patrocinador">
-        <img src="images/enRuta.png" alt="Empresa" class="banner-logo">
-        
-      </div>
-      <div class="banner-divider-vertical">
-      </div>
-      <div class="banner-patrocinador">
-        <img src="images/biblioteca.png" alt="Biblioteca" class="banner-logo">
-        
-      </div>  
+  <!-- Banner institucional -->
+  <div class="banner-institucional"> 
+    <div class="banner-patrocinador">
+      <img src="images/enRuta.png" alt="Empresa" class="banner-logo">
     </div>
+    <div class="banner-divider-vertical"></div>
+    <div class="banner-patrocinador">
+      <img src="images/biblioteca.png" alt="Biblioteca" class="banner-logo">
+    </div>  
+  </div>
 
-    <!-- Control de tamaño de letra -->
-    <div class="font-controls" aria-label="Tamaño de letra">
-      <button class="btn-font-decrease" onclick="decreaseFontSize()" title="Reducir letra">A−</button>
-      <span class="fc-divider"></span>
-      <span class="font-size-indicator">A</span>
-      <span class="fc-divider"></span>
-      <button class="btn-font-increase" onclick="increaseFontSize()" title="Agrandar letra">A+</button>
-    </div>
+  <!-- Control de tamaño de letra -->
+  <div class="font-controls" aria-label="Tamaño de letra">
+    <button class="btn-font-decrease" onclick="decreaseFontSize()" title="Reducir letra">A−</button>
+    <span class="fc-divider"></span>
+    <span class="font-size-indicator">A</span>
+    <span class="fc-divider"></span>
+    <button class="btn-font-increase" onclick="increaseFontSize()" title="Agrandar letra">A+</button>
+  </div>
 
   <!-- Header — clickeable abre el modal de trenes -->
   <header class="main-header header-clickeable" id="mainHeader" onclick="abrirModalTrenes()" role="button" tabindex="0" aria-label="Ver lista de trenes" title="Haz clic para ver los trenes">
@@ -82,6 +79,7 @@ $trenes = json_decode($json, true);
       <?php endforeach; ?>
     </div>
   </section>
+
   <!-- Footer -->
   <footer class="main-footer">
     <p class="footer-text-principal">Exposición Ferroviaria &mdash; Patrimonio sobre Rieles</p>
@@ -98,7 +96,6 @@ $trenes = json_decode($json, true);
   <div class="modal-trenes-overlay" id="modalTrenesOverlay" onclick="cerrarModalTrenes(event)" aria-modal="true" role="dialog" aria-label="Lista de trenes">
     <div class="modal-trenes-inner" id="modalTrenesInner">
 
-      <!-- Cabecera del modal -->
       <div class="modal-header">
         <div class="modal-header-left">
           <span class="modal-title-text">TABLERO DE SALIDAS</span>
@@ -106,7 +103,6 @@ $trenes = json_decode($json, true);
         <button class="modal-close-btn" onclick="cerrarModalTrenes(event)" aria-label="Cerrar">✕</button>
       </div>
 
-      <!-- Tablero de horarios estilo vintage -->
       <section class="departure-board departure-board-modal">
         <div class="board-header">
           <span class="board-label">SALIDAS</span>
@@ -135,6 +131,6 @@ $trenes = json_decode($json, true);
     </div>
   </div>
 
-  <script src="script.js?v=12"></script>
+  <script src="script.js?v=13"></script>
 </body>
 </html>

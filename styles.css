@@ -1,109 +1,58 @@
 /* ========================================================
-FERROCARRIL — Estilos Mobile-First Completo
+   FERROCARRIL — Estilos Mobile-First Completo v13
    ======================================================== */
 
+/* ──────────────────────────────────────────────────────
+   IMPORTS & VARIABLES
+   ────────────────────────────────────────────────────── */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Special+Elite&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Merriweather:ital,wght@0,300;0,400;1,300&display=swap');
 
 :root {
-  /* — ocres → acentos activos — */
   --ocre: #C07090;
-  /* acento principal */
   --ocre-claro: #D898B0;
-  /* acento claro / hover */
   --ocre-oscuro: #8C2848;
-  /* bordes activos / rubí */
-
-  /* — aceros → superficies medias — */
   --acero: #5C1830;
-  /* superficie / card */
   --acero-claro: #8C2848;
-  /* borde visible */
-
-
   --shadow-warm: 0 4px 30px rgba(201, 166, 107, 0.25);
   --shadow-deep: 0 8px 40px rgba(0, 0, 0, 0.6);
   --glow-ocre: 0 0 20px rgba(201, 166, 107, 0.4);
   --glow-rojo: 0 0 20px rgba(139, 26, 26, 0.5);
 }
 
-/* ================================================================
-TAMAÑO DE LETRA — controlado desde JS via font-size en <html>
-   ================================================================ */
+/* ========================================================
+   TAMAÑO DE LETRA
+   ======================================================== */
 html {
   font-size: 20px;
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
 }
 
-body {
-  font-size: 1rem;
-}
+body { font-size: 1rem; }
 
-.parada-desc,
-.detalle-desc,
-.facts-list li,
-.parada-curiosidad p,
-.detalle-curiosity p {
-  font-size: 0.9rem;
-}
+.parada-desc, .detalle-desc, .facts-list li,
+.parada-curiosidad p, .detalle-curiosity p { font-size: 0.9rem; }
 
-.parada-nombre,
-.detalle-title {
-  font-size: clamp(1.2rem, 5vw, 2rem);
-}
+.parada-nombre, .detalle-title { font-size: clamp(1.2rem, 5vw, 2rem); }
 
-/* ================================================================
-ICONOS SVG VINTAGE
-================================================================ */
-.icon-tren-header {
-  width: 64px;
-  height: 64px;
-  display: block;
+/* ========================================================
+   ICONOS SVG VINTAGE
+   ======================================================== */
+.icon-tren-header, .icon-tren-timeline, .icon-progress-train,
+.icon-btn, .icon-sm, .ticket-train-icon img {
   filter: brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(5deg);
 }
 
-.icon-tren-timeline {
-  width: 32px;
-  height: 32px;
-  display: block;
-  transform: scaleX(-1);
-  filter: brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(5deg);
-}
+.icon-tren-header { width: 64px; height: 64px; display: block; }
+.icon-tren-timeline { width: 32px; height: 32px; transform: scaleX(-1); }
+.icon-progress-train { width: 24px; height: 24px; transform: scaleX(-1); }
+.icon-btn { width: 22px; height: 22px; display: inline-block; vertical-align: middle; }
+.icon-sm { width: 20px; height: 20px; display: inline-block; vertical-align: middle; flex-shrink: 0; }
+.ticket-train-icon img { width: 40px; height: 40px; filter: brightness(0) saturate(100%) invert(60%) sepia(50%) saturate(500%) hue-rotate(5deg); }
 
-.icon-progress-train {
-  width: 24px;
-  height: 24px;
-  display: block;
-  transform: scaleX(-1);
-  filter: brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(5deg);
-}
-
-.icon-btn {
-  width: 22px;
-  height: 22px;
-  display: inline-block;
-  vertical-align: middle;
-  filter: brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(5deg);
-}
-
-.icon-sm {
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-  vertical-align: middle;
-  flex-shrink: 0;
-  filter: brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(5deg);
-}
-
-.ticket-train-icon img {
-  width: 40px;
-  height: 40px;
-  filter: brightness(0) saturate(100%) invert(60%) sepia(50%) saturate(500%) hue-rotate(5deg);
-}
-
-/* ================================================================
-  CONTROL DE TAMAÑO DE LETRA
-   ================================================================ */
+/* ========================================================
+   CONTROL DE TAMAÑO DE LETRA
+   ======================================================== */
 .font-controls {
   position: fixed;
   top: 14px;
@@ -117,7 +66,6 @@ ICONOS SVG VINTAGE
   border-radius: 6px;
   padding: 5px 8px;
   backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
 }
 
 .font-controls button {
@@ -129,21 +77,12 @@ ICONOS SVG VINTAGE
   cursor: pointer;
   padding: 3px 6px;
   border-radius: 3px;
-  line-height: 1;
   transition: background 0.2s;
-  touch-action: manipulation;
 }
 
 .font-controls button:hover,
-.font-controls button:active {
-  background: rgba(201, 166, 107, 0.15);
-}
-
-.font-controls button:disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
-}
-
+.font-controls button:active { background: rgba(201, 166, 107, 0.15); }
+.font-controls button:disabled { opacity: 0.3; cursor: not-allowed; }
 .font-size-indicator {
   font-family: var(--font-display);
   font-size: 0.65rem;
@@ -153,7 +92,6 @@ ICONOS SVG VINTAGE
   text-align: center;
   letter-spacing: 1px;
 }
-
 .font-controls .fc-divider {
   width: 1px;
   height: 14px;
@@ -161,142 +99,73 @@ ICONOS SVG VINTAGE
   margin: 0 2px;
 }
 
-/* ================================================================
+/* ========================================================
    PALETA POR PÁGINA
-   ================================================================ */
-
-/* INDEX — Tablero principal */
+   ======================================================== */
 body.page-index {
   --carbon: #140206;
-  /* fondo más profundo */
   --carbon-medio: #200408;
-  /* fondo principal */
   --carbon-claro: #340810;
-  /* fondo elevado */
-
   --ocre: #C0A060;
-  /* marfil como acento principal */
   --ocre-claro: #FFF8E8;
-  /* marfil claro / hover */
   --ocre-oscuro: #C0A060;
-  /* dorado apagado / bordes */
-
   --acero: #340810;
-  /* superficie / card */
   --acero-claro: #C0A060;
-  /* borde visible */
-
   --marfil: #F0E0C8;
-  /* texto secundario */
   --marfil-claro: #FFF8F0;
-  /* texto principal / títulos */
-
   --rojo-tren: #D01828;
-  /* acento de acción / flechas */
-
   --font-display: 'Playfair Display', Georgia, serif;
   --font-body: 'Libre Baskerville', Georgia, serif;
-
   --shadow-warm: 0 4px 24px rgba(208, 24, 40, 0.20);
   --shadow-deep: 0 8px 40px rgba(0, 0, 0, 0.80);
   --glow-ocre: 0 0 16px rgba(240, 224, 192, 0.25);
   --glow-rojo: 0 0 16px rgba(208, 24, 40, 0.45);
 }
 
-/* TREN — Viaje / embarque */
 body.page-tren {
-  /* — fondos  — */
   --carbon: #140807;
-  /* fondo profundo cálido */
   --carbon-medio: #24120E;
-  /* interior del vagón */
   --carbon-claro: #3A1F18;
-  /* superficies elevadas */
-
-  /* — acento principal — */
   --ocre: #D4A85A;
-  /* dorado vivo */
   --ocre-claro: #F2D18F;
-  /* brillo / reflejo */
   --ocre-oscuro: #9C6B2F;
-  /* profundidad del metal */
-
-  /* — superficies — */
   --acero: #3A1F18;
-  /* paneles del vagón */
   --acero-claro: #7A4A2A;
-  /* bordes cálidos */
-
-  /* — textos — */
   --marfil: #EADCC6;
-  /* texto suave */
   --marfil-claro: #FFF6E8;
-  /* texto principal */
-
-  /* — acción (energía del viaje) — */
   --rojo-tren: #C4452D;
-  /* rojo quemado intenso */
-
   --font-display: 'Crimson Text', Georgia, serif;
   --font-body: 'Merriweather', Georgia, serif;
-
-  /* — efectos — */
   --shadow-warm: 0 4px 30px rgba(196, 69, 45, 0.25);
   --shadow-deep: 0 8px 40px rgba(0, 0, 0, 0.85);
   --glow-ocre: 0 0 20px rgba(212, 168, 90, 0.45);
   --glow-rojo: 0 0 20px rgba(196, 69, 45, 0.55);
 }
 
-/* DETALLE — Vista de detalle individual */
 body.page-detalle {
   --carbon: #2b1a0f;
-  /* fondo  */
   --carbon-medio: #3a2416;
-  /* fondo principal */
   --carbon-claro: #4a2f1d;
-  /* fondo elevado */
-
   --ocre: #e0b84f;
-  /* dorado */
   --ocre-claro: #f5d98a;
-  /* brillo cálido */
   --ocre-oscuro: #a67c2e;
-  /* dorado envejecido */
-
   --acero: #4a2f1d;
-  /* cards */
   --acero-claro: #7a5230;
-  /* borde madera */
-
   --marfil: #f0e2c8;
-  /* texto */
   --marfil-claro: #fff6e6;
-  /* títulos */
-
   --rojo-tren: #a83228;
-  /* vino elegante  */
-
   --font-display: 'Crimson Text', Georgia, serif;
   --font-body: 'Merriweather', Georgia, serif;
-
   --shadow-warm: 0 6px 30px rgba(168, 50, 40, 0.35);
   --shadow-deep: 0 10px 40px rgba(43, 26, 15, 0.6);
-
   --glow-ocre: 0 0 18px rgba(224, 184, 79, 0.35);
   --glow-rojo: 0 0 16px rgba(168, 50, 40, 0.45);
 }
 
-/* ================================================================
-   RESET
-   ================================================================ */
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* ========================================================
+   RESET & BASE
+   ======================================================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
   font-family: var(--font-body);
@@ -305,20 +174,6 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   line-height: 1.7;
-  -webkit-tap-highlight-color: transparent;
-}
-
-body::before {
-
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 0px, rgba(255, 255, 255, 0.015) 1px, transparent 1px, transparent 4px);
-  pointer-events: none;
-  z-index: 9998;
-
-  display: none;
-
 }
 
 body::after {
@@ -330,24 +185,13 @@ body::after {
   z-index: 9997;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+a { color: inherit; text-decoration: none; }
+button { font-family: var(--font-display); cursor: pointer; }
+.hidden { display: none !important; }
 
-button {
-  font-family: var(--font-display);
-  cursor: pointer;
-  touch-action: manipulation;
-}
-
-.hidden {
-  display: none !important;
-}
-
-/* ================================================================
-  INDEX — TABLERO
-   ================================================================ */
+/* ========================================================
+   INDEX — TABLERO
+   ======================================================== */
 .bg-smoke {
   position: fixed;
   inset: 0;
@@ -362,63 +206,18 @@ button {
   background: rgba(192, 112, 144, 0.04);
   animation: bgSmoke 12s infinite ease-out;
   filter: blur(8px);
-
 }
 
-.bg-smoke span:nth-child(1) {
-  width: 200px;
-  height: 200px;
-  left: 5%;
-  top: 70%;
-  animation-delay: 0s;
-}
-
-.bg-smoke span:nth-child(2) {
-  width: 150px;
-  height: 150px;
-  left: 30%;
-  top: 80%;
-  animation-delay: 2s;
-}
-
-.bg-smoke span:nth-child(3) {
-  width: 180px;
-  height: 180px;
-  left: 60%;
-  top: 60%;
-  animation-delay: 4s;
-}
-
-.bg-smoke span:nth-child(4) {
-  width: 120px;
-  height: 120px;
-  left: 80%;
-  top: 75%;
-  animation-delay: 6s;
-}
-
-.bg-smoke span:nth-child(5) {
-  width: 160px;
-  height: 160px;
-  left: 50%;
-  top: 85%;
-  animation-delay: 8s;
-}
+.bg-smoke span:nth-child(1) { width: 200px; height: 200px; left: 5%; top: 70%; animation-delay: 0s; }
+.bg-smoke span:nth-child(2) { width: 150px; height: 150px; left: 30%; top: 80%; animation-delay: 2s; }
+.bg-smoke span:nth-child(3) { width: 180px; height: 180px; left: 60%; top: 60%; animation-delay: 4s; }
+.bg-smoke span:nth-child(4) { width: 120px; height: 120px; left: 80%; top: 75%; animation-delay: 6s; }
+.bg-smoke span:nth-child(5) { width: 160px; height: 160px; left: 50%; top: 85%; animation-delay: 8s; }
 
 @keyframes bgSmoke {
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 0;
-  }
-
-  20% {
-    opacity: 1;
-  }
-
-  100% {
-    transform: translateY(-300px) scale(2);
-    opacity: 0;
-  }
+  0% { transform: translateY(0) scale(1); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translateY(-300px) scale(2); opacity: 0; }
 }
 
 .rails-bg {
@@ -437,14 +236,8 @@ button {
   width: 100%;
   background: linear-gradient(to right, transparent, var(--ocre-oscuro) 20%, var(--ocre-oscuro) 80%, transparent);
 }
-
-.rail:first-child {
-  top: 15px;
-}
-
-.rail:nth-child(2) {
-  top: 30px;
-}
+.rail:first-child { top: 15px; }
+.rail:nth-child(2) { top: 30px; }
 
 .ties {
   position: absolute;
@@ -456,6 +249,7 @@ button {
   opacity: 0.35;
 }
 
+/* Header */
 .main-header {
   position: relative;
   z-index: 10;
@@ -477,15 +271,8 @@ button {
 }
 
 @keyframes floatEmblem {
-
-  0%,
-  100% {
-    transform: translateY(0) rotate(-2deg);
-  }
-
-  50% {
-    transform: translateY(-8px) rotate(2deg);
-  }
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
 }
 
 .header-sub {
@@ -505,11 +292,7 @@ button {
   color: var(--marfil-claro);
   text-shadow: 0 0 30px rgba(192, 112, 144, 0.3);
 }
-
-.header-title em {
-  color: var(--ocre);
-  font-style: italic;
-}
+.header-title em { color: var(--ocre); font-style: italic; }
 
 .header-tagline {
   font-style: italic;
@@ -527,6 +310,7 @@ button {
   font-size: 1rem;
 }
 
+/* Tablero de salidas */
 .departure-board {
   position: relative;
   z-index: 10;
@@ -556,14 +340,6 @@ button {
   white-space: nowrap;
 }
 
-.board-clock {
-  font-family: var(--font-display);
-  font-size: clamp(1rem, 4vw, 1.4rem);
-  color: var(--ocre-claro);
-  letter-spacing: 2px;
-  text-shadow: var(--glow-ocre);
-}
-
 .board-rows {
   background: var(--carbon-medio);
   border: 2px solid var(--ocre-oscuro);
@@ -583,14 +359,9 @@ button {
   opacity: 0;
   transform: translateX(-15px);
   animation: rowSlideIn 0.5s ease forwards;
-  text-decoration: none;
-  color: inherit;
 }
 
-.board-row:last-child {
-  border-bottom: none;
-}
-
+.board-row:last-child { border-bottom: none; }
 .board-row:hover,
 .board-row:active {
   background: rgba(192, 112, 144, 0.08);
@@ -598,24 +369,10 @@ button {
   padding-left: 13px;
 }
 
-@keyframes rowSlideIn {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.board-row[data-delay="1"] {
-  animation-delay: 0.2s;
-}
-
-.board-row[data-delay="2"] {
-  animation-delay: 0.4s;
-}
-
-.board-row[data-delay="3"] {
-  animation-delay: 0.6s;
-}
+@keyframes rowSlideIn { to { opacity: 1; transform: translateX(0); } }
+.board-row[data-delay="1"] { animation-delay: 0.2s; }
+.board-row[data-delay="2"] { animation-delay: 0.4s; }
+.board-row[data-delay="3"] { animation-delay: 0.6s; }
 
 .row-number {
   font-family: var(--font-display);
@@ -623,35 +380,23 @@ button {
   color: var(--acero-claro);
   opacity: 0.6;
 }
-
 .row-name {
   font-family: var(--font-display);
   font-size: clamp(0.9rem, 3.5vw, 1.1rem);
   color: var(--marfil-claro);
   letter-spacing: 1px;
 }
-
-.row-era {
-  display: none;
-}
-
-.row-status {
-  display: none;
-}
-
+.row-era, .row-status { display: none; }
 .row-arrow {
   color: var(--ocre);
   font-size: 1.1rem;
   opacity: 0.7;
   transition: transform 0.3s;
 }
-
 .board-row:hover .row-arrow,
-.board-row:active .row-arrow {
-  transform: translateX(4px);
-  opacity: 1;
-}
+.board-row:active .row-arrow { transform: translateX(4px); opacity: 1; }
 
+/* Línea de tiempo */
 .timeline-strip {
   position: relative;
   z-index: 10;
@@ -667,7 +412,6 @@ button {
   max-width: 900px;
   margin: 0 auto;
   height: 70px;
-  overflow: hidden;
 }
 
 .timeline-track::before {
@@ -708,17 +452,14 @@ button {
   border: 2px solid var(--ocre);
   transition: all 0.3s;
 }
-
 .stop-year {
   font-family: var(--font-display);
   font-size: 0.6rem;
   color: var(--ocre);
 }
+.stop-name { display: none; }
 
-.stop-name {
-  display: none;
-}
-
+/* Footer */
 .main-footer {
   position: relative;
   z-index: 10;
@@ -727,6 +468,7 @@ button {
   opacity: 0.4;
   font-style: italic;
   font-size: 0.8rem;
+  margin-top: 60px;
 }
 
 .footer-tracks {
@@ -735,24 +477,18 @@ button {
   justify-content: center;
   margin-top: 12px;
 }
-
 .track-line {
   flex: 1;
   height: 2px;
   background: linear-gradient(to right, transparent, var(--ocre-oscuro));
   max-width: 120px;
 }
-
-.track-line:last-child {
-  background: linear-gradient(to left, transparent, var(--ocre-oscuro));
-}
-
+.track-line:last-child { background: linear-gradient(to left, transparent, var(--ocre-oscuro)); }
 .track-dots {
   display: flex;
   gap: 6px;
   padding: 0 8px;
 }
-
 .track-dots span {
   width: 5px;
   height: 5px;
@@ -760,9 +496,9 @@ button {
   background: var(--ocre-oscuro);
 }
 
-/* ================================================================
-  TREN — EMBARQUE
-   ================================================================ */
+/* ========================================================
+   TREN — EMBARQUE
+   ======================================================== */
 .boarding-screen {
   position: fixed;
   inset: 0;
@@ -775,13 +511,11 @@ button {
   padding: 20px;
   overflow-y: auto;
 }
-
 .boarding-screen.leaving {
   opacity: 0;
   transform: scale(1.04);
   pointer-events: none;
 }
-
 .boarding-inner {
   display: flex;
   flex-direction: column;
@@ -792,6 +526,7 @@ button {
   padding: 20px 0;
 }
 
+/* Ticket vintage */
 .boarding-ticket {
   background: var(--marfil-claro);
   color: var(--carbon);
@@ -802,7 +537,6 @@ button {
   box-shadow: var(--shadow-deep), var(--shadow-warm);
   position: relative;
 }
-
 .boarding-ticket::before,
 .boarding-ticket::after {
   content: "";
@@ -815,24 +549,62 @@ button {
   transform: translateY(-50%);
   z-index: 2;
 }
+.boarding-ticket::before { left: -11px; }
+.boarding-ticket::after { right: -11px; }
 
-.boarding-ticket::before {
-  left: -11px;
+.vintage-ticket {
+  background: #f5ead5 !important;
+  background-image: repeating-linear-gradient(0deg, transparent, transparent 24px, rgba(160,120,60,0.08) 24px, rgba(160,120,60,0.08) 25px), repeating-linear-gradient(90deg, transparent, transparent 24px, rgba(160,120,60,0.04) 24px, rgba(160,120,60,0.04) 25px) !important;
+  color: #2a1a0a !important;
+  border-radius: 2px !important;
+  box-shadow: 0 0 0 1px rgba(120,80,30,0.4), 0 0 0 3px rgba(120,80,30,0.12), 4px 6px 20px rgba(0,0,0,0.5), inset 0 0 40px rgba(180,130,60,0.06) !important;
+  max-width: 370px;
+  animation: ticketBreath 5s ease-in-out infinite;
+}
+.vintage-ticket::before {
+  content: "✦";
+  position: absolute;
+  font-size: 8rem;
+  color: rgba(160, 100, 30, 0.06);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.vintage-ticket::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  background: linear-gradient(135deg, transparent 50%, rgba(120,80,30,0.25) 50%);
 }
 
-.boarding-ticket::after {
-  right: -11px;
+@keyframes ticketBreath {
+  0%, 100% { box-shadow: 0 6px 28px rgba(0,0,0,0.65), inset 0 0 80px rgba(139,100,50,0.10), 0 0 0 1px rgba(110,70,25,0.35); }
+  50% { box-shadow: 0 8px 35px rgba(0,0,0,0.70), inset 0 0 80px rgba(139,100,50,0.14), 0 0 12px rgba(192,120,48,0.18); }
 }
 
 .ticket-top {
+  background: linear-gradient(135deg, #6b1a14 0%, #8b2a1c 60%, #5a1410 100%);
+  background-image: repeating-linear-gradient(to right, transparent 0px, transparent 8px, rgba(255,255,255,0.03) 8px, rgba(255,255,255,0.03) 9px);
+  padding: 10px 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 18px;
-  background: var(--rojo-tren);
-  color: var(--marfil-claro);
+  gap: 8px;
+  border-bottom: 3px solid #8b3010;
 }
 
+.ticket-header-left { display: flex; flex-direction: column; gap: 3px; }
+.ticket-company {
+  font-family: 'Special Elite', monospace;
+  font-size: 0.60rem;
+  letter-spacing: 2.5px;
+  color: #f5e8d0;
+  text-transform: uppercase;
+}
 .ticket-label {
   font-family: 'Special Elite', monospace;
   font-size: 0.58rem;
@@ -840,132 +612,6 @@ button {
   opacity: 0.9;
   text-transform: uppercase;
 }
-
-.ticket-num {
-  font-family: 'Special Elite', monospace;
-  font-size: 0.7rem;
-  opacity: 0.8;
-}
-
-.ticket-divider {
-  height: 1px;
-  margin: 0 18px;
-  border-top: 1px dashed var(--ocre-oscuro);
-  opacity: 0.3;
-}
-
-.ticket-destination {
-  font-family: var(--font-display);
-  font-size: clamp(1.1rem, 5vw, 1.5rem);
-  text-align: center;
-  padding: 14px 18px 4px;
-  color: var(--carbon);
-  line-height: 1.2;
-}
-
-.ticket-era {
-  font-style: italic;
-  text-align: center;
-  color: var(--ocre-oscuro);
-  font-size: 0.82rem;
-  padding-bottom: 10px;
-}
-
-.ticket-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 18px;
-  gap: 8px;
-}
-
-.ticket-bottom>div {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.ticket-bottom .ticket-label {
-  color: var(--carbon);
-  opacity: 0.5;
-}
-
-.ticket-val {
-  font-family: 'Special Elite', monospace;
-  font-size: 0.72rem;
-  color: var(--carbon);
-}
-
-.ticket-train-icon {
-  font-size: 1.6rem;
-}
-
-/* ================================================================
-   TICKET VINTAGE — Boleto de embarque estilo antiguo
-   ================================================================ */
-
-/* Papel envejecido con textura */
-.vintage-ticket {
-  background: #f2e4c8;
-  background-image:
-    radial-gradient(ellipse at top left, rgba(180,130,60,0.12) 0%, transparent 60%),
-    radial-gradient(ellipse at bottom right, rgba(120,70,30,0.10) 0%, transparent 55%);
-  color: #2a1a0e;
-  border-radius: 2px;
-  box-shadow:
-    0 6px 28px rgba(0,0,0,0.65),
-    inset 0 0 80px rgba(139,100,50,0.10),
-    0 0 0 1px rgba(110,70,25,0.35);
-  max-width: 370px;
-}
-
-/* Forzar pseudo-cutouts al color del fondo oscuro de la página */
-.vintage-ticket::before,
-.vintage-ticket::after {
-  background: var(--carbon-medio) !important;
-  box-shadow: none !important;
-}
-
-/* ── Cabecera rojiza estilo telegrama ── */
-.ticket-top {
-  background: linear-gradient(135deg, #6b1a14 0%, #8b2a1c 60%, #5a1410 100%);
-  background-image: repeating-linear-gradient(
-    to right,
-    transparent 0px, transparent 8px,
-    rgba(255,255,255,0.03) 8px, rgba(255,255,255,0.03) 9px
-  );
-  padding: 10px 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 8px;
-  border-bottom: 3px solid #8b3010;
-  box-shadow: inset 0 -1px 0 rgba(0,0,0,0.3);
-}
-
-.ticket-header-left {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.ticket-company {
-  font-family: 'Special Elite', monospace;
-  font-size: 0.60rem;
-  letter-spacing: 2.5px;
-  color: #f5e8d0;
-  text-transform: uppercase;
-  opacity: 0.95;
-  line-height: 1;
-}
-
-.ticket-top .ticket-label {
-  color: #f5e8d0 !important;
-  opacity: 0.55 !important;
-  font-size: 0.44rem !important;
-  letter-spacing: 3px;
-}
-
 .ticket-num-stamp {
   display: flex;
   flex-direction: column;
@@ -974,50 +620,28 @@ button {
   border: 1px solid rgba(245,232,208,0.20);
   border-radius: 2px;
   padding: 4px 10px;
-  min-width: 56px;
-  box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
 }
-
 .ticket-num-label {
   font-family: 'Special Elite', monospace;
   font-size: 0.42rem;
   letter-spacing: 3px;
   color: #f5e8d0;
   opacity: 0.50;
-  text-transform: uppercase;
-  line-height: 1;
-  margin-bottom: 2px;
 }
-
 .ticket-num {
-  font-family: 'Special Elite', monospace !important;
+  font-family: 'Special Elite', monospace;
   font-size: 1.05rem !important;
   color: #f5e8d0 !important;
-  opacity: 1 !important;
   letter-spacing: 3px;
-  line-height: 1;
 }
 
-/* ── Franja decorativa tipo galón de tren ── */
-.ticket-stripe {
-  height: 6px;
-  background: repeating-linear-gradient(
-    to right,
-    #7a2a10 0px,  #7a2a10 10px,
-    #c07830 10px, #c07830 12px,
-    #4a1008 12px, #4a1008 22px,
-    #c07830 22px, #c07830 24px
-  );
-}
+.ticket-stripe { height: 6px; background: repeating-linear-gradient(to right, #7a2a10 0px, #7a2a10 10px, #c07830 10px, #c07830 12px, #4a1008 12px, #4a1008 22px, #c07830 22px, #c07830 24px); }
 
-/* ── Bloque de destino — corazón del ticket ── */
 .ticket-destination-block {
   padding: 14px 20px 10px;
   text-align: center;
-  position: relative;
   background: rgba(139,90,40,0.04);
 }
-
 .ticket-destination-block::before {
   content: "── ✦ ──────────────── ✦ ──";
   display: block;
@@ -1025,10 +649,8 @@ button {
   letter-spacing: 1px;
   color: #7a4a1a;
   opacity: 0.40;
-  margin-bottom: 6px;
   font-family: 'Special Elite', monospace;
 }
-
 .ticket-dest-label {
   display: block;
   font-family: 'Special Elite', monospace;
@@ -1037,62 +659,45 @@ button {
   color: #6b3a14;
   text-transform: uppercase;
   opacity: 0.65;
-  margin-bottom: 5px;
 }
-
 .ticket-destination {
   font-family: 'Libre Baskerville', Georgia, serif !important;
   font-size: clamp(0.95rem, 4vw, 1.35rem) !important;
   color: #1e0f08 !important;
   font-weight: 700;
   letter-spacing: 2px;
-  line-height: 1.15;
-  padding: 0 !important;
   text-transform: uppercase;
-  text-shadow: 1px 1px 0 rgba(255,255,255,0.4), 0 0 8px rgba(180,130,60,0.2);
 }
-
 .ticket-era {
   font-family: 'Libre Baskerville', Georgia, serif !important;
   font-style: italic !important;
   font-size: 0.72rem !important;
   color: #7a4818 !important;
   opacity: 0.80;
-  margin-top: 5px;
-  padding-bottom: 0 !important;
-  letter-spacing: 0.5px;
 }
 
-/* ── Línea de separación perforada ── */
 .ticket-tear-line {
   display: flex;
   align-items: center;
-  position: relative;
   margin: 0;
   height: 20px;
 }
-
 .ticket-tear-circle {
   width: 20px;
   height: 20px;
   border-radius: 50%;
   background: var(--carbon-medio);
   flex-shrink: 0;
-  z-index: 2;
   box-shadow: inset 0 0 4px rgba(0,0,0,0.4);
 }
-
-.ticket-tear-circle.left  { margin-left:  -10px; }
+.ticket-tear-circle.left { margin-left: -10px; }
 .ticket-tear-circle.right { margin-right: -10px; }
-
 .ticket-tear-dashes {
   flex: 1;
-  height: 0;
   border-top: 1px dashed rgba(90,50,15,0.40);
   margin: 0 6px;
 }
 
-/* ── Campos PARTIDA / LLEGADA ── */
 .ticket-bottom {
   padding: 10px 18px !important;
   background: rgba(139,90,40,0.06);
@@ -1101,17 +706,8 @@ button {
   align-items: center;
   gap: 8px;
 }
-
-.ticket-field {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.ticket-field-right {
-  text-align: right;
-}
-
+.ticket-field { display: flex; flex-direction: column; gap: 3px; }
+.ticket-field-right { text-align: right; }
 .ticket-field-label {
   font-family: 'Special Elite', monospace;
   font-size: 0.42rem;
@@ -1120,30 +716,22 @@ button {
   text-transform: uppercase;
   opacity: 0.60;
 }
-
 .ticket-field-value {
   font-family: 'Libre Baskerville', Georgia, serif;
   font-size: 0.70rem;
   color: #1e0f08;
   font-weight: 700;
-  letter-spacing: 0.5px;
 }
 
-/* ── Talón / Talonario inferior ── */
 .ticket-stub {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 7px 16px;
   background: linear-gradient(135deg, #5a1410 0%, #7a2018 60%, #4a1008 100%);
-  background-image: repeating-linear-gradient(
-    to right,
-    transparent 0px, transparent 8px,
-    rgba(255,255,255,0.03) 8px, rgba(255,255,255,0.03) 9px
-  );
+  background-image: repeating-linear-gradient(to right, transparent 0px, transparent 8px, rgba(255,255,255,0.03) 8px, rgba(255,255,255,0.03) 9px);
   border-top: 2px solid #8b3010;
 }
-
 .ticket-stub-text {
   font-family: 'Special Elite', monospace;
   font-size: 0.46rem;
@@ -1152,24 +740,9 @@ button {
   opacity: 0.70;
   text-transform: uppercase;
 }
+.ticket-stub-icon { color: #c08030; font-size: 0.90rem; opacity: 0.85; }
 
-.ticket-stub-icon {
-  color: #c08030;
-  font-size: 0.90rem;
-  opacity: 0.85;
-  text-shadow: 0 0 6px rgba(192,128,48,0.5);
-}
-
-/* ── Animación sutil de latido del ticket ── */
-@keyframes ticketBreath {
-  0%, 100% { box-shadow: 0 6px 28px rgba(0,0,0,0.65), inset 0 0 80px rgba(139,100,50,0.10), 0 0 0 1px rgba(110,70,25,0.35); }
-  50%       { box-shadow: 0 8px 35px rgba(0,0,0,0.70), inset 0 0 80px rgba(139,100,50,0.14), 0 0 12px rgba(192,120,48,0.18); }
-}
-
-.vintage-ticket {
-  animation: ticketBreath 5s ease-in-out infinite;
-}
-
+/* Botón embarcar */
 .btn-embarcar {
   font-family: 'Special Elite', monospace;
   font-size: clamp(0.8rem, 3vw, 0.95rem);
@@ -1185,41 +758,25 @@ button {
   display: flex;
   align-items: center;
   gap: 12px;
-  touch-action: manipulation;
   width: 100%;
   max-width: 260px;
   justify-content: center;
   text-transform: uppercase;
 }
-
 .btn-embarcar:hover,
 .btn-embarcar:active {
   transform: scale(1.03);
   box-shadow: 0 0 24px rgba(155, 45, 31, 0.6), var(--shadow-deep);
 }
-
 .btn-whistle {
   font-size: 1.1rem;
   animation: whistleShake 3s infinite;
 }
-
 @keyframes whistleShake {
-
-  0%,
-  90%,
-  100% {
-    transform: rotate(0);
-  }
-
-  93% {
-    transform: rotate(-14deg);
-  }
-
-  96% {
-    transform: rotate(14deg);
-  }
+  0%, 90%, 100% { transform: rotate(0); }
+  93% { transform: rotate(-14deg); }
+  96% { transform: rotate(14deg); }
 }
-
 .boarding-hint {
   font-style: italic;
   opacity: 0.28;
@@ -1227,136 +784,23 @@ button {
   text-align: center;
 }
 
-/* ================================================================
-  TREN — VIAJE
-   ================================================================ */
-.journey-screen {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
+/* ========================================================
+   TREN — VIAJE
+   ======================================================== */
+.journey-screen { min-height: 100vh; display: flex; flex-direction: column; }
 
-.train-window {
-  position: relative;
-  height: 200px;
-  flex-shrink: 0;
-}
-
-.window-frame {
-  position: absolute;
-  inset: 12px 30px;
-  background: var(--carbon);
-  border: 10px solid var(--carbon-claro);
-  border-radius: 6px 6px 0 0;
-  overflow: hidden;
-  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.5), 0 0 0 2px var(--ocre-oscuro), var(--shadow-deep);
-}
-
-.window-glass {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-}
-
-.landscape {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 3000px;
-  display: flex;
-  align-items: flex-end;
-  animation: landscapeScroll 20s linear infinite;
-}
-
-@keyframes landscapeScroll {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.window-reflections {
-  position: absolute;
-  inset: 0;
-  background: transparent;
-  pointer-events: none;
-}
-
-.rain-overlay {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.rain-drop {
-  position: absolute;
-  width: 1px;
-  background: rgba(180, 220, 255, 0.3);
-  animation: rainFall 0.8s linear infinite;
-  top: -20px;
-}
-
-@keyframes rainFall {
-  to {
-    transform: translateY(220px) translateX(-15px);
-    opacity: 0;
-  }
-}
-
-.window-ledge {
-  position: absolute;
-  bottom: -12px;
-  left: 0;
-  right: 0;
-  height: 12px;
-  background: linear-gradient(to bottom, var(--carbon-claro), var(--carbon));
-  border-radius: 0 0 4px 4px;
-}
-
-.window-curtain {
-  position: absolute;
-  top: 0;
-  width: 36px;
-  height: 100%;
-  z-index: 5;
-}
-
-.window-curtain.left {
-  left: 30px;
-  background: linear-gradient(to right, var(--rojo-tren), transparent);
-  opacity: 0.6;
-}
-
-.window-curtain.right {
-  right: 30px;
-  background: linear-gradient(to left, var(--rojo-tren), transparent);
-  opacity: 0.6;
-}
-
+/* Ventana del tren */
 .train-window {
   position: relative;
   height: 320px;
   flex-shrink: 0;
 }
-
 .window-frame {
   position: absolute;
   inset: 0;
   overflow: hidden;
-  border-radius: 0;
-  border: none;
-  box-shadow: none;
 }
-
-.window-glass {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-}
-
+.window-glass { position: absolute; inset: 0; overflow: hidden; }
 .landscape {
   position: absolute;
   top: 0;
@@ -1366,30 +810,21 @@ button {
   align-items: flex-end;
   animation: landscapeScroll 20s linear infinite;
 }
-
 @keyframes landscapeScroll {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
-
 .window-reflections {
   position: absolute;
   inset: 0;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, transparent 40%, rgba(255, 255, 255, 0.01) 60%, transparent 100%);
   pointer-events: none;
 }
-
 .rain-overlay {
   position: absolute;
   inset: 0;
   pointer-events: none;
 }
-
 .rain-drop {
   position: absolute;
   width: 1px;
@@ -1397,14 +832,9 @@ button {
   animation: rainFall 0.9s linear infinite;
   top: -20px;
 }
-
 @keyframes rainFall {
-  to {
-    transform: translateY(340px) translateX(-14px);
-    opacity: 0;
-  }
+  to { transform: translateY(340px) translateX(-14px); opacity: 0; }
 }
-
 .window-ledge {
   position: absolute;
   bottom: -10px;
@@ -1413,11 +843,9 @@ button {
   height: 10px;
   background: linear-gradient(to bottom, var(--carbon-claro), var(--carbon));
 }
+.window-curtain { display: none; }
 
-.window-curtain {
-  display: none;
-}
-
+/* Interior del tren */
 .train-interior {
   flex: 1;
   display: flex;
@@ -1429,62 +857,9 @@ button {
 
 .journey-progress {
   padding: 14px 20px;
-  border-bottom: 1px solid rgba(201, 166, 107, 0.12);
-  background: rgba(0, 0, 0, 0.3);
-}
-
-.progress-track {
-  position: relative;
-  height: 3px;
-  background: rgba(201, 166, 107, 0.2);
-  border-radius: 2px;
-  margin: 22px 0 28px;
-}
-
-.progress-fill {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  background: linear-gradient(to right, var(--ocre-oscuro), var(--ocre));
-  border-radius: 2px;
-  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 0 8px rgba(201, 166, 107, 0.5);
-}
-
-.progress-train {
-  position: absolute;
-  top: -10px;
-  transition: left 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: translateX(-50%);
-}
-
-.progress-stop {
-  position: absolute;
-  top: -18px;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3px;
-}
-
-.pstop-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--carbon);
-  border: 2px solid var(--ocre-oscuro);
-  transition: all 0.3s;
-}
-
-/* Progreso */
-.journey-progress {
-  padding: 14px 20px;
   border-bottom: 1px solid rgba(140, 40, 72, 0.12);
   background: rgba(0, 0, 0, 0.3);
 }
-
 .progress-track {
   position: relative;
   height: 3px;
@@ -1492,7 +867,6 @@ button {
   border-radius: 2px;
   margin: 22px 0 28px;
 }
-
 .progress-fill {
   position: absolute;
   left: 0;
@@ -1503,16 +877,13 @@ button {
   transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 0 8px rgba(192, 112, 144, 0.5);
 }
-
 .progress-train {
   position: absolute;
   top: -10px;
-  font-size: 1.1rem;
   transition: left 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translateX(-50%);
   filter: drop-shadow(0 0 5px rgba(192, 112, 144, 0.6));
 }
-
 .progress-stop {
   position: absolute;
   top: -18px;
@@ -1522,7 +893,6 @@ button {
   align-items: center;
   gap: 3px;
 }
-
 .pstop-dot {
   width: 10px;
   height: 10px;
@@ -1531,33 +901,16 @@ button {
   border: 2px solid var(--ocre-oscuro);
   transition: all 0.3s;
 }
-
-.pstop-dot.visited {
-  background: var(--ocre-oscuro);
-  border-color: var(--ocre);
-}
-
+.pstop-dot.visited { background: var(--ocre-oscuro); border-color: var(--ocre); }
 .pstop-dot.current {
   background: var(--ocre);
   border-color: var(--ocre-claro);
   box-shadow: var(--glow-ocre);
   transform: scale(1.3);
 }
+.pstop-name { display: none; }
 
-.pstop-name {
-  display: none;
-}
-
-.arrival-announcement {
-  background: linear-gradient(135deg, var(--carbon-claro), rgba(139, 26, 26, 0.2));
-  border: 1px solid rgba(201, 166, 107, 0.3);
-  border-radius: 6px;
-  margin: 14px 16px;
-  padding: 12px 16px;
-  animation: announceSlide 0.5s ease;
-}
-
-/* Anuncio */
+/* Anuncio de llegada */
 .arrival-announcement {
   background: linear-gradient(135deg, var(--carbon-claro), rgba(140, 40, 72, 0.2));
   border: 1px solid rgba(192, 112, 144, 0.3);
@@ -1566,23 +919,11 @@ button {
   padding: 12px 16px;
   animation: announceSlide 0.5s ease;
 }
-
-.arrival-announcement.hidden {
-  display: none;
-}
-
+.arrival-announcement.hidden { display: none; }
 @keyframes announceSlide {
-  from {
-    opacity: 0;
-    transform: translateY(-8px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-
 .announcement-inner {
   display: flex;
   align-items: center;
@@ -1593,29 +934,15 @@ button {
   color: var(--ocre-claro);
 }
 
-.announcement-icon {
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-}
-
+/* Contenido de parada */
 .parada-slide {
   padding: 20px 16px 10px;
   animation: paradaEntra 0.5s ease;
 }
-
 @keyframes paradaEntra {
-  from {
-    opacity: 0;
-    transform: translateX(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
 }
-
 .parada-header {
   display: flex;
   align-items: center;
@@ -1623,20 +950,6 @@ button {
   margin-bottom: 6px;
   flex-wrap: wrap;
 }
-
-.parada-tipo-badge {
-  font-family: var(--font-display);
-  font-size: 0.6rem;
-  letter-spacing: 2px;
-  padding: 3px 10px;
-  border-radius: 20px;
-  background: rgba(201, 166, 107, 0.12);
-  border: 1px solid rgba(201, 166, 107, 0.3);
-  color: var(--ocre);
-  text-transform: uppercase;
-}
-
-
 .parada-tipo-badge {
   font-family: var(--font-display);
   font-size: 0.6rem;
@@ -1648,65 +961,31 @@ button {
   color: var(--ocre);
   text-transform: uppercase;
 }
-
 .parada-año {
   font-family: var(--font-display);
   font-size: 0.8rem;
   color: var(--acero-claro);
   opacity: 0.7;
 }
-
 .parada-nombre {
   font-family: var(--font-display);
   font-size: clamp(1.2rem, 5vw, 2rem);
   color: var(--marfil-claro);
   letter-spacing: 1px;
   margin-bottom: 12px;
-  line-height: 1.2;
 }
-
 .parada-desc {
   font-size: clamp(0.85rem, 3vw, 1rem);
   line-height: 1.8;
   opacity: 0.85;
   margin-bottom: 18px;
 }
-
 .parada-datos {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
   margin-bottom: 18px;
 }
-
-.parada-dato {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(201, 166, 107, 0.2);
-  border-radius: 5px;
-  padding: 6px 12px;
-  font-size: clamp(0.7rem, 2.5vw, 0.8rem);
-  color: var(--marfil);
-  opacity: 0.8;
-}
-
-.parada-curiosidad {
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-  background: rgba(201, 166, 107, 0.07);
-  border-left: 3px solid var(--ocre-oscuro);
-  padding: 12px 14px;
-  border-radius: 0 6px 6px 0;
-  margin-bottom: 20px;
-}
-
-.curiosidad-icon {
-  flex-shrink: 0;
-  margin-top: 2px;
-  display: flex;
-  align-items: center;
-}
-
 .parada-dato {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(192, 112, 144, 0.2);
@@ -1714,9 +993,7 @@ button {
   padding: 6px 12px;
   font-size: clamp(0.7rem, 2.5vw, 0.8rem);
   color: var(--marfil);
-  opacity: 0.8;
 }
-
 .parada-curiosidad {
   display: flex;
   gap: 10px;
@@ -1727,13 +1004,6 @@ button {
   border-radius: 0 6px 6px 0;
   margin-bottom: 20px;
 }
-
-.curiosidad-icon {
-  font-size: 1rem;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
 .parada-curiosidad p {
   font-style: italic;
   opacity: 0.8;
@@ -1741,10 +1011,8 @@ button {
   line-height: 1.6;
 }
 
-.parada-360-section {
-  margin-top: 16px;
-}
-
+/* Sección 360° */
+.parada-360-section { margin-top: 16px; }
 .parada-360-title {
   font-family: var(--font-display);
   font-size: 0.7rem;
@@ -1755,7 +1023,6 @@ button {
   align-items: center;
   gap: 8px;
 }
-
 .parada-360-title::after {
   content: "";
   flex: 1;
@@ -1763,90 +1030,6 @@ button {
   background: linear-gradient(to right, var(--ocre-oscuro), transparent);
   max-width: 150px;
 }
-
-.parada-panorama {
-  height: 220px;
-  border-radius: 6px;
-  overflow: hidden;
-  border: 2px solid rgba(201, 166, 107, 0.2);
-  box-shadow: var(--shadow-deep);
-}
-
-.parada-ver-detalle {
-  display: inline-block;
-  margin-top: 10px;
-  font-family: var(--font-display);
-  font-size: 0.7rem;
-  letter-spacing: 2px;
-  color: var(--ocre);
-  border: 1px solid var(--ocre-oscuro);
-  padding: 8px 16px;
-  border-radius: 4px;
-  transition: all 0.3s;
-  touch-action: manipulation;
-}
-
-.parada-ver-detalle:active {
-  background: rgba(201, 166, 107, 0.1);
-}
-
-.detalle-360-wrapper {
-  position: relative;
-  /*  clave para que el overlay funcione */
-}
-
-/* Overlay inicial */
-.overlay-contexto {
-  position: absolute;
-  inset: 0;
-  background: transparent;
-  z-index: 5;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 1s ease;
-}
-
-.overlay-contexto img {
-  max-width: 90%;
-  max-height: 80%;
-  object-fit: contain;
-}
-
-.overlay-texto {
-  color: white;
-  margin-top: 10px;
-  font-size: 18px;
-  opacity: 0.8;
-}
-
-/* Estado oculto */
-.overlay-contexto.ocultar {
-  opacity: 0;
-  pointer-events: none;
-}
-
-
-.parada-360-title {
-  font-family: var(--font-display);
-  font-size: 0.7rem;
-  letter-spacing: 3px;
-  color: var(--ocre);
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.parada-360-title::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(to right, var(--ocre-oscuro), transparent);
-  max-width: 150px;
-}
-
 .parada-panorama {
   height: 220px;
   border-radius: 6px;
@@ -1854,7 +1037,6 @@ button {
   border: 2px solid rgba(192, 112, 144, 0.2);
   box-shadow: var(--shadow-deep);
 }
-
 .parada-ver-detalle {
   display: inline-block;
   margin-top: 10px;
@@ -1866,12 +1048,8 @@ button {
   padding: 8px 16px;
   border-radius: 4px;
   transition: all 0.3s;
-  touch-action: manipulation;
 }
-
-.parada-ver-detalle:active {
-  background: rgba(192, 112, 144, 0.1);
-}
+.parada-ver-detalle:active { background: rgba(192, 112, 144, 0.1); }
 
 /* Controles fijos */
 .journey-controls {
@@ -1889,7 +1067,6 @@ button {
   z-index: 50;
   gap: 10px;
 }
-
 .ctrl-btn {
   font-family: var(--font-display);
   font-size: clamp(0.6rem, 2.5vw, 0.78rem);
@@ -1901,31 +1078,16 @@ button {
   border: 1px solid rgba(192, 112, 144, 0.3);
   cursor: pointer;
   transition: all 0.25s;
-  touch-action: manipulation;
   flex: 1;
   max-width: 160px;
   text-align: center;
-  line-height: 1.3;
 }
-
-.ctrl-btn:active {
-  background: rgba(192, 112, 144, 0.12);
-}
-
-.ctrl-btn:disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
-}
-
+.ctrl-btn:disabled { opacity: 0.3; cursor: not-allowed; }
 .ctrl-btn.primary {
   background: linear-gradient(135deg, var(--rojo-tren), var(--ocre-oscuro));
   border-color: rgba(192, 112, 144, 0.3);
 }
-
-.ctrl-btn.primary:active {
-  box-shadow: var(--glow-rojo);
-}
-
+.ctrl-btn.primary:active { box-shadow: var(--glow-rojo); }
 .ctrl-stop-name {
   font-family: var(--font-display);
   font-size: clamp(0.55rem, 2vw, 0.75rem);
@@ -1937,7 +1099,6 @@ button {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  padding: 0 4px;
 }
 
 .btn-volver {
@@ -1955,13 +1116,9 @@ button {
   transition: all 0.3s;
   z-index: 100;
   backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
 }
 
-.btn-volver:active {
-  background: rgba(192, 112, 144, 0.1);
-}
-
+/* Transición entre estaciones */
 .station-transition {
   position: fixed;
   inset: 0;
@@ -1974,12 +1131,10 @@ button {
   pointer-events: none;
   transition: opacity 0.4s;
 }
-
 .station-transition.active {
   opacity: 1;
   pointer-events: all;
 }
-
 .station-transition-text {
   font-family: var(--font-display);
   font-size: clamp(1rem, 5vw, 1.8rem);
@@ -1987,34 +1142,22 @@ button {
   letter-spacing: 4px;
   text-align: center;
   text-shadow: var(--glow-ocre);
-  padding: 0 20px;
-  line-height: 1.4;
   animation: transitionPulse 0.5s ease infinite alternate;
 }
-
 @keyframes transitionPulse {
-  from {
-    opacity: 0.5;
-  }
-
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0.5; }
+  to { opacity: 1; }
 }
 
-/* ================================================================
-  DETALLE
-   ================================================================ */
-.page-detalle {
-  min-height: 100vh;
-}
-
+/* ========================================================
+   DETALLE
+   ======================================================== */
+.page-detalle { min-height: 100vh; }
 .detalle-layout {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
-
 .detalle-360-wrapper {
   position: relative;
   background: var(--carbon);
@@ -2022,363 +1165,19 @@ button {
   min-height: 220px;
   max-height: 380px;
   flex-shrink: 0;
-}
-
-
-
-.panorama-full {
   width: 100%;
-  height: 100%;
-}
-
-.detalle-panel {
-  background: var(--carbon-medio);
-  border-top: 1px solid rgba(192, 112, 144, 0.15);
-  padding: 20px 16px 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.detalle-breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.7rem;
-  opacity: 0.45;
-  flex-wrap: wrap;
-}
-
-.detalle-breadcrumb a:active {
-  opacity: 1;
-  color: var(--ocre);
-}
-
-.detalle-title {
-  font-family: var(--font-display);
-  font-size: clamp(1.3rem, 5vw, 1.8rem);
-  color: var(--marfil-claro);
-  letter-spacing: 1px;
-  line-height: 1.2;
-}
-
-.detalle-year {
-  font-family: var(--font-display);
-  font-size: 0.75rem;
-  color: var(--ocre);
-  letter-spacing: 2px;
-  opacity: 0.75;
-}
-
-.detalle-desc {
-  font-size: clamp(0.85rem, 3vw, 0.95rem);
-  line-height: 1.8;
-  opacity: 0.85;
-}
-
-.detalle-facts {
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 6px;
-  padding: 14px 16px;
-  border: 1px solid rgba(192, 112, 144, 0.1);
-}
-
-.facts-title {
-  font-family: var(--font-display);
-  font-size: 0.7rem;
-  letter-spacing: 2px;
-  color: var(--ocre);
-  margin-bottom: 10px;
-}
-
-.facts-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.facts-list li {
-  font-size: clamp(0.75rem, 2.5vw, 0.82rem);
-  opacity: 0.8;
-  padding-left: 14px;
-  position: relative;
-  line-height: 1.5;
-}
-
-.facts-list li::before {
-  content: "▸";
-  position: absolute;
-  left: 0;
-  color: var(--ocre-oscuro);
-}
-
-.detalle-curiosity {
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-  background: rgba(192, 112, 144, 0.07);
-  border-left: 3px solid var(--ocre-oscuro);
-  padding: 12px 14px;
-  border-radius: 0 6px 6px 0;
-}
-
-.curiosity-icon {
-  font-size: 1rem;
-  flex-shrink: 0;
-}
-
-.detalle-curiosity p {
-  font-style: italic;
-  opacity: 0.8;
-  font-size: clamp(0.8rem, 2.8vw, 0.88rem);
-  line-height: 1.6;
-}
-
-.detalle-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  padding-top: 16px;
-  border-top: 1px solid rgba(192, 112, 144, 0.1);
-}
-
-.btn-detalle-nav,
-.btn-volver-tren {
-  font-family: var(--font-display);
-  font-size: 0.65rem;
-  letter-spacing: 1.5px;
-  padding: 11px 14px;
-  border-radius: 4px;
-  background: var(--carbon-claro);
-  color: var(--marfil);
-  border: 1px solid rgba(192, 112, 144, 0.25);
-  transition: all 0.25s;
-  flex: 1;
-  text-align: center;
-  touch-action: manipulation;
-  line-height: 1.4;
-  min-width: 100px;
-}
-
-.btn-detalle-nav:active,
-.btn-volver-tren:active {
-  background: rgba(192, 112, 144, 0.1);
-  border-color: var(--ocre);
-}
-
-.btn-detalle-nav.primary {
-  background: linear-gradient(135deg, var(--rojo-tren), var(--ocre-oscuro));
-}
-
-/* ================================================================
-  TABLET ≥ 600px
-   ================================================================ */
-@media (min-width: 600px) {
-  .header-inner {
-    flex-direction: row;
-    gap: 30px;
-  }
-
-  .board-row {
-    grid-template-columns: 50px 1fr 130px 40px;
-  }
-
-  .row-era {
-    display: block;
-  }
-
-  .stop-name {
-    display: block;
-    font-size: 0.6rem;
-    color: var(--marfil);
-    opacity: 0.5;
-    text-align: center;
-    max-width: 70px;
-    font-style: italic;
-  }
-
-  .train-window {
-    height: 240px;
-  }
-
-  .parada-panorama {
-    height: 260px;
-  }
-
-  .parada-slide {
-    padding: 24px 28px 10px;
-  }
-
-  .journey-controls {
-    padding: 14px 30px;
-  }
-
-  .ctrl-btn {
-    padding: 12px 20px;
-    font-size: 0.75rem;
-    max-width: 200px;
-  }
-
-  .detalle-360-wrapper {
-    height: 45vw;
-    max-height: 440px;
-  }
-
-  .detalle-panel {
-    padding: 24px 28px 40px;
-  }
-}
-
-/* ================================================================
-DESKTOP ≥ 900px
-   ================================================================ */
-@media (min-width: 900px) {
-  .board-row {
-    grid-template-columns: 60px 1fr 140px 150px 40px;
-  }
-
-  .row-status {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-family: var(--font-display);
-    font-size: 0.7rem;
-    letter-spacing: 2px;
-    color: var(--ocre-claro);
-  }
-
-  .status-dot {
-    width: 8px;
-    height: 8px;
-    background: var(--ocre-claro);
-    border-radius: 50%;
-    animation: statusPulse 2s infinite;
-    box-shadow: var(--glow-ocre);
-  }
-
-  @keyframes statusPulse {
-
-    0%,
-    100% {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    50% {
-      opacity: 0.5;
-      transform: scale(0.8);
-    }
-  }
-
-  .train-window {
-    height: 280px;
-  }
-
-  .parada-panorama {
-    height: 300px;
-  }
-
-  .parada-slide {
-    padding: 30px 40px;
-  }
-
-  .journey-controls {
-    padding: 15px 40px;
-  }
-
-  .ctrl-stop-name {
-    display: block;
-  }
-
-  .pstop-name {
-    display: block;
-    font-family: var(--font-display);
-    font-size: 0.6rem;
-    color: var(--ocre);
-    letter-spacing: 0.5px;
-    white-space: nowrap;
-    opacity: 0.7;
-    margin-top: 20px;
-  }
-
-  .page-detalle {
-    height: 100vh;
-    overflow: hidden;
-  }
-
-  .detalle-layout {
-    flex-direction: row;
-    height: 100vh;
-  }
-
-  .detalle-360-wrapper {
-    flex: 1;
-    height: 100vh;
-    max-height: none;
-  }
-
-  .detalle-panel {
-    width: 380px;
-    flex-shrink: 0;
-    border-top: none;
-    border-left: 1px solid rgba(192, 112, 144, 0.15);
-    overflow-y: auto;
-    padding: 30px 25px;
-  }
-
-  .detalle-panel::-webkit-scrollbar {
-    width: 4px;
-  }
-
-  .detalle-panel::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  .detalle-panel::-webkit-scrollbar-thumb {
-    background: var(--ocre-oscuro);
-    border-radius: 2px;
-  }
-}
-
-.btn-volver-tren img {
-  width: 20px;
-  height: auto;
-  vertical-align: middle;
-  margin-right: 5px;
-}
-
-/* ================================================================
-MÓVIL — evitar solapamiento btn-volver y font-controls
-   ================================================================ */
-@media (max-width: 599px) {
-
-  /* En páginas con btn-volver (tren.php y detalle.php), bajar font-controls
-     para que no se solape con el botón Volver (top:14px) */
-  .page-tren .font-controls,
-  .page-detalle .font-controls {
-    top: 52px;
-  }
-}
-
-.detalle-360-wrapper {
-  position: relative;
-  width: 100%;
-  height: auto;
   aspect-ratio: 4 / 3;
   border-radius: 10px;
   overflow: hidden;
-  transition: height 0.5s cubic-bezier(.4, 0, .2, 1), box-shadow 0.3s ease;
+  transition: height 0.5s cubic-bezier(.4, 0, .2, 1);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
   background: #111;
 }
-
 .detalle-360-wrapper.expandido {
   aspect-ratio: unset;
   height: 80vh;
 }
 
-/* ── Capa 1: imagen plana (siempre presente) ── */
 .capa-imagen {
   position: absolute;
   inset: 0;
@@ -2389,8 +1188,6 @@ MÓVIL — evitar solapamiento btn-volver y font-controls
   z-index: 1;
   transition: opacity 0.6s ease;
 }
-
-/* ── Capa 2: visor 360° (encima, empieza invisible) ── */
 .capa-360 {
   position: absolute;
   inset: 0;
@@ -2401,17 +1198,15 @@ MÓVIL — evitar solapamiento btn-volver y font-controls
   pointer-events: none;
   transition: opacity 0.8s ease;
 }
-
 .capa-360.visible {
   opacity: 1;
   pointer-events: auto;
 }
 
-/* ── Overlay de invitación (miniatura) ── */
 .expand-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: transparent;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2421,25 +1216,11 @@ MÓVIL — evitar solapamiento btn-volver y font-controls
   cursor: pointer;
   transition: opacity 0.35s ease;
 }
-
 .detalle-360-wrapper.expandido .expand-overlay {
   opacity: 0;
   pointer-events: none;
 }
 
-.expand-overlay-icon {
-  font-size: 2.4rem;
-}
-
-.expand-overlay-text {
-  font-family: 'Special Elite', serif;
-  color: #f0d080;
-  font-size: 0.88rem;
-  letter-spacing: 0.1em;
-  text-shadow: 0 1px 8px #000;
-}
-
-/* ── Barra de carga (lazo de tiempo) ── */
 .carga-barra-wrap {
   position: absolute;
   bottom: 0;
@@ -2451,20 +1232,12 @@ MÓVIL — evitar solapamiento btn-volver y font-controls
   opacity: 0;
   transition: opacity 0.3s ease;
 }
-
-.carga-barra-wrap.activa {
-  opacity: 1;
-}
-
+.carga-barra-wrap.activa { opacity: 1; }
 .carga-barra {
   height: 100%;
   width: 0%;
   background: #c9a66b;
-  transition: width linear;
-  /* duración se pone por JS */
 }
-
-/* ── Indicador de cargando 360 ── */
 .carga-label {
   position: absolute;
   bottom: 12px;
@@ -2482,12 +1255,8 @@ MÓVIL — evitar solapamiento btn-volver y font-controls
   transition: opacity 0.3s ease;
   white-space: nowrap;
 }
+.carga-label.activa { opacity: 1; }
 
-.carga-label.activa {
-  opacity: 1;
-}
-
-/* ── Botón minimizar ── */
 .btn-cerrar-vista {
   position: absolute;
   margin-top: 20px;
@@ -2505,24 +1274,119 @@ MÓVIL — evitar solapamiento btn-volver y font-controls
   transition: opacity 0.3s ease;
   font-family: 'Special Elite', serif;
 }
-
 .detalle-360-wrapper.expandido .btn-cerrar-vista {
   opacity: 1;
   pointer-events: auto;
 }
 
-/* ── Imagen plana: sin lazo, solo contenedor ── */
-.detalle-imagen-plana {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  background: #111;
-  display: block;
+.detalle-panel {
+  background: var(--carbon-medio);
+  border-top: 1px solid rgba(192, 112, 144, 0.15);
+  padding: 20px 16px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.detalle-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.7rem;
+  opacity: 0.45;
+  flex-wrap: wrap;
+}
+.detalle-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 5vw, 1.8rem);
+  color: var(--marfil-claro);
+  letter-spacing: 1px;
+}
+.detalle-year {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  color: var(--ocre);
+  letter-spacing: 2px;
+}
+.detalle-desc {
+  font-size: clamp(0.85rem, 3vw, 0.95rem);
+  line-height: 1.8;
+  opacity: 0.85;
+}
+.detalle-facts {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  padding: 14px 16px;
+  border: 1px solid rgba(192, 112, 144, 0.1);
+}
+.facts-title {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  color: var(--ocre);
+  margin-bottom: 10px;
+}
+.facts-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.facts-list li {
+  font-size: clamp(0.75rem, 2.5vw, 0.82rem);
+  opacity: 0.8;
+  padding-left: 14px;
+  position: relative;
+}
+.facts-list li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--ocre-oscuro);
+}
+.detalle-curiosity {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  background: rgba(192, 112, 144, 0.07);
+  border-left: 3px solid var(--ocre-oscuro);
+  padding: 12px 14px;
+  border-radius: 0 6px 6px 0;
+}
+.detalle-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(192, 112, 144, 0.1);
+}
+.btn-detalle-nav,
+.btn-volver-tren {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  letter-spacing: 1.5px;
+  padding: 11px 14px;
+  border-radius: 4px;
+  background: var(--carbon-claro);
+  color: var(--marfil);
+  border: 1px solid rgba(192, 112, 144, 0.25);
+  transition: all 0.25s;
+  flex: 1;
+  text-align: center;
+  min-width: 100px;
+}
+.btn-volver-tren img {
+  width: 20px;
+  height: auto;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.btn-detalle-nav.primary {
+  background: linear-gradient(135deg, var(--rojo-tren), var(--ocre-oscuro));
 }
 
-/* ================================================================
+/* ========================================================
    BANNER INSTITUCIONAL
-   ================================================================ */
+   ======================================================== */
 .banner-institucional {
   display: flex;
   align-items: center;
@@ -2532,33 +1396,20 @@ MÓVIL — evitar solapamiento btn-volver y font-controls
   background: rgba(10, 8, 5, 0.85);
   border-bottom: 1px solid var(--ocre-oscuro);
   backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
   position: relative;
   z-index: 10;
 }
-
 .banner-patrocinador {
   display: flex;
   align-items: center;
   gap: 0.6rem;
 }
-
 .banner-logo {
   height: 36px;
   width: auto;
   object-fit: contain;
   filter: brightness(0.9) sepia(0.2);
 }
-
-.banner-nombre {
-  font-family: var(--font-body);
-  font-size: 0.78rem;
-  color: var(--ocre);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  opacity: 0.85;
-}
-
 .banner-divider-vertical {
   width: 1px;
   height: 30px;
@@ -2566,107 +1417,21 @@ MÓVIL — evitar solapamiento btn-volver y font-controls
   opacity: 0.5;
 }
 
-/* ================================================================
-   MÓVIL ≤ 599px
-   ================================================================ */
-@media (max-width: 599px) {
-
-  /* font-controls queda justo debajo del banner (~52px de alto) */
-  .page-index .font-controls {
-    position: fixed;
-    top: 52px;
-    right: 14px;
-  }
-
-  .page-tren .font-controls {
-    position: fixed;
-    top: 52px;
-    right: 14px;
-  }
-
-  /* Texto del footer sube encima de las vías */
-  .main-footer {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .footer-text-principal {
-    order: -1;
-    /* el texto va primero */
-    text-align: center;
-    padding-bottom: 6px;
-  }
-
-  .footer-tracks {
-    order: 1;
-    /* las vías van al final */
-  }
-}
-
-.expand-overlay {
-  position: absolute;
-  inset: 0;
-  background: transparent;
-  /* ← quita el rgba(0,0,0,0.5) */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  z-index: 10;
-  cursor: pointer;
-  transition: opacity 0.35s ease;
-}
-
-.imagen-credito {
-  display: block;
-  margin-top: 8px;
-  font-family: var(--font-display);
-  font-size: 0.65rem;
-  letter-spacing: 1px;
-  color: var(--ocre-oscuro);
-  opacity: 0.8;
-  text-align: right;
-  font-style: italic;
-  color: white;
-}
-
-/* ================================================================
-   HEADER CLICKEABLE (index.php)
-   ================================================================ */
+/* ========================================================
+   HEADER CLICKEABLE & MODAL
+   ======================================================== */
 .header-clickeable {
   cursor: pointer;
   transition: transform 0.3s ease;
-  position: relative;
 }
-
-.header-clickeable:hover .header-title,
-.header-clickeable:focus .header-title {
-  text-shadow: 0 0 40px rgba(192, 112, 144, 0.6), 0 0 80px rgba(192, 112, 144, 0.2);
-}
-
-.header-clickeable:hover .header-emblem,
-.header-clickeable:focus .header-emblem {
-  filter: drop-shadow(0 0 20px rgba(192, 112, 144, 0.7));
-}
-
-.header-clickeable:active {
-  transform: scale(0.99);
-}
-
-.header-clickeable:focus {
-  outline: none;
-}
-
+.header-clickeable:active { transform: scale(0.99); }
 .header-logo-img {
   width: 160px;
   height: 160px;
   object-fit: contain;
   animation: floatEmblem 4s ease-in-out infinite;
   filter: drop-shadow(0 0 12px rgba(192, 112, 144, 0.4));
-  transition: filter 0.3s;
 }
-
 .header-click-hint {
   display: flex;
   align-items: center;
@@ -2682,34 +1447,16 @@ MÓVIL — evitar solapamiento btn-volver y font-controls
   text-transform: uppercase;
   animation: hintPulse 3s ease-in-out infinite;
 }
-
 @keyframes hintPulse {
-
-  0%,
-  100% {
-    opacity: 0.4;
-    transform: translateY(0);
-  }
-
-  50% {
-    opacity: 0.9;
-    transform: translateY(-3px);
-  }
+  0%, 100% { opacity: 0.4; transform: translateY(0); }
+  50% { opacity: 0.9; transform: translateY(-3px); }
 }
 
-.hint-icon {
-  font-size: 0.9rem;
-}
-
-/* ================================================================
-   MODAL DE TRENES (index.php)
-   ================================================================ */
 .modal-trenes-overlay {
   position: fixed;
   inset: 0;
   background: rgba(10, 5, 3, 0.88);
   backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -2719,12 +1466,10 @@ MÓVIL — evitar solapamiento btn-volver y font-controls
   pointer-events: none;
   transition: opacity 0.4s ease;
 }
-
 .modal-trenes-overlay.activo {
   opacity: 1;
   pointer-events: all;
 }
-
 .modal-trenes-inner {
   background: linear-gradient(160deg, var(--carbon-claro) 0%, var(--carbon-medio) 100%);
   border: 2px solid var(--ocre-oscuro);
@@ -2733,30 +1478,13 @@ MÓVIL — evitar solapamiento btn-volver y font-controls
   max-width: 700px;
   max-height: 88vh;
   overflow-y: auto;
-  position: relative;
   box-shadow: 0 0 60px rgba(192, 112, 144, 0.15), 0 20px 80px rgba(0, 0, 0, 0.8);
   transform: scale(0.96) translateY(10px);
   transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
-
 .modal-trenes-overlay.activo .modal-trenes-inner {
   transform: scale(1) translateY(0);
 }
-
-/* Scrollbar estilo vintage */
-.modal-trenes-inner::-webkit-scrollbar {
-  width: 6px;
-}
-
-.modal-trenes-inner::-webkit-scrollbar-track {
-  background: var(--carbon);
-}
-
-.modal-trenes-inner::-webkit-scrollbar-thumb {
-  background: var(--ocre-oscuro);
-  border-radius: 3px;
-}
-
 .modal-header {
   display: flex;
   align-items: center;
@@ -2768,33 +1496,6 @@ MÓVIL — evitar solapamiento btn-volver y font-controls
   top: 0;
   z-index: 5;
 }
-
-.modal-header-left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.modal-steam-icon {
-  font-size: 1.2rem;
-  opacity: 0.8;
-  animation: steamFloat 2s ease-in-out infinite;
-}
-
-@keyframes steamFloat {
-
-  0%,
-  100% {
-    transform: translateY(0);
-    opacity: 0.6;
-  }
-
-  50% {
-    transform: translateY(-3px);
-    opacity: 1;
-  }
-}
-
 .modal-title-text {
   font-family: 'Special Elite', monospace;
   font-size: 0.75rem;
@@ -2802,7 +1503,6 @@ MÓVIL — evitar solapamiento btn-volver y font-controls
   color: var(--marfil-claro);
   text-transform: uppercase;
 }
-
 .modal-close-btn {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -2816,34 +1516,15 @@ MÓVIL — evitar solapamiento btn-volver y font-controls
   align-items: center;
   justify-content: center;
   transition: all 0.2s;
-  font-family: 'Special Elite', monospace;
 }
-
 .modal-close-btn:hover {
   background: rgba(255, 255, 255, 0.12);
   border-color: var(--ocre);
   color: var(--ocre);
 }
-
-.departure-board-modal {
-  margin: 0;
-  padding: 0;
-  max-width: 100%;
-}
-
-.departure-board-modal .board-header {
-  border-radius: 0;
-  border-left: none;
-  border-right: none;
-}
-
-.departure-board-modal .board-rows {
-  border-left: none;
-  border-right: none;
-  border-bottom: none;
-  border-radius: 0;
-}
-
+.departure-board-modal { margin: 0; padding: 0; max-width: 100%; }
+.departure-board-modal .board-header { border-radius: 0; border-left: none; border-right: none; }
+.departure-board-modal .board-rows { border-left: none; border-right: none; border-bottom: none; border-radius: 0; }
 .modal-footer-hint {
   text-align: center;
   padding: 14px;
@@ -2854,301 +1535,9 @@ MÓVIL — evitar solapamiento btn-volver y font-controls
   letter-spacing: 1px;
 }
 
-/* ================================================================
-   TICKET VINTAGE — REDISEÑO COMPLETO
-   ================================================================ */
-.vintage-ticket {
-  background: #f5ead5 !important;
-  /* papel envejecido */
-  background-image:
-    repeating-linear-gradient(0deg,
-      transparent,
-      transparent 24px,
-      rgba(160, 120, 60, 0.08) 24px,
-      rgba(160, 120, 60, 0.08) 25px),
-    repeating-linear-gradient(90deg,
-      transparent,
-      transparent 24px,
-      rgba(160, 120, 60, 0.04) 24px,
-      rgba(160, 120, 60, 0.04) 25px) !important;
-  color: #2a1a0a !important;
-  border: none !important;
-  border-radius: 2px !important;
-  box-shadow:
-    0 0 0 1px rgba(120, 80, 30, 0.4),
-    0 0 0 3px rgba(120, 80, 30, 0.12),
-    4px 6px 20px rgba(0, 0, 0, 0.5),
-    inset 0 0 40px rgba(180, 130, 60, 0.06) !important;
-  position: relative;
-  overflow: hidden;
-  max-width: 360px !important;
-}
-
-/* Marca de agua decorativa */
-.vintage-ticket::before {
-  content: "✦";
-  position: absolute;
-  font-size: 8rem;
-  color: rgba(160, 100, 30, 0.06);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  font-family: serif;
-  z-index: 0;
-}
-
-/* Esquinas dobladas */
-.vintage-ticket::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 22px;
-  height: 22px;
-  background: linear-gradient(135deg, transparent 50%, rgba(120, 80, 30, 0.25) 50%);
-  pointer-events: none;
-}
-
-/* ── Perforaciones ── */
-.ticket-punch-row {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 0 8px;
-  height: 16px;
-  background: #e8d8b8;
-  position: relative;
-  z-index: 1;
-}
-
-.ticket-punch {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: var(--carbon, #1a0a04);
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-/* ── Cabecera del ticket ── */
-.vintage-ticket .ticket-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 12px 18px 10px;
-  background: #7a1818;
-  background-image: repeating-linear-gradient(45deg,
-      transparent,
-      transparent 3px,
-      rgba(0, 0, 0, 0.06) 3px,
-      rgba(0, 0, 0, 0.06) 6px);
-  color: #f5e8cc;
-  position: relative;
-  z-index: 1;
-}
-
-.ticket-header-left {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.ticket-company {
-  font-family: 'Special Elite', monospace;
-  font-size: 0.58rem;
-  letter-spacing: 2px;
-  color: #f5e8cc;
-  text-transform: uppercase;
-  opacity: 0.85;
-}
-
-.vintage-ticket .ticket-label {
-  font-family: 'Special Elite', monospace;
-  font-size: 0.52rem;
-  letter-spacing: 1.5px;
-  color: #f5e8cc;
-  opacity: 0.65;
-  text-transform: uppercase;
-}
-
-.ticket-num-stamp {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 1px;
-}
-
-.ticket-num-label {
-  font-family: 'Special Elite', monospace;
-  font-size: 0.45rem;
-  letter-spacing: 2px;
-  color: #f5e8cc;
-  opacity: 0.6;
-}
-
-.vintage-ticket .ticket-num {
-  font-family: 'Special Elite', monospace;
-  font-size: 1.1rem;
-  color: #f5e8cc;
-  letter-spacing: 2px;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-}
-
-/* ── Franja decorativa ── */
-.ticket-stripe {
-  height: 4px;
-  background: repeating-linear-gradient(90deg,
-      #7a1818 0px,
-      #7a1818 12px,
-      #f0c060 12px,
-      #f0c060 14px);
-  position: relative;
-  z-index: 1;
-}
-
-/* ── Bloque de destino ── */
-.ticket-destination-block {
-  padding: 16px 18px 10px;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
-
-.ticket-dest-label {
-  display: block;
-  font-family: 'Special Elite', monospace;
-  font-size: 0.5rem;
-  letter-spacing: 4px;
-  color: rgba(80, 40, 10, 0.55);
-  text-transform: uppercase;
-  margin-bottom: 6px;
-}
-
-.vintage-ticket .ticket-destination {
-  font-family: 'Playfair Display', 'Libre Baskerville', Georgia, serif;
-  font-size: clamp(1rem, 4.5vw, 1.35rem);
-  font-weight: 700;
-  color: #2a1005;
-  line-height: 1.25;
-  padding: 0;
-  text-shadow: 1px 1px 0 rgba(180, 120, 40, 0.2);
-}
-
-.vintage-ticket .ticket-era {
-  font-family: 'Libre Baskerville', Georgia, serif;
-  font-style: italic;
-  font-size: 0.78rem;
-  color: #7a4a18;
-  padding: 6px 0 0;
-  text-align: center;
-}
-
-/* ── Línea de corte ── */
-.ticket-tear-line {
-  display: flex;
-  align-items: center;
-  margin: 2px 0;
-  position: relative;
-  z-index: 1;
-  height: 16px;
-}
-
-.ticket-tear-circle {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: var(--carbon, #140206);
-  flex-shrink: 0;
-  position: relative;
-  z-index: 2;
-}
-
-.ticket-tear-circle.left {
-  margin-left: -8px;
-}
-
-.ticket-tear-circle.right {
-  margin-right: -8px;
-}
-
-.ticket-tear-dashes {
-  flex: 1;
-  height: 1px;
-  background: repeating-linear-gradient(90deg,
-      rgba(100, 60, 20, 0.5) 0px,
-      rgba(100, 60, 20, 0.5) 8px,
-      transparent 8px,
-      transparent 13px);
-}
-
-/* ── Datos del viaje ── */
-.vintage-ticket .ticket-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 18px 8px;
-  gap: 8px;
-  position: relative;
-  z-index: 1;
-}
-
-.ticket-field {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.ticket-field-right {
-  text-align: right;
-}
-
-.ticket-field-label {
-  font-family: 'Special Elite', monospace;
-  font-size: 0.45rem;
-  letter-spacing: 2px;
-  color: rgba(80, 40, 10, 0.5);
-  text-transform: uppercase;
-}
-
-.ticket-field-value {
-  font-family: 'Special Elite', monospace;
-  font-size: 0.7rem;
-  color: #3a1a08;
-}
-
-.vintage-ticket .ticket-train-icon {
-  font-size: 1.2rem;
-  filter: sepia(1) saturate(0.5) hue-rotate(5deg);
-}
-
-/* ── Talón inferior ── */
-.ticket-stub {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 7px 18px;
-  background: #e0cab0;
-  border-top: 1px dashed rgba(120, 80, 30, 0.3);
-  position: relative;
-  z-index: 1;
-}
-
-.ticket-stub-text {
-  font-family: 'Special Elite', monospace;
-  font-size: 0.5rem;
-  letter-spacing: 2px;
-  color: rgba(80, 40, 10, 0.6);
-  text-transform: uppercase;
-}
-
-.ticket-stub-icon {
-  color: rgba(120, 80, 30, 0.4);
-  font-size: 0.7rem;
-}
-
-/* ================================================================
-   BOTÓN "SIGUIENTE TREN"
-   ================================================================ */
+/* ========================================================
+   BOTÓN SIGUIENTE TREN
+   ======================================================== */
 .btn-siguiente-tren {
   background: linear-gradient(135deg, #8a3a12, #5a1a08) !important;
   border: 1px solid var(--ocre-oscuro) !important;
@@ -3157,7 +1546,6 @@ MÓVIL — evitar solapamiento btn-volver y font-controls
   position: relative;
   overflow: hidden;
 }
-
 .btn-siguiente-tren::before {
   content: "";
   position: absolute;
@@ -3166,33 +1554,18 @@ MÓVIL — evitar solapamiento btn-volver y font-controls
   transform: translateX(-100%);
   animation: nextTrainShine 2.5s ease-in-out infinite;
 }
-
 @keyframes nextTrainPulse {
-
-  0%,
-  100% {
-    box-shadow: 0 0 12px rgba(212, 140, 60, 0.3);
-  }
-
-  50% {
-    box-shadow: 0 0 24px rgba(212, 140, 60, 0.6), 0 0 40px rgba(212, 140, 60, 0.2);
-  }
+  0%, 100% { box-shadow: 0 0 12px rgba(212, 140, 60, 0.3); }
+  50% { box-shadow: 0 0 24px rgba(212, 140, 60, 0.6), 0 0 40px rgba(212, 140, 60, 0.2); }
 }
-
 @keyframes nextTrainShine {
-  0% {
-    transform: translateX(-100%);
-  }
-
-  60%,
-  100% {
-    transform: translateX(200%);
-  }
+  0% { transform: translateX(-100%); }
+  60%, 100% { transform: translateX(200%); }
 }
 
-/* ================================================================
-   TRANSICIÓN ENTRE TRENES — overlay vintage pantalla completa
-   ================================================================ */
+/* ========================================================
+   TRANSICIÓN ENTRE TRENES
+   ======================================================== */
 .tren-transition-overlay {
   position: fixed;
   inset: 0;
@@ -3205,12 +1578,10 @@ MÓVIL — evitar solapamiento btn-volver y font-controls
   pointer-events: none;
   transition: opacity 0.5s ease;
 }
-
 .tren-transition-overlay.activo {
   opacity: 1;
   pointer-events: all;
 }
-
 .tren-tr-content {
   text-align: center;
   display: flex;
@@ -3219,7 +1590,6 @@ MÓVIL — evitar solapamiento btn-volver y font-controls
   gap: 24px;
   padding: 40px 20px;
 }
-
 .tren-tr-steam {
   font-size: 1.8rem;
   color: var(--ocre, #c0a060);
@@ -3227,29 +1597,11 @@ MÓVIL — evitar solapamiento btn-volver y font-controls
   opacity: 0.6;
   animation: steamDrift 2s ease-in-out infinite;
 }
-
 @keyframes steamDrift {
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 0.5;
-  }
-
-  50% {
-    transform: translateY(-10px) scale(1.1);
-    opacity: 0.9;
-  }
-
-  100% {
-    transform: translateY(0) scale(1);
-    opacity: 0.5;
-  }
+  0% { transform: translateY(0) scale(1); opacity: 0.5; }
+  50% { transform: translateY(-10px) scale(1.1); opacity: 0.9; }
+  100% { transform: translateY(0) scale(1); opacity: 0.5; }
 }
-
-.tren-tr-train-anim {
-  display: flex;
-  align-items: center;
-}
-
 .tren-tr-icon {
   width: 80px;
   height: 80px;
@@ -3257,17 +1609,10 @@ MÓVIL — evitar solapamiento btn-volver y font-controls
   transform: scaleX(-1);
   animation: trainRide 0.15s ease-in-out infinite alternate;
 }
-
 @keyframes trainRide {
-  0% {
-    transform: scaleX(-1) translateY(0);
-  }
-
-  100% {
-    transform: scaleX(-1) translateY(-4px);
-  }
+  0% { transform: scaleX(-1) translateY(0); }
+  100% { transform: scaleX(-1) translateY(-4px); }
 }
-
 .tren-tr-text {
   font-family: 'Special Elite', monospace;
   font-size: clamp(0.9rem, 3vw, 1.3rem);
@@ -3277,14 +1622,12 @@ MÓVIL — evitar solapamiento btn-volver y font-controls
   min-width: 260px;
   text-shadow: 0 0 20px rgba(192, 160, 96, 0.5);
 }
-
 .tren-tr-track {
   position: relative;
   width: 280px;
   height: 20px;
   overflow: hidden;
 }
-
 .tren-tr-rail {
   position: absolute;
   left: 0;
@@ -3293,115 +1636,23 @@ MÓVIL — evitar solapamiento btn-volver y font-controls
   background: var(--ocre-oscuro, #8a6030);
   opacity: 0.6;
 }
-
-.tren-tr-rail:first-child {
-  top: 3px;
-}
-
-.tren-tr-rail:nth-child(2) {
-  top: 12px;
-}
-
+.tren-tr-rail:first-child { top: 3px; }
+.tren-tr-rail:nth-child(2) { top: 12px; }
 .tren-tr-ties {
   position: absolute;
   inset: 0;
-  background-image: repeating-linear-gradient(90deg,
-      var(--carbon-claro, #2a1408) 0px,
-      var(--carbon-claro, #2a1408) 12px,
-      transparent 12px,
-      transparent 28px);
+  background-image: repeating-linear-gradient(90deg, var(--carbon-claro, #2a1408) 0px, var(--carbon-claro, #2a1408) 12px, transparent 12px, transparent 28px);
   animation: tiesScroll 0.4s linear infinite;
   opacity: 0.5;
 }
-
 @keyframes tiesScroll {
-  from {
-    background-position: 0 0;
-  }
-
-  to {
-    background-position: -28px 0;
-  }
+  from { background-position: 0 0; }
+  to { background-position: -28px 0; }
 }
 
-.detalle-credito {
-  position: relative;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(26, 20, 17, 0.75);
-  font-family: var(--font-display);
-  font-size: 0.6rem;
-  letter-spacing: 1px;
-  color: var(--ocre-oscuro);
-  text-align: center;
-  padding: 5px 10px;
-  font-style: italic;
-  z-index: 10;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  margin-top: 60px;
-  position: relative;
-}
-
-.creditos {
-  font-size: 16px;
-  /* antes estaba muy pequeño */
-  color: #f5e6c8;
-  /* color más claro (mejor contraste) */
-  font-weight: 500;
-  letter-spacing: 0.5px;
-}
-
-.main-footer {
-  margin-top: 60px;
-  /* ajusta: 20px, 60px, etc */
-}
-
-.page-tren .font-controls {
-  position: fixed;
-  top: 52px;
-  right: 14px;
-}
-
-/* Texto del footer sube encima de las vías */
-.main-footer {
-  display: flex;
-  flex-direction: column;
-}
-
-.footer-text-principal {
-  order: -1;
-  /* el texto va primero */
-  text-align: center;
-  padding-bottom: 6px;
-}
-
-.footer-tracks {
-  order: 1;
-  /* las vías van al final */
-}
-
-.expand-overlay {
-  position: absolute;
-  inset: 0;
-  background: transparent;
-  /* ← quita el rgba(0,0,0,0.5) */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  z-index: 10;
-  cursor: pointer;
-  transition: opacity 0.35s ease;
-}
-/* ================================================================
+/* ========================================================
    BOTÓN CANCELAR EN TRANSICIÓN DE TRENES
-   ================================================================ */
+   ======================================================== */
 .tren-cancel-btn {
   display: flex;
   align-items: center;
@@ -3418,64 +1669,164 @@ footer {
   letter-spacing: 2px;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-weight: 500;
   backdrop-filter: blur(4px);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
-
 .tren-cancel-btn:hover {
   background: #c9a66b;
   color: #1a0a04;
   transform: scale(1.02);
   box-shadow: 0 0 16px rgba(201, 166, 107, 0.5);
-  border-color: #e8c88a;
 }
-
-.tren-cancel-btn:active {
-  transform: scale(0.98);
-}
-
+.tren-cancel-btn:active { transform: scale(0.98); }
 .tren-cancel-btn .cancel-icon {
   font-size: 1rem;
   font-weight: bold;
   transition: transform 0.2s ease;
 }
-
-.tren-cancel-btn:hover .cancel-icon {
-  transform: rotate(90deg);
-}
-
+.tren-cancel-btn:hover .cancel-icon { transform: rotate(90deg); }
 .tren-cancel-btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
-  transform: none;
 }
 
-/* Ajuste responsive para móvil */
-@media (max-width: 600px) {
-  .tren-cancel-btn {
-    padding: 8px 20px;
-    font-size: 0.75rem;
-    gap: 6px;
+/* ========================================================
+   CONTROL DE SONIDO FLOTANTE
+   ======================================================== */
+.sound-control {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+.sound-toggle-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(26, 20, 17, 0.9);
+  border: 1px solid var(--ocre-oscuro, #8c2848);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+.sound-toggle-btn:hover {
+  transform: scale(1.05);
+  border-color: var(--ocre, #c9a66b);
+  box-shadow: 0 0 12px rgba(201, 166, 107, 0.4);
+}
+.sound-toggle-btn:active { transform: scale(0.95); }
+.sound-icon { font-size: 1.2rem; }
+
+/* ========================================================
+   RESPONSIVE
+   ======================================================== */
+@media (min-width: 600px) {
+  .header-inner { flex-direction: row; gap: 30px; }
+  .board-row { grid-template-columns: 50px 1fr 130px 40px; }
+  .row-era { display: block; }
+  .stop-name {
+    display: block;
+    font-size: 0.6rem;
+    color: var(--marfil);
+    opacity: 0.5;
+    text-align: center;
+    max-width: 70px;
+    font-style: italic;
+  }
+  .train-window { height: 240px; }
+  .parada-panorama { height: 260px; }
+  .parada-slide { padding: 24px 28px 10px; }
+  .journey-controls { padding: 14px 30px; }
+  .ctrl-btn { padding: 12px 20px; font-size: 0.75rem; max-width: 200px; }
+  .detalle-360-wrapper { height: 45vw; max-height: 440px; }
+  .detalle-panel { padding: 24px 28px 40px; }
+}
+
+@media (min-width: 900px) {
+  .board-row { grid-template-columns: 60px 1fr 140px 150px 40px; }
+  .row-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: var(--ocre-claro);
+  }
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--ocre-claro);
+    border-radius: 50%;
+    animation: statusPulse 2s infinite;
+    box-shadow: var(--glow-ocre);
+  }
+  @keyframes statusPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+  .train-window { height: 280px; }
+  .parada-panorama { height: 300px; }
+  .parada-slide { padding: 30px 40px; }
+  .journey-controls { padding: 15px 40px; }
+  .pstop-name {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 0.6rem;
+    color: var(--ocre);
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    opacity: 0.7;
     margin-top: 20px;
   }
-  
-  .tren-cancel-btn .cancel-icon {
-    font-size: 0.9rem;
+  .page-detalle { height: 100vh; overflow: hidden; }
+  .detalle-layout { flex-direction: row; height: 100vh; }
+  .detalle-360-wrapper { flex: 1; height: 100vh; max-height: none; }
+  .detalle-panel {
+    width: 380px;
+    flex-shrink: 0;
+    border-top: none;
+    border-left: 1px solid rgba(192, 112, 144, 0.15);
+    overflow-y: auto;
+    padding: 30px 25px;
   }
 }
 
-/* Animación adicional para el overlay cuando se cancela */
-.tren-transition-overlay.cancelando {
-  animation: fadeOutOverlay 0.5s ease forwards;
+@media (max-width: 599px) {
+  .page-tren .font-controls,
+  .page-detalle .font-controls { top: 52px; }
+  .main-footer { display: flex; flex-direction: column; }
+  .footer-text-principal { order: -1; text-align: center; padding-bottom: 6px; }
+  .footer-tracks { order: 1; }
+  .page-tren .font-controls { top: 52px; right: 14px; }
+  .tren-cancel-btn { padding: 8px 20px; font-size: 0.75rem; gap: 6px; margin-top: 20px; }
+  .tren-cancel-btn .cancel-icon { font-size: 0.9rem; }
+  .sound-control { bottom: 80px; right: 15px; }
+  .sound-toggle-btn { width: 42px; height: 42px; }
+  .sound-icon { font-size: 1.1rem; }
 }
 
-@keyframes fadeOutOverlay {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-    visibility: hidden;
-  }
+/* ========================================================
+   MISCELÁNEOS
+   ======================================================== */
+.imagen-credito {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+  opacity: 0.8;
+  text-align: right;
+  font-style: italic;
+  color: white;
+}
+
+.footer-text-principal {
+  order: -1;
+  text-align: center;
+  padding-bottom: 6px;
 }

@@ -8,7 +8,6 @@ $paradaId = $_GET['parada'] ?? 0;
 $tren   = $trenes[$trenId] ?? null;
 $parada = $tren["paradas"][$paradaId] ?? null;
  
-// Soporta tanto "panorama" como "imagen" (compatibilidad tren 8)
 $panoramaUrl = $parada["panorama"] ?? "";
 $imagenPlana = $parada["imagen_thumb"] ?? $parada["imagen"] ?? "";
 $esPanorama  = !empty($panoramaUrl);
@@ -20,13 +19,11 @@ $esPanorama  = !empty($panoramaUrl);
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?= $parada ? htmlspecialchars($parada["nombre"]) : "Detalle" ?> — Ferroviaria</title>
   <link rel="icon" type="image/x-icon" href="icons/logo.ico">
-  <link rel="stylesheet" href="styles.css?v=12">
+  <link rel="stylesheet" href="styles.css?v=13">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.css"/>
   <script src="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.js"></script>
- 
-  
 </head>
 <body class="page-detalle">
  
@@ -46,7 +43,6 @@ $esPanorama  = !empty($panoramaUrl);
  
       <?php if ($esPanorama): ?>
  
-        <!-- Capa 1: imagen estática (preview de la panorámica) -->
         <img
           class="capa-imagen"
           id="capaImagen"
@@ -54,12 +50,10 @@ $esPanorama  = !empty($panoramaUrl);
           alt="<?= htmlspecialchars($parada["nombre"]) ?>"
         >
  
-        <!-- Capa 2: visor 360° (empieza invisible) -->
         <div class="capa-360" id="capa360">
           <div id="panoramaDetalle" style="width:100%;height:100%;"></div>
         </div>
  
-        <!-- Barra de progreso del lazo -->
         <div class="carga-barra-wrap" id="cargaBarraWrap">
           <div class="carga-barra" id="cargaBarra"></div>
         </div>
@@ -67,7 +61,6 @@ $esPanorama  = !empty($panoramaUrl);
  
       <?php else: ?>
  
-        <!-- Solo imagen plana, sin lazo -->
         <img
           class="capa-imagen"
           src="<?= htmlspecialchars($imagenPlana) ?>"
@@ -76,19 +69,14 @@ $esPanorama  = !empty($panoramaUrl);
         >
       <?php endif; ?>
  
-      <!-- Overlay invitación -->
       <div class="expand-overlay" onclick="expandirVista()">
-        <div class="expand-overlay-icon"><?= $esPanorama ? '' : '' ?></div>
-        <div class="expand-overlay-text">
-          <?= $esPanorama ? '' : '' ?>
-        </div>
+        <div class="expand-overlay-icon"></div>
+        <div class="expand-overlay-text"></div>
       </div>
  
-      <!-- Botón minimizar -->
       <button class="btn-cerrar-vista" onclick="cerrarVista(event)">✕ Minimizar</button>
     </div>
  
-    <!-- Panel informativo -->
     <div class="detalle-panel">
  
       <div class="detalle-breadcrumb">
@@ -152,7 +140,7 @@ $esPanorama  = !empty($panoramaUrl);
     const esPanorama    = <?= $esPanorama ? 'true' : 'false' ?>;
     const panoramaUrl   = <?= json_encode($panoramaUrl) ?>;
     const panoramaPitch = <?= json_encode($parada["panorama_pitch"] ?? 0) ?>;
-    const LAZO_MS       = 12000; // ms que se ve la imagen plana antes del 360°
+    const LAZO_MS       = 12000;
  
     let expandido    = false;
     let panoramaListo = false;
@@ -165,24 +153,20 @@ $esPanorama  = !empty($panoramaUrl);
       wrapper.classList.add('expandido');
       wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
  
-      if (!esPanorama) return; // imagen plana: nada más que hacer
+      if (!esPanorama) return;
  
-      // ── Lazo de tiempo: mostrar imagen 3s, luego activar 360° ──
       const barraWrap = document.getElementById('cargaBarraWrap');
       const barra     = document.getElementById('cargaBarra');
       const label     = document.getElementById('cargaLabel');
  
-      // Mostrar barra y label
       barraWrap.classList.add('activa');
       label.classList.add('activa');
  
-      // Animar barra al 100% en LAZO_MS ms
       requestAnimationFrame(() => {
         barra.style.transition = `width ${LAZO_MS}ms linear`;
         barra.style.width = '100%';
       });
  
-      // Iniciar Pannellum en paralelo (carga en background)
       pannellum.viewer('panoramaDetalle', {
         type:         "equirectangular",
         panorama:     panoramaUrl,
@@ -193,7 +177,6 @@ $esPanorama  = !empty($panoramaUrl);
         showControls: true
       });
  
-      // Después del lazo: ocultar imagen estática, mostrar 360°
       setTimeout(() => {
         barraWrap.classList.remove('activa');
         label.classList.remove('activa');
@@ -201,7 +184,6 @@ $esPanorama  = !empty($panoramaUrl);
         const capa360 = document.getElementById('capa360');
         capa360.classList.add('visible');
  
-        // Desvanecer imagen estática
         document.getElementById('capaImagen').style.opacity = '0';
       }, LAZO_MS);
     }
@@ -220,6 +202,6 @@ $esPanorama  = !empty($panoramaUrl);
   </div>
 <?php endif; ?>
  
-  <script src="script.js?v=11"></script>
+  <script src="script.js?v=13"></script>
 </body>
 </html>
