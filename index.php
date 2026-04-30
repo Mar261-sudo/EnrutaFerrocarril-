@@ -55,7 +55,7 @@ $trenes = json_decode($json, true);
       <div class="header-emblem">
         <img src="icons/logo.ico" alt="Locomotora" class="header-logo-img">
         <div class="header-click-hint">
-          <span class="hint-text">Toca para ver los trenes</span>
+          <span class="hint-text">Sube a un ferrocarril</span>
         </div>
       </div>
       <div class="header-text">
@@ -82,7 +82,6 @@ $trenes = json_decode($json, true);
       <?php endforeach; ?>
     </div>
   </section>
-
   <!-- Footer -->
   <footer class="main-footer">
     <p class="footer-text-principal">Exposición Ferroviaria &mdash; Patrimonio sobre Rieles</p>
@@ -102,7 +101,6 @@ $trenes = json_decode($json, true);
       <!-- Cabecera del modal -->
       <div class="modal-header">
         <div class="modal-header-left">
-          <span class="modal-steam-icon">♨</span>
           <span class="modal-title-text">TABLERO DE SALIDAS</span>
         </div>
         <button class="modal-close-btn" onclick="cerrarModalTrenes(event)" aria-label="Cerrar">✕</button>
@@ -133,7 +131,7 @@ $trenes = json_decode($json, true);
         </div>
       </section>
 
-      <p class="modal-footer-hint">Selecciona un tren para comenzar el recorrido</p>
+      <p class="modal-footer-hint">Selecciona un ferrocarril para comenzar el recorrido</p>
     </div>
   </div>
 

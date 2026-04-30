@@ -105,7 +105,7 @@ if ($posActual !== false && isset($idsOrdenados[$posActual + 1])) {
       <!-- FIN TICKET VINTAGE -->
 
       <button class="btn-embarcar" id="btnEmbarcar" onclick="iniciarViaje()">
-        <span class="btn-text">SUBIR AL TREN</span>
+        <span class="btn-text">SUBIR AL FERROCARRIL</span>
         <span class="btn-whistle"><img src="icons/icon-campana.svg" alt="campana" class="icon-btn"></span>
       </button>
       <p class="boarding-hint">Haz clic para comenzar el recorrido</p>
@@ -184,7 +184,7 @@ if ($posActual !== false && isset($idsOrdenados[$posActual + 1])) {
 
 <?php else: ?>
   <div class="container" style="text-align:center; padding:100px 20px;">
-    <h1 style="font-family:'Special Elite',serif; color:#c9a66b;">Tren no encontrado</h1>
+    <h1 style="font-family:'Special Elite',serif; color:#c9a66b;">Ferrocarril no encontrado</h1>
     <a href="index.php"><button class="btn-embarcar">← Volver</button></a>
   </div>
 <?php endif; ?>

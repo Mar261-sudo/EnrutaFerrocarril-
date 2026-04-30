@@ -459,7 +459,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  /* ── Overlay de transición entre TRENES ── */
+    /* ── Overlay de transición entre TRENES con botón Cancelar ── */
   function mostrarTransicionTren(callback) {
     // Crear overlay si no existe
     let overlay = document.getElementById("trenTransitionOverlay");
@@ -473,59 +473,124 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="tren-tr-train-anim">
             <img src="icons/icon-tren.svg" alt="tren" class="tren-tr-icon">
           </div>
-          <div class="tren-tr-text" id="trenTrText">Preparando el siguiente tren...</div>
+          <div class="tren-tr-text" id="trenTrText">Preparando el siguiente ferrocarril...</div>
           <div class="tren-tr-track">
             <div class="tren-tr-rail"></div>
             <div class="tren-tr-rail"></div>
             <div class="tren-tr-ties"></div>
           </div>
+          <button class="tren-cancel-btn" id="trenCancelBtn">
+            <span class="cancel-icon">✖</span> Cancelar viaje
+          </button>
         </div>
       `;
       document.body.appendChild(overlay);
     }
 
+    // Variable para controlar si se canceló
+    let cancelado = false;
+    let timeoutId = null;
+    let animationInterval = null;
+    let textoInterval = null;
+    
+    // Obtener el botón y los elementos
+    const cancelBtn = document.getElementById("trenCancelBtn");
+    const textEl = document.getElementById("trenTrText");
+    
+    // Función para limpiar todos los temporizadores e intervalos
+    function limpiarTransicion() {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+        timeoutId = null;
+      }
+      if (animationInterval) {
+        clearInterval(animationInterval);
+        animationInterval = null;
+      }
+      if (textoInterval) {
+        clearInterval(textoInterval);
+        textoInterval = null;
+      }
+    }
+    
+    // Manejador de cancelación
+    const cancelHandler = () => {
+      if (cancelado) return;
+      cancelado = true;
+      
+      // Cambiar texto del botón
+      if (cancelBtn) {
+        cancelBtn.innerHTML = '<span class="cancel-icon">✓</span> Cancelado';
+        cancelBtn.style.opacity = '0.7';
+        cancelBtn.disabled = true;
+      }
+      
+      // Mostrar mensaje de cancelación
+      if (textEl) {
+        textEl.textContent = "Viaje cancelado. Regresando...";
+        textEl.style.color = "#ff8888";
+      }
+      
+      // Limpiar temporizadores
+      limpiarTransicion();
+      
+      // Ocultar overlay después de un momento
+      setTimeout(() => {
+        overlay.classList.remove("activo");
+        // No ejecutar el callback
+      }, 800);
+    };
+    
+    // Agregar evento de cancelar
+    if (cancelBtn) {
+      // Remover event listener anterior si existe
+      const newCancelBtn = cancelBtn.cloneNode(true);
+      cancelBtn.parentNode.replaceChild(newCancelBtn, cancelBtn);
+      newCancelBtn.addEventListener("click", cancelHandler);
+    }
+    
     // Activar overlay
     overlay.classList.add("activo");
-
-    // Animación de texto tipo máquina de escribir
+    
+    // Animación de texto cambiante
     const frases = [
-      "Finalizando recorrido...",
-      "Silbato de partida ✦",
-      "Subiendo al siguiente tren...",
-      "¡Buen viaje, pasajero!",
+      "Preparando el siguiente ferrocarril...",
+      "Silbato de partida sonando...",
+      "Subiendo al siguiente ferrocarril...",
+      "¡Buen viaje, pasajero!"
     ];
-
-    const textEl = document.getElementById("trenTrText");
+    
     let fraseIdx = 0;
-
-    function escribirFrase(frase, done) {
-      if (!textEl) { done(); return; }
-      textEl.textContent = "";
-      let i = 0;
-      const inter = setInterval(() => {
-        textEl.textContent += frase[i];
-        i++;
-        if (i >= frase.length) {
-          clearInterval(inter);
-          setTimeout(done, 500);
-        }
-      }, 55);
-    }
-
-    function siguienteFrase() {
-      if (fraseIdx >= frases.length) {
-        // Todas las frases escritas → navegar
-        if (callback) callback();
-        return;
+    textoInterval = setInterval(() => {
+      if (cancelado) return;
+      if (textEl) {
+        fraseIdx = (fraseIdx + 1) % frases.length;
+        textEl.textContent = frases[fraseIdx];
       }
-      escribirFrase(frases[fraseIdx], () => {
-        fraseIdx++;
-        siguienteFrase();
-      });
+    }, 2000);
+    
+    // Animar las traviesas más rápido
+    const ties = overlay.querySelector(".tren-tr-ties");
+    if (ties) {
+      let speed = 0;
+      animationInterval = setInterval(() => {
+        if (cancelado) return;
+        speed = (speed + 2) % 56;
+        ties.style.backgroundPosition = `${speed}px 0`;
+      }, 30);
     }
-
-    // Iniciar texto después de que el overlay esté visible
-    setTimeout(siguienteFrase, 400);
+    
+    // Establecer timeout para ejecutar callback (5 segundos)
+    timeoutId = setTimeout(() => {
+      if (!cancelado) {
+        limpiarTransicion();
+        // No remover el event listener aquí, solo ocultar y ejecutar callback
+        overlay.classList.remove("activo");
+        if (callback && typeof callback === "function") {
+          callback();
+        }
+      }
+    }, 5000);
   }
 
   /* ================================================================

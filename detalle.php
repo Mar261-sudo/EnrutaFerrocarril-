@@ -135,8 +135,8 @@ $esPanorama  = !empty($panoramaUrl);
             ◀ Parada anterior
           </a>
         <?php endif; ?>
-        <a href="tren.php?id=<?= $trenId ?>&inicio=1&parada=<?= $paradaId ?>" class="btn-volver-tren">
-          <img src="icons/icon-tren.svg" alt="tren"> Volver al tren
+        <a href="index.php" class="btn-volver-tren">
+          <img src="icons/icon-tren.svg" alt="tren"> Volver a las paradas
         </a>
         <?php if ($paradaId < count($tren["paradas"]) - 1): ?>
           <a href="detalle.php?tren=<?= $trenId ?>&parada=<?= $paradaId + 1 ?>" class="btn-detalle-nav primary">
