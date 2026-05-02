@@ -106,12 +106,16 @@ if ($posActual !== false && isset($idsOrdenados[$posActual + 1])) {
     <div class="train-window" id="trainWindow">
       <div class="window-frame">
         <div class="window-glass">
-          <iframe
+            <video
+            id="videoVentanaTren"
             src="video/video.mp4"
-            frameborder="0"
-            allow="autoplay"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
             style="position:absolute; top:50%; left:50%; width:200%; height:100%; transform:translate(-50%,-50%); pointer-events:none; z-index:1;">
-          </iframe>
+          </video>
           <div class="landscape" id="landscape" style="z-index:2; opacity:0;"></div>
           <div class="window-reflections" style="z-index:3;"></div>
           <div class="rain-overlay" id="rainOverlay" style="z-index:4;"></div>
