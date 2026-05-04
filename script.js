@@ -107,6 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!overlay) return;
     overlay.classList.add("activo");
     document.body.style.overflow = "hidden";
+    if (typeof window.reproducirSonido === "function") window.reproducirSonido("ticket");
 
     const filas = overlay.querySelectorAll(".board-row");
     filas.forEach((f, i) => {
@@ -144,107 +145,70 @@ document.addEventListener("DOMContentLoaded", () => {
   const boardingScreen = document.getElementById("boardingScreen");
   const journeyScreen = document.getElementById("journeyScreen");
 
-  const ICON_TREN = '<img src="icons/icon-tren.svg" alt="tren" class="icon-progress-train">';
-  const ICON_LINTERNA = '<img src="icons/icon-linterna.svg" alt="curiosidad" class="icon-sm">';
-  const ICON_DATOS = '<img src="icons/icon-datos.svg" alt="datos" class="icon-sm">';
-  const ICON_BOCINA = '<img src="icons/icon-bocina.svg" alt="anuncio" class="icon-sm">';
-
+  const ICON_TREN = '<img src="images/icon-tren.png" alt="tren" class="icon-progress-train">';
+  const ICON_LINTERNA = '<img src="images/icon-linterna.png" alt="curiosidad" class="icon-sm">';
+  const ICON_DATOS = '<img src="images/icon-datos.png" alt="datos" class="icon-sm">';
+  const ICON_BOCINA = '<img src="images/icon-bocina.png" alt="anuncio" class="icon-sm">';
   let paradaActual = 0;
   const paradas = TREN_DATA.paradas || [];
   let panoramaViewer = null;
 
   /* ================================================================
-     SISTEMA DE 3 SONIDOS CON ARCHIVOS MP3
+     SISTEMA DE SONIDOS — cortos, bajos, instantáneos
      ================================================================ */
-  
-  // Configuración de los 3 sonidos (AJUSTA LOS NOMBRES SEGÚN TUS ARCHIVOS)
+
   const SONIDOS = {
-    estacion: "audio/sonido1.mp3",      // Para llegada a estaciones
-    cambioTren: "audio/sonido2.mp3", // Para cambio de tren
-    ticket: "audio/sonido3.mp3"           // Para el ticket/embarque
+    estacion:   "audio/sonido1.mp3",
+    cambioTren: "audio/sonido2.mp3",
+    ticket:     "audio/sonido3.mp3"
   };
 
-  // Volúmenes (0 a 1)
+  const DURACION_MAX = {
+    estacion:   2.5,
+    cambioTren: 4.0,
+    ticket:     2.0
+  };
+
   const VOLUMENES = {
-    estacion: 0.6,
-    cambioTren: 0.7,
-    ticket: 0.5
+    estacion:   0.4,
+    cambioTren: 0.5,
+    ticket:     0.35
   };
 
   let sonidosActivados = true;
-  const audioCache = {};
 
-  function reproducirSonido(tipo, loop = false) {
-    if (!sonidosActivados) return null;
-    
+  window.reproducirSonido = function (tipo) {
+    if (!sonidosActivados) return;
     const url = SONIDOS[tipo];
-    if (!url) {
-      console.warn(`Sonido ${tipo} no encontrado`);
-      return null;
-    }
-    
+    if (!url) return;
+
     try {
-      if (audioCache[tipo]) {
-        const audio = audioCache[tipo].cloneNode();
-        audio.volume = VOLUMENES[tipo];
-        audio.loop = loop;
-        audio.currentTime = 0;
-        audio.play().catch(e => console.log("Error al reproducir:", e));
-        return audio;
-      }
-      
       const audio = new Audio(url);
-      audio.preload = "auto";
-      audio.addEventListener("canplaythrough", () => {
-        audioCache[tipo] = audio;
-      });
       audio.volume = VOLUMENES[tipo];
-      audio.loop = loop;
-      audio.play().catch(e => console.log("Error al reproducir:", e));
-      return audio;
-    } catch (error) {
-      console.warn(`Error con sonido ${tipo}:`, error);
-      return null;
-    }
+      audio.currentTime = 0;
+
+      const durMax = DURACION_MAX[tipo] || 2.0;
+      const fadeStart = durMax - 0.4;
+
+      audio.play().then(() => {
+        const fadeInterval = setInterval(() => {
+          if (audio.currentTime >= fadeStart) {
+            audio.volume = Math.max(0, audio.volume - 0.04);
+          }
+          if (audio.currentTime >= durMax || audio.volume <= 0) {
+            clearInterval(fadeInterval);
+            audio.pause();
+          }
+        }, 50);
+      }).catch(e => console.log("Error audio:", e));
+    } catch(e) {}
   }
 
-  function toggleSonidos() {
-    sonidosActivados = !sonidosActivados;
-    const icono = document.querySelector(".sound-toggle-btn .sound-icon");
-    if (icono) {
-      icono.textContent = sonidosActivados ? "🔊" : "";
-    }
-    console.log(`Sonidos ${sonidosActivados ? "activados" : "desactivados"}`);
-    return sonidosActivados;
-  }
+  /* ================================================================
+     INTEGRACIÓN DE SONIDOS CON LAS FUNCIONES EXISTENTES
+     ================================================================ */
 
-  function agregarControlDeSonido() {
-    if (document.getElementById("soundControl")) return;
-    
-    const controlHTML = `
-      <div class="sound-control" id="soundControl">
-        <button class="sound-toggle-btn" title="Activar/Desactivar sonidos">
-          <span class="sound-icon">🔊</span>
-        </button>
-      </div>
-    `;
-    
-    document.body.insertAdjacentHTML("beforeend", controlHTML);
-    
-    const btn = document.querySelector(".sound-toggle-btn");
-    if (btn) {
-      btn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        toggleSonidos();
-      });
-    }
-  }
-
-  // ================================================================
-  // INTEGRACIÓN DE SONIDOS CON LAS FUNCIONES EXISTENTES
-  // ================================================================
-
-  // 1. SONIDO DE ESTACIÓN - Al llegar a una nueva parada
+  // 1. SONIDO DE TICKET — Al embarcar
   window.iniciarViaje = function () {
     if (!boardingScreen) return;
 
@@ -254,7 +218,6 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => { btn.style.transform = ""; }, 150);
     }
 
-    // Sonido de ticket al embarcar
     reproducirSonido("ticket");
 
     boardingScreen.classList.add("leaving");
@@ -507,7 +470,6 @@ document.addEventListener("DOMContentLoaded", () => {
   window.paradaSiguiente = function () {
     if (paradaActual < paradas.length - 1) {
       paradaActual++;
-      // Sonido de estación al llegar a la nueva parada
       reproducirSonido("estacion");
       mostrarParada(paradaActual, true);
       acelerarPaisaje();
@@ -532,10 +494,8 @@ document.addEventListener("DOMContentLoaded", () => {
      IR AL SIGUIENTE TREN — con transición vintage y sonido
      ================================================================ */
   window.irSiguienteTren = function () {
-    // Sonido de cambio de tren
     reproducirSonido("cambioTren");
 
-    // Mostrar overlay de transición vintage
     mostrarTransicionTren(() => {
       const destino = (typeof TREN_ID_SIGUIENTE !== "undefined" && TREN_ID_SIGUIENTE !== null)
         ? `tren.php?id=${TREN_ID_SIGUIENTE}`
@@ -555,7 +515,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="tren-tr-content">
           <div class="tren-tr-steam">♨ ♨ ♨</div>
           <div class="tren-tr-train-anim">
-            <img src="icons/icon-tren.svg" alt="tren" class="tren-tr-icon">
+          <img src="images/icon-tren.png" alt="tren" class="tren-tr-icon">
           </div>
           <div class="tren-tr-text" id="trenTrText">Preparando el siguiente ferrocarril...</div>
           <div class="tren-tr-track">
@@ -575,62 +535,53 @@ document.addEventListener("DOMContentLoaded", () => {
     let timeoutId = null;
     let animationInterval = null;
     let textoInterval = null;
-    
+
     const cancelBtn = document.getElementById("trenCancelBtn");
     const textEl = document.getElementById("trenTrText");
-    
+
     function limpiarTransicion() {
-      if (timeoutId) {
-        clearTimeout(timeoutId);
-        timeoutId = null;
-      }
-      if (animationInterval) {
-        clearInterval(animationInterval);
-        animationInterval = null;
-      }
-      if (textoInterval) {
-        clearInterval(textoInterval);
-        textoInterval = null;
-      }
+      if (timeoutId) { clearTimeout(timeoutId); timeoutId = null; }
+      if (animationInterval) { clearInterval(animationInterval); animationInterval = null; }
+      if (textoInterval) { clearInterval(textoInterval); textoInterval = null; }
     }
-    
+
     const cancelHandler = () => {
       if (cancelado) return;
       cancelado = true;
-      
+
       if (cancelBtn) {
         cancelBtn.innerHTML = '<span class="cancel-icon">✓</span> Cancelado';
         cancelBtn.style.opacity = '0.7';
         cancelBtn.disabled = true;
       }
-      
+
       if (textEl) {
         textEl.textContent = "Viaje cancelado. Regresando...";
         textEl.style.color = "#ff8888";
       }
-      
+
       limpiarTransicion();
-      
+
       setTimeout(() => {
         overlay.classList.remove("activo");
       }, 800);
     };
-    
+
     if (cancelBtn) {
       const newCancelBtn = cancelBtn.cloneNode(true);
       cancelBtn.parentNode.replaceChild(newCancelBtn, cancelBtn);
       newCancelBtn.addEventListener("click", cancelHandler);
     }
-    
+
     overlay.classList.add("activo");
-    
+
     const frases = [
       "Preparando el siguiente ferrocarril...",
       "Silbato de partida sonando...",
       "Subiendo al siguiente ferrocarril...",
       "¡Buen viaje, pasajero!"
     ];
-    
+
     let fraseIdx = 0;
     textoInterval = setInterval(() => {
       if (cancelado) return;
@@ -639,7 +590,7 @@ document.addEventListener("DOMContentLoaded", () => {
         textEl.textContent = frases[fraseIdx];
       }
     }, 2000);
-    
+
     const ties = overlay.querySelector(".tren-tr-ties");
     if (ties) {
       let speed = 0;
@@ -649,7 +600,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ties.style.backgroundPosition = `${speed}px 0`;
       }, 30);
     }
-    
+
     timeoutId = setTimeout(() => {
       if (!cancelado) {
         limpiarTransicion();
@@ -671,19 +622,8 @@ document.addEventListener("DOMContentLoaded", () => {
     landscape.style.opacity = "0";
   }, 1500);
 
-  // Agregar control de sonido y precargar sonidos
-  agregarControlDeSonido();
-  
-  // Precargar los 3 sonidos
-  setTimeout(() => {
-    Object.keys(SONIDOS).forEach(tipo => {
-      const audio = new Audio(SONIDOS[tipo]);
-      audio.preload = "auto";
-      audio.load();
-    });
-    console.log(" Sonidos precargados");
-  }, 1000);
 });
+
 
 window.mostrarCuriosidad = function () {
   if (typeof curiosidades === "undefined" || !curiosidades.length) return;

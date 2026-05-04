@@ -21,7 +21,7 @@ if ($posActual !== false && isset($idsOrdenados[$posActual + 1])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?= $tren ? htmlspecialchars($tren["nombre"]) : "Tren" ?> — Exposición Ferroviaria</title>
-  <link rel="icon" type="image/x-icon" href="icons/logo.ico">
+  <link rel="icon" type="image/png" href="images/logo.png">
   <link rel="stylesheet" href="styles.css?v=13">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -43,7 +43,7 @@ if ($posActual !== false && isset($idsOrdenados[$posActual + 1])) {
   <div class="boarding-screen" id="boardingScreen">
     <div class="boarding-inner">
 
-      <div class="boarding-ticket vintage-ticket">
+      <div class="vintage-ticket">
 
         <div class="ticket-top">
           <div class="ticket-header-left">
@@ -65,18 +65,17 @@ if ($posActual !== false && isset($idsOrdenados[$posActual + 1])) {
         </div>
 
         <div class="ticket-tear-line">
-          <div class="ticket-tear-circle left"></div>
-          <div class="ticket-tear-dashes"></div>
-          <div class="ticket-tear-circle right"></div>
+        <div class="ticket-tear-dashes"></div>
         </div>
-
+         
         <div class="ticket-bottom">
           <div class="ticket-field">
             <span class="ticket-field-label">PARTIDA</span>
             <span class="ticket-field-value">Estación Central</span>
           </div>
+
           <div class="ticket-train-icon">
-            <img src="icons/icon-tren.svg" alt="tren" class="icon-btn">
+            <img src="images/icon-tren.png" alt="tren" class="icon-btn">
           </div>
           <div class="ticket-field ticket-field-right">
             <span class="ticket-field-label">LLEGADA</span>
@@ -95,7 +94,9 @@ if ($posActual !== false && isset($idsOrdenados[$posActual + 1])) {
 
       <button class="btn-embarcar" id="btnEmbarcar" onclick="iniciarViaje()">
         <span class="btn-text">SUBIR AL FERROCARRIL</span>
-        <span class="btn-whistle"><img src="icons/icon-campana.svg" alt="campana" class="icon-btn"></span>
+         <span class="btn-whistle">
+            <img src="images/icon-campana.png" alt="campana" class="icon-btn">
+         </span>
       </button>
       <p class="boarding-hint">Haz clic para comenzar el recorrido</p>
     </div>
@@ -106,12 +107,17 @@ if ($posActual !== false && isset($idsOrdenados[$posActual + 1])) {
     <div class="train-window" id="trainWindow">
       <div class="window-frame">
         <div class="window-glass">
-          <iframe
+          <video
+            id="videoVentanaTren"
             src="video/video.mp4"
-            frameborder="0"
-            allow="autoplay"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
             style="position:absolute; top:50%; left:50%; width:200%; height:100%; transform:translate(-50%,-50%); pointer-events:none; z-index:1;">
-          </iframe>
+          </video>
+
           <div class="landscape" id="landscape" style="z-index:2; opacity:0;"></div>
           <div class="window-reflections" style="z-index:3;"></div>
           <div class="rain-overlay" id="rainOverlay" style="z-index:4;"></div>
@@ -128,7 +134,7 @@ if ($posActual !== false && isset($idsOrdenados[$posActual + 1])) {
         <div class="progress-track">
           <div class="progress-fill" id="progressFill"></div>
           <div class="progress-train" id="progressTrain">
-            <img src="icons/icon-tren.svg" alt="tren" class="icon-progress-train">
+            <img src="images/icon-tren.png" alt="tren" class="icon-progress-train">
           </div>
           <?php foreach ($tren["paradas"] as $i => $parada): ?>
             <div class="progress-stop" style="left: <?= $totalParadas === 1 ? 50 : ($i / $divisor) * 100 ?>%">
@@ -142,7 +148,9 @@ if ($posActual !== false && isset($idsOrdenados[$posActual + 1])) {
       <div class="station-content" id="stationContent">
         <div class="arrival-announcement hidden" id="arrivalAnnouncement">
           <div class="announcement-inner">
-            <span class="announcement-icon"><img src="icons/icon-bocina.svg" alt="anuncio" class="icon-sm"></span>
+            <span class="announcement-icon">
+              <img src="images/icon-bocina.png" alt="anuncio" class="icon-sm">
+            </span>
             <span class="announcement-text" id="announcementText"></span>
           </div>
         </div>
