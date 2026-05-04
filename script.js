@@ -107,6 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!overlay) return;
     overlay.classList.add("activo");
     document.body.style.overflow = "hidden";
+    if (typeof window.reproducirSonido === "function") window.reproducirSonido("ticket");
 
     const filas = overlay.querySelectorAll(".board-row");
     filas.forEach((f, i) => {
@@ -135,31 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
       window.abrirModalTrenes();
     }
   });
-  /* ================================================================
-     VIDEO  (tren.php)
-     ================================================================ */
-  document.querySelectorAll("#videoVentanaTren").forEach(video => {
-  video.muted = true;
-  video.defaultMuted = true;
-  video.loop = true;
-  video.autoplay = true;
-  video.playsInline = true;
 
-  const reproducir = () => {
-    video.play().catch(error => {
-      console.log("No se pudo reproducir automáticamente:", error);
-    });
-  };
-
-  video.addEventListener("loadeddata", reproducir, { once: true });
-
-  video.addEventListener("ended", () => {
-    video.currentTime = 0;
-    reproducir();
-  });
-
-  reproducir();
-});
   /* ================================================================
      PANTALLA DE EMBARQUE Y VIAJE (tren.php)
      ================================================================ */
@@ -168,82 +145,82 @@ document.addEventListener("DOMContentLoaded", () => {
   const boardingScreen = document.getElementById("boardingScreen");
   const journeyScreen = document.getElementById("journeyScreen");
 
-  const ICON_TREN = '<img src="icons/icon-tren.svg" alt="tren" class="icon-progress-train">';
-  const ICON_LINTERNA = '<img src="icons/icon-linterna.svg" alt="curiosidad" class="icon-sm">';
-  const ICON_DATOS = '<img src="icons/icon-datos.svg" alt="datos" class="icon-sm">';
-  const ICON_BOCINA = '<img src="icons/icon-bocina.svg" alt="anuncio" class="icon-sm">';
-
+  const ICON_TREN = '<img src="images/icon-tren.png" alt="tren" class="icon-progress-train">';
+  const ICON_LINTERNA = '<img src="images/icon-linterna.png" alt="curiosidad" class="icon-sm">';
+  const ICON_DATOS = '<img src="images/icon-datos.png" alt="datos" class="icon-sm">';
+  const ICON_BOCINA = '<img src="images/icon-bocina.png" alt="anuncio" class="icon-sm">';
   let paradaActual = 0;
   const paradas = TREN_DATA.paradas || [];
   let panoramaViewer = null;
 
   /* ================================================================
-     SISTEMA DE SONIDOS — cortos, bajos, instantáneos
+     SISTEMA DE SONIDOS — precargados para reproducción inmediata
      ================================================================ */
 
-  const SONIDOS = {
+  const VOLUMENES = {
+    estacion:   0.4,
+    cambioTren: 0.5,
+    ticket:     0.35
+  };
+
+  const DURACION_MAX = {
+    estacion:   2.5,
+    cambioTren: 4.0,
+    ticket:     2.0
+  };
+
+  // Precargar todos los audios al inicio para evitar latencia
+  const audioCache = {};
+  const SONIDOS_SRC = {
     estacion:   "audio/sonido1.mp3",
     cambioTren: "audio/sonido2.mp3",
     ticket:     "audio/sonido3.mp3"
   };
 
-  const DURACION_MAX = {
-    estacion:   1.5,
-    cambioTren: 2.0,
-    ticket:     1.0
-  };
-
-  const VOLUMENES = {
-    estacion:   0.25,
-    cambioTren: 0.30,
-    ticket:     0.20
-  };
+  Object.entries(SONIDOS_SRC).forEach(([tipo, url]) => {
+    const audio = new Audio(url);
+    audio.preload = "auto";
+    audio.volume = VOLUMENES[tipo];
+    audio.load();
+    audioCache[tipo] = audio;
+  });
 
   let sonidosActivados = true;
 
-  // Precargar todos los audios al inicio para que no haya delay
-  const audioCache = {};
-  Object.keys(SONIDOS).forEach(tipo => {
-    const a = new Audio(SONIDOS[tipo]);
-    a.preload = "auto";
-    a.volume  = VOLUMENES[tipo];
-    a.load();
-    audioCache[tipo] = a;
-  });
-
-  function reproducirSonido(tipo) {
+  window.reproducirSonido = function (tipo) {
     if (!sonidosActivados) return;
-    const original = audioCache[tipo];
-    if (!original) return;
+    const audio = audioCache[tipo];
+    if (!audio) return;
 
     try {
-      const audio = original.cloneNode();
-      audio.volume = VOLUMENES[tipo];
+      audio.pause();
       audio.currentTime = 0;
+      audio.volume = VOLUMENES[tipo];
 
-      const durMax = DURACION_MAX[tipo] || 1.5;
-      const fadeStart = durMax - 0.3;
+      const durMax = DURACION_MAX[tipo] || 2.0;
+      const fadeStart = durMax - 0.4;
 
-      const fadeInterval = setInterval(() => {
-        if (audio.currentTime >= fadeStart) {
-          audio.volume = Math.max(0, audio.volume - 0.05);
-        }
-        if (audio.currentTime >= durMax || audio.volume <= 0) {
-          clearInterval(fadeInterval);
-          audio.pause();
-          audio.currentTime = 0;
-        }
-      }, 50);
-
-      audio.play().catch(() => clearInterval(fadeInterval));
+      audio.play().then(() => {
+        const fadeInterval = setInterval(() => {
+          if (audio.currentTime >= fadeStart) {
+            audio.volume = Math.max(0, audio.volume - 0.04);
+          }
+          if (audio.currentTime >= durMax || audio.volume <= 0) {
+            clearInterval(fadeInterval);
+            audio.pause();
+          }
+        }, 50);
+      }).catch(e => console.log("Error audio:", e));
     } catch(e) {}
-  }
+  };
 
   /* ================================================================
      INTEGRACIÓN DE SONIDOS CON LAS FUNCIONES EXISTENTES
      ================================================================ */
 
   // 1. SONIDO DE TICKET — Al embarcar
+  // El audio se crea y reproduce directamente en el handler del clic
+  // para evitar que el navegador bloquee la reproducción automática
   window.iniciarViaje = function () {
     if (!boardingScreen) return;
 
@@ -253,7 +230,12 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => { btn.style.transform = ""; }, 150);
     }
 
-    reproducirSonido("ticket");
+    // Audio creado y reproducido directamente aquí, dentro del evento de clic
+    try {
+      const audioTicket = new Audio("audio/sonido3.mp3");
+      audioTicket.volume = 0.35;
+      audioTicket.play().catch(e => console.log("Audio ticket error:", e));
+    } catch(e) {}
 
     boardingScreen.classList.add("leaving");
 
@@ -412,7 +394,7 @@ document.addEventListener("DOMContentLoaded", () => {
             btnSig.classList.add("btn-siguiente-tren");
             btnSig.onclick = irSiguienteTren;
           } else {
-            btnSig.textContent = "Volver al inicio";
+            btnSig.textContent = "⬛ Volver al inicio";
             btnSig.disabled = false;
             btnSig.classList.add("btn-siguiente-tren");
             btnSig.onclick = () => { window.location.href = "index.php"; };
@@ -550,7 +532,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="tren-tr-content">
           <div class="tren-tr-steam">♨ ♨ ♨</div>
           <div class="tren-tr-train-anim">
-            <img src="icons/icon-tren.svg" alt="tren" class="tren-tr-icon">
+          <img src="images/icon-tren.png" alt="tren" class="tren-tr-icon">
           </div>
           <div class="tren-tr-text" id="trenTrText">Preparando el siguiente ferrocarril...</div>
           <div class="tren-tr-track">

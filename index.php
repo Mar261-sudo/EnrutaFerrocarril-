@@ -8,7 +8,7 @@ $trenes = json_decode($json, true);
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Exposición Ferroviaria</title>
-  <link rel="icon" type="image/x-icon" href="icons/logo.ico">
+  <link rel="icon" type="image/png" href="images/logo.png">
   <link rel="stylesheet" href="styles.css?v=13">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -49,16 +49,17 @@ $trenes = json_decode($json, true);
   <!-- Header — clickeable abre el modal de trenes -->
   <header class="main-header header-clickeable" id="mainHeader" onclick="abrirModalTrenes()" role="button" tabindex="0" aria-label="Ver lista de trenes" title="Haz clic para ver los trenes">
     <div class="header-inner">
-      <div class="header-emblem">
-        <img src="icons/logo.ico" alt="Locomotora" class="header-logo-img">
-        <div class="header-click-hint">
-          <span class="hint-text">Sube a un ferrocarril</span>
-        </div>
-      </div>
       <div class="header-text">
         <p class="header-sub">Exposición</p>
         <h1 class="header-title">Ferrocarriles<br><em>Históricos</em></h1>
         <p class="header-tagline">Un viaje a través del tiempo sobre rieles de acero</p>
+        <div class="header-emblem">
+        <img src="images/logo.png" alt="Locomotora" class="header-logo-img">
+        <div class="header-click-hint">
+          <span class="hint-text">Sube a un ferrocarril</span>
+          <span class="hint-text">haciendo click aqui!</span>
+        </div>
+      </div>
       </div>
     </div>
     <div class="header-divider">
@@ -69,7 +70,9 @@ $trenes = json_decode($json, true);
   <!-- Línea de tiempo decorativa -->
   <section class="timeline-strip">
     <div class="timeline-track">
-      <div class="timeline-train" id="timelineTrain"><img src="icons/icon-tren.svg" alt="tren" class="icon-tren-timeline"></div>
+      <div class="timeline-train" id="timelineTrain">
+        <img src="images/icon-tren.png" alt="tren" class="icon-tren-timeline">
+      </div>
       <?php foreach ($trenes as $id => $tren): ?>
         <div class="timeline-stop">
           <div class="stop-dot"></div>

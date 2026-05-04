@@ -537,20 +537,21 @@ button { font-family: var(--font-display); cursor: pointer; }
   box-shadow: var(--shadow-deep), var(--shadow-warm);
   position: relative;
 }
-.boarding-ticket::before,
-.boarding-ticket::after {
+.vintage-ticket::before,
+.vintage-ticket::after {
   content: "";
   position: absolute;
   width: 22px;
   height: 22px;
-  background: var(--carbon);
+  background: var(--carbon-medio);
   border-radius: 50%;
-  top: 50%;
+  top: 62%;
   transform: translateY(-50%);
-  z-index: 2;
+  z-index: 3;
+  pointer-events: none;
 }
-.boarding-ticket::before { left: -11px; }
-.boarding-ticket::after { right: -11px; }
+.vintage-ticket::before { left: -11px; }
+.vintage-ticket::after { right: -11px; }
 
 .vintage-ticket {
   background: #f5ead5 !important;
@@ -560,25 +561,6 @@ button { font-family: var(--font-display); cursor: pointer; }
   box-shadow: 0 0 0 1px rgba(120,80,30,0.4), 0 0 0 3px rgba(120,80,30,0.12), 4px 6px 20px rgba(0,0,0,0.5), inset 0 0 40px rgba(180,130,60,0.06) !important;
   max-width: 370px;
   animation: ticketBreath 5s ease-in-out infinite;
-}
-.vintage-ticket::before {
-  content: "✦";
-  position: absolute;
-  font-size: 8rem;
-  color: rgba(160, 100, 30, 0.06);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-}
-.vintage-ticket::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 22px;
-  height: 22px;
-  background: linear-gradient(135deg, transparent 50%, rgba(120,80,30,0.25) 50%);
 }
 
 @keyframes ticketBreath {
@@ -681,8 +663,12 @@ button { font-family: var(--font-display); cursor: pointer; }
   align-items: center;
   margin: 0;
   height: 20px;
+  position: relative;
 }
-.ticket-tear-circle {
+
+.ticket-tear-line::before,
+.ticket-tear-line::after {
+  content: "";
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -690,8 +676,10 @@ button { font-family: var(--font-display); cursor: pointer; }
   flex-shrink: 0;
   box-shadow: inset 0 0 4px rgba(0,0,0,0.4);
 }
-.ticket-tear-circle.left { margin-left: -10px; }
-.ticket-tear-circle.right { margin-right: -10px; }
+
+.ticket-tear-line::before { margin-left: -10px; }
+.ticket-tear-line::after  { margin-right: -10px; }
+
 .ticket-tear-dashes {
   flex: 1;
   border-top: 1px dashed rgba(90,50,15,0.40);
@@ -1434,8 +1422,9 @@ button { font-family: var(--font-display); cursor: pointer; }
 }
 .header-click-hint {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 2px;
   margin-top: 8px;
   opacity: 0;
   transform: translateY(4px);
@@ -1446,6 +1435,15 @@ button { font-family: var(--font-display); cursor: pointer; }
   color: var(--ocre);
   text-transform: uppercase;
   animation: hintPulse 3s ease-in-out infinite;
+}
+.hint-text {
+  font-size: clamp(1rem, 3.5vw, 1.3rem);
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.hint-text:last-child {
+  font-size: 1.1em;
+  opacity: 0.9;
 }
 @keyframes hintPulse {
   0%, 100% { opacity: 0.4; transform: translateY(0); }

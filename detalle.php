@@ -18,7 +18,7 @@ $esPanorama  = !empty($panoramaUrl);
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?= $parada ? htmlspecialchars($parada["nombre"]) : "Detalle" ?> — Ferroviaria</title>
-  <link rel="icon" type="image/x-icon" href="icons/logo.ico">
+   <link rel="icon" type="image/png" href="images/logo.png">
   <link rel="stylesheet" href="styles.css?v=13">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -98,7 +98,7 @@ $esPanorama  = !empty($panoramaUrl);
       <?php if (!empty($parada["datos"])): ?>
       <div class="detalle-facts">
         <h3 class="facts-title">
-          <img src="icons/icon-datos.svg" alt="datos" class="icon-sm"> Datos de esta parada
+          <img src="images/icon-datos.png" alt="datos" class="icon-sm"> Datos de esta parada
         </h3>
         <ul class="facts-list">
           <?php foreach ($parada["datos"] as $dato): ?>
@@ -111,7 +111,7 @@ $esPanorama  = !empty($panoramaUrl);
       <?php if (!empty($parada["curiosidad"])): ?>
       <div class="detalle-curiosity">
         <span class="curiosity-icon">
-          <img src="icons/icon-linterna.svg" alt="curiosidad" class="icon-sm">
+          <img src="images/icon-linterna.png" alt="curiosidad" class="icon-sm">
         </span>
         <p><?= htmlspecialchars($parada["curiosidad"]) ?></p>
       </div>
@@ -124,7 +124,7 @@ $esPanorama  = !empty($panoramaUrl);
           </a>
         <?php endif; ?>
         <a href="index.php" class="btn-volver-tren">
-          <img src="icons/icon-tren.svg" alt="tren"> Volver a las paradas
+          <img src="images/icon-tren.png" alt="tren">Volver a las paradas
         </a>
         <?php if ($paradaId < count($tren["paradas"]) - 1): ?>
           <a href="detalle.php?tren=<?= $trenId ?>&parada=<?= $paradaId + 1 ?>" class="btn-detalle-nav primary">
