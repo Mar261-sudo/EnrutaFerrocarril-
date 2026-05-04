@@ -1436,6 +1436,102 @@ button { font-family: var(--font-display); cursor: pointer; }
   text-transform: uppercase;
   animation: hintPulse 3s ease-in-out infinite;
 }
+
+/* BOTÓN VINTAGE DORADO */
+.hint-button {
+  position: relative;
+  margin-top: 8px;
+  padding: 12px 26px;
+
+  font-family: 'Special Elite', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  color: #2a1a0a;
+
+  background: linear-gradient(
+    135deg,
+    #f0d080 0%,
+    #d4b474 30%,
+    #c9a66b 55%,
+    #a67c2e 100%
+  );
+
+  border: 1px solid rgba(201, 166, 107, 0.7);
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  /* profundidad + metal */
+  box-shadow:
+    0 3px 8px rgba(0, 0, 0, 0.7),
+    inset 0 0 10px rgba(255, 255, 255, 0.25),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.25);
+
+  transition: all 0.3s ease;
+}
+
+/* ✨ brillo metálico */
+.hint-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 6px;
+
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.25),
+    transparent 70%
+  );
+
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* 🔩 tornillos decorativos */
+.hint-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 6px;
+  pointer-events: none;
+
+  background:
+    radial-gradient(circle at 8px 8px, #5a3a14 2px, transparent 3px),
+    radial-gradient(circle at calc(100% - 8px) 8px, #5a3a14 2px, transparent 3px),
+    radial-gradient(circle at 8px calc(100% - 8px), #5a3a14 2px, transparent 3px),
+    radial-gradient(circle at calc(100% - 8px) calc(100% - 8px), #5a3a14 2px, transparent 3px);
+
+  opacity: 0.6;
+}
+
+/* Hover elegante */
+.hint-button:hover {
+  transform: translateY(-2px) scale(1.05);
+
+  background: linear-gradient(
+    135deg,
+    #f5e2a8 0%,
+    #e0c07a 40%,
+    #b88a3c 100%
+  );
+
+  box-shadow:
+    0 6px 14px rgba(0, 0, 0, 0.8),
+    0 0 20px rgba(201, 166, 107, 0.5),
+    inset 0 0 12px rgba(255, 255, 255, 0.3);
+}
+
+/* Click (sensación física) */
+.hint-button:active {
+  transform: translateY(2px) scale(0.96);
+
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.7),
+    inset 0 3px 6px rgba(0, 0, 0, 0.4);
+}
 .hint-text {
   font-size: clamp(1rem, 3.5vw, 1.3rem);
   font-weight: 600;

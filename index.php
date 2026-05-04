@@ -57,7 +57,11 @@ $trenes = json_decode($json, true);
         <img src="images/logo.png" alt="Locomotora" class="header-logo-img">
         <div class="header-click-hint">
           <span class="hint-text">Sube a un ferrocarril</span>
-          <span class="hint-text">haciendo click aqui!</span>
+          
+          <div class="hint-button" onclick="abrirModalTrenes()" role="button" tabindex="0"> 
+            Haciendo click aquí!
+          </div>
+
         </div>
       </div>
       </div>
